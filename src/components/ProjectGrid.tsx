@@ -78,7 +78,7 @@ export function ProjectGrid({ projects, onOpenCaseStudy }: ProjectGridProps) {
             <div className="flex items-center justify-between pb-3 border-b border-white/10 text-slate-400 font-mono">
               <span className="text-blue-400 font-semibold flex items-center gap-1.5 text-xs uppercase tracking-wider">
                 <Box className="w-4 h-4" />
-                Key Engineering Achievements
+                Key Engineering Highlights
               </span>
               <span className="text-emerald-400 font-medium">Unreal Engine 5.7</span>
             </div>
@@ -87,32 +87,32 @@ export function ProjectGrid({ projects, onOpenCaseStudy }: ProjectGridProps) {
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-4 h-4 text-blue-400 mt-0.5 shrink-0" />
                 <div>
-                  <strong className="text-white block font-medium">Gameplay State Tree Architecture</strong>
-                  <span>Decouples player exploration, puzzle triggers, and transition logic from monolithic world actor scripts.</span>
+                  <strong className="text-white block font-medium">Gameplay State Trees</strong>
+                  <span>Separated quest logic, puzzle triggers, and exploration states from level actors using Unreal Engine 5.7 Gameplay State Trees.</span>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-4 h-4 text-blue-400 mt-0.5 shrink-0" />
                 <div>
-                  <strong className="text-white block font-medium">Asynchronous UI Event Dispatchers</strong>
-                  <span>UMG challenge interfaces communicate with GameMode and GameState through decoupled event dispatchers without blocking the main game thread.</span>
+                  <strong className="text-white block font-medium">Decoupled UI Events</strong>
+                  <span>Used custom event dispatchers so UMG challenge widgets communicate with GameMode without tying UI directly to actor blueprints.</span>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-4 h-4 text-blue-400 mt-0.5 shrink-0" />
                 <div>
-                  <strong className="text-white block font-medium">Lumen &amp; Nanite PBR Optimization</strong>
-                  <span>Virtualized geometry and dynamic global illumination shaders configured for real-time environment rendering.</span>
+                  <strong className="text-white block font-medium">Dynamic Lighting &amp; Nanite</strong>
+                  <span>Configured Lumen global illumination and Nanite geometry for realistic interior saloon lighting.</span>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-4 h-4 text-blue-400 mt-0.5 shrink-0" />
                 <div>
-                  <strong className="text-white block font-medium">Modular Raycast Interaction Subsystem</strong>
-                  <span>Extensible first-person line-trace subsystem enabling dynamic evaluation of in-world interactable objects.</span>
+                  <strong className="text-white block font-medium">Line-Trace Interaction</strong>
+                  <span>Built a modular first-person line-trace system from the camera center to inspect and interact with world items.</span>
                 </div>
               </div>
             </div>
@@ -130,7 +130,7 @@ export function ProjectGrid({ projects, onOpenCaseStudy }: ProjectGridProps) {
             <div className="flex items-center justify-between pb-3 border-b border-white/10 text-slate-400 font-mono">
               <span className="text-indigo-400 font-semibold flex items-center gap-1.5 text-xs uppercase tracking-wider">
                 <Activity className="w-4 h-4" />
-                Key Engineering Achievements
+                Key Engineering Highlights
               </span>
               <span className="text-emerald-400 font-medium">Grid Logistics Engine</span>
             </div>
@@ -139,32 +139,32 @@ export function ProjectGrid({ projects, onOpenCaseStudy }: ProjectGridProps) {
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-4 h-4 text-indigo-400 mt-0.5 shrink-0" />
                 <div>
-                  <strong className="text-white block font-medium">OOP Machine Hierarchy &amp; 4-Way Vector Routing</strong>
-                  <span>Polymorphic machine classes (Producer, Conveyor, Smelter, Crafter, Seller) with 4-way rotational vectors on a 40x40 spatial grid.</span>
+                  <strong className="text-white block font-medium">Directional Grid Routing</strong>
+                  <span>Built 4-way directional conveyor logic on a 40x40 spatial grid with non-blocking handoffs between machines.</span>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-4 h-4 text-indigo-400 mt-0.5 shrink-0" />
                 <div>
-                  <strong className="text-white block font-medium">Multi-Tier Electronics Assembly Graph</strong>
-                  <span>Recursive manufacturing dependency graph transforming raw ores (Copper, Iron, Gold, Coal) into circuits, CPUs, GPUs, RAM, and full PC units.</span>
+                  <strong className="text-white block font-medium">Multi-Tier Crafting Tree</strong>
+                  <span>Engineered multi-stage manufacturing pipelines converting raw copper and iron into circuits, CPUs, GPUs, and full PCs.</span>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-4 h-4 text-indigo-400 mt-0.5 shrink-0" />
                 <div>
-                  <strong className="text-white block font-medium">Dynamic Economic &amp; Cashflow Engine</strong>
-                  <span>Real-time supply tracking, market rate adjustments, and continuous revenue per minute calculations during active simulation.</span>
+                  <strong className="text-white block font-medium">Dynamic Market &amp; Economy</strong>
+                  <span>Implemented a fluctuating market economy that updates resource values and tracks player earnings per minute.</span>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-4 h-4 text-indigo-400 mt-0.5 shrink-0" />
                 <div>
-                  <strong className="text-white block font-medium">Binary State Persistence Protocol</strong>
-                  <span>Serialized complete multi-tier factory layouts, machine upgrade tiers, and financial states using Python binary serialization.</span>
+                  <strong className="text-white block font-medium">Binary State Persistence</strong>
+                  <span>Saved and loaded complete factory layouts, machine inventories, and player cash using Python binary serialization.</span>
                 </div>
               </div>
             </div>
@@ -182,7 +182,7 @@ export function ProjectGrid({ projects, onOpenCaseStudy }: ProjectGridProps) {
             <div className="flex items-center justify-between pb-3 border-b border-white/10 text-slate-400 font-mono">
               <span className="text-purple-400 font-semibold flex items-center gap-1.5 text-xs uppercase tracking-wider">
                 <Database className="w-4 h-4" />
-                Key Engineering Achievements
+                Key Engineering Highlights
               </span>
               <span className="text-emerald-400 font-medium">City Team Project</span>
             </div>
@@ -191,32 +191,32 @@ export function ProjectGrid({ projects, onOpenCaseStudy }: ProjectGridProps) {
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-4 h-4 text-purple-400 mt-0.5 shrink-0" />
                 <div>
-                  <strong className="text-white block font-medium">Desktop Model-View-Controller (MVC) Architecture</strong>
-                  <span>Strict decoupling of custom Swing presentation components, controller event dispatchers, and database models.</span>
+                  <strong className="text-white block font-medium">Desktop MVC Pattern</strong>
+                  <span>Structured code using Model-View-Controller separation to keep Swing UI, database queries, and business rules isolated.</span>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-4 h-4 text-purple-400 mt-0.5 shrink-0" />
                 <div>
-                  <strong className="text-white block font-medium">Relational SQLite Transaction Management</strong>
-                  <span>Engineered schemas and JDBC Data Access Object (DAO) layers managing ticket booking, seating adjustments, and audit reports.</span>
+                  <strong className="text-white block font-medium">SQLite Transactions</strong>
+                  <span>Designed schemas and JDBC queries handling seat reservations, pricing tiers, cancellations, and refund records.</span>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-4 h-4 text-purple-400 mt-0.5 shrink-0" />
                 <div>
-                  <strong className="text-white block font-medium">Reusable Custom Swing Component Suite</strong>
-                  <span>Developed modular, custom-styled UI elements (RoundedPanel, dynamic seat layout selectors) for consistent desktop usability.</span>
+                  <strong className="text-white block font-medium">Custom Swing Components</strong>
+                  <span>Built reusable rounded panels, styled buttons, and an interactive seating grid with custom paint overrides.</span>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-4 h-4 text-purple-400 mt-0.5 shrink-0" />
                 <div>
-                  <strong className="text-white block font-medium">Multi-Developer Team Integration</strong>
-                  <span>Coordinated Git feature branches, package documentation (JavaDoc), and code reviews across a university engineering group.</span>
+                  <strong className="text-white block font-medium">Team Collaboration</strong>
+                  <span>Coordinated feature branches, pull requests, and JavaDoc documentation across a four-student university team.</span>
                 </div>
               </div>
             </div>
@@ -234,7 +234,7 @@ export function ProjectGrid({ projects, onOpenCaseStudy }: ProjectGridProps) {
             <div className="flex items-center justify-between pb-3 border-b border-white/10 text-slate-400 font-mono">
               <span className="text-purple-400 font-semibold flex items-center gap-1.5 text-xs uppercase tracking-wider">
                 <BrainCircuit className="w-4 h-4" />
-                Key Engineering Achievements
+                Key Engineering Highlights
               </span>
               <span className="text-emerald-400 font-medium">PyTorch 2.x</span>
             </div>
@@ -243,32 +243,32 @@ export function ProjectGrid({ projects, onOpenCaseStudy }: ProjectGridProps) {
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-4 h-4 text-purple-400 mt-0.5 shrink-0" />
                 <div>
-                  <strong className="text-white block font-medium">Deep Convolutional Feature Extractors</strong>
-                  <span>Multi-layer CNN architecture with Batch Normalization, ReLU activations, and dropout to stabilize backpropagation.</span>
+                  <strong className="text-white block font-medium">Convolutional Architecture</strong>
+                  <span>Built multi-layer CNNs in PyTorch with batch normalization, ReLU activations, and dropout regularization.</span>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-4 h-4 text-purple-400 mt-0.5 shrink-0" />
                 <div>
-                  <strong className="text-white block font-medium">Dynamic Learning Rate Scheduling</strong>
-                  <span>Implemented adaptive learning rate decay with Adam optimization to escape saddle points and reach optimal loss convergence.</span>
+                  <strong className="text-white block font-medium">Learning Rate Scheduling</strong>
+                  <span>Implemented step learning rate decay with Adam optimization to ensure steady loss convergence.</span>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-4 h-4 text-purple-400 mt-0.5 shrink-0" />
                 <div>
-                  <strong className="text-white block font-medium">Data Augmentation &amp; Regularization</strong>
-                  <span>Applied random cropping, horizontal flipping, and normalization transforms to prevent model overfitting on CIFAR-10.</span>
+                  <strong className="text-white block font-medium">Data Augmentation</strong>
+                  <span>Applied random cropping, horizontal flips, and normalization to improve model generalization on CIFAR-10.</span>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-4 h-4 text-purple-400 mt-0.5 shrink-0" />
                 <div>
-                  <strong className="text-white block font-medium">Empirical Baseline Benchmarking</strong>
-                  <span>Evaluated baseline vs improved architectures with training loss curves, validation accuracy trajectories, and confusion matrices.</span>
+                  <strong className="text-white block font-medium">Model Comparison</strong>
+                  <span>Evaluated baseline against improved models with Matplotlib loss curves, validation accuracy, and confusion matrices.</span>
                 </div>
               </div>
             </div>
@@ -286,7 +286,7 @@ export function ProjectGrid({ projects, onOpenCaseStudy }: ProjectGridProps) {
             <div className="flex items-center justify-between pb-3 border-b border-white/10 text-slate-400 font-mono">
               <span className="text-blue-400 font-semibold flex items-center gap-1.5 text-xs uppercase tracking-wider">
                 <Cpu className="w-4 h-4" />
-                Key Engineering Achievements
+                Key Engineering Highlights
               </span>
               <span className="text-emerald-400 font-medium">LTSA Formal Proof</span>
             </div>
@@ -295,32 +295,32 @@ export function ProjectGrid({ projects, onOpenCaseStudy }: ProjectGridProps) {
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-4 h-4 text-blue-400 mt-0.5 shrink-0" />
                 <div>
-                  <strong className="text-white block font-medium">Asynchronous PacketDispatcher with Rendezvous Semantics</strong>
-                  <span>Engineered thread-safe port coordination supporting both blocking/non-buffered rendezvous and non-blocking buffered packet polling.</span>
+                  <strong className="text-white block font-medium">PacketDispatcher Rendezvous</strong>
+                  <span>Engineered a thread-safe packet dispatcher supporting rendezvous ports, bounded buffers, and timeout handling in Java 17.</span>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-4 h-4 text-blue-400 mt-0.5 shrink-0" />
                 <div>
-                  <strong className="text-white block font-medium">Parallel Matrix Multiplication Worker Pool</strong>
-                  <span>Partitioned 2D matrix computational workloads across available CPU worker threads, eliminating false sharing and lock contention.</span>
+                  <strong className="text-white block font-medium">Parallel Matrix Multiplication</strong>
+                  <span>Partitioned 2D matrix rows across worker thread pools for multi-core performance gains.</span>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-4 h-4 text-blue-400 mt-0.5 shrink-0" />
                 <div>
-                  <strong className="text-white block font-medium">Multi-Threaded StewPuzzle Synchronization</strong>
-                  <span>Modeled concurrent producer-consumer thread rendezvous with synchronized monitors, condition variables, and starvation avoidance.</span>
+                  <strong className="text-white block font-medium">Thread Synchronization</strong>
+                  <span>Implemented a synchronized producer-consumer monitor with condition variables to prevent race conditions and thread starvation.</span>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-4 h-4 text-blue-400 mt-0.5 shrink-0" />
                 <div>
-                  <strong className="text-white block font-medium">Formal LTSA Deadlock &amp; Safety Verification</strong>
-                  <span>Mathematically proved mutual exclusion, progress, and deadlock-freedom by modeling thread interaction graphs in Finite State Processes (FSP).</span>
+                  <strong className="text-white block font-medium">LTSA Deadlock Verification</strong>
+                  <span>Formally modeled thread interaction graphs in Finite State Processes (FSP) to verify mutual exclusion and deadlock freedom.</span>
                 </div>
               </div>
             </div>
@@ -338,7 +338,7 @@ export function ProjectGrid({ projects, onOpenCaseStudy }: ProjectGridProps) {
             <div className="flex items-center justify-between pb-3 border-b border-white/10 text-slate-400 font-mono">
               <span className="text-amber-400 font-semibold flex items-center gap-1.5 text-xs uppercase tracking-wider">
                 <Terminal className="w-4 h-4" />
-                Key Engineering Achievements
+                Key Engineering Highlights
               </span>
               <span className="text-emerald-400 font-medium">Sub-10ms IPC</span>
             </div>
@@ -347,32 +347,32 @@ export function ProjectGrid({ projects, onOpenCaseStudy }: ProjectGridProps) {
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-4 h-4 text-amber-400 mt-0.5 shrink-0" />
                 <div>
-                  <strong className="text-white block font-medium">Bidirectional TCP Socket IPC Bridge</strong>
-                  <span>Low-latency socket layer connecting an external Java 17 backend client directly to an Unreal Engine 3D simulation.</span>
+                  <strong className="text-white block font-medium">Java TCP Socket Bridge</strong>
+                  <span>Built a multithreaded Java 17 socket client communicating with Unreal Engine over local IPC.</span>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-4 h-4 text-amber-400 mt-0.5 shrink-0" />
                 <div>
-                  <strong className="text-white block font-medium">Non-Blocking Telemetry Streaming</strong>
-                  <span>Asynchronous multithreaded socket buffer processing that prevents network operations from stalling the Unreal Engine render loop.</span>
+                  <strong className="text-white block font-medium">Non-Blocking Updates</strong>
+                  <span>Processed network streams on background worker threads to keep simulation updates from stuttering.</span>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-4 h-4 text-amber-400 mt-0.5 shrink-0" />
                 <div>
-                  <strong className="text-white block font-medium">Digital Twin State Synchronization</strong>
-                  <span>Real-time data ingestion translating external machine telemetry payloads directly into 3D actor animations and machine states.</span>
+                  <strong className="text-white block font-medium">Dynamic Actor State Sync</strong>
+                  <span>Mapped incoming machine telemetry payloads directly to 3D actor positions and animations in Unreal Engine.</span>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-4 h-4 text-amber-400 mt-0.5 shrink-0" />
                 <div>
-                  <strong className="text-white block font-medium">Resilient Packet Framing Protocol</strong>
-                  <span>Structured message framing, keep-alive checks, and error recovery to maintain continuous communication during simulation runs.</span>
+                  <strong className="text-white block font-medium">Keep-Alive &amp; Framing</strong>
+                  <span>Used message framing and heartbeat checks to maintain reliable socket communication during runs.</span>
                 </div>
               </div>
             </div>
@@ -390,7 +390,7 @@ export function ProjectGrid({ projects, onOpenCaseStudy }: ProjectGridProps) {
             <div className="flex items-center justify-between pb-3 border-b border-white/10 text-slate-400 font-mono">
               <span className="text-amber-400 font-semibold flex items-center gap-1.5 text-xs uppercase tracking-wider">
                 <SlidersHorizontal className="w-4 h-4" />
-                Key Engineering Achievements
+                Key Engineering Highlights
               </span>
               <span className="text-emerald-400 font-medium">98+ Lighthouse</span>
             </div>
@@ -399,32 +399,32 @@ export function ProjectGrid({ projects, onOpenCaseStudy }: ProjectGridProps) {
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-4 h-4 text-amber-400 mt-0.5 shrink-0" />
                 <div>
-                  <strong className="text-white block font-medium">Server-Side Optical EXIF Extraction</strong>
-                  <span>Extracts camera focal length, aperture, shutter speed, and ISO directly from file headers using ExifReader with zero client overhead.</span>
+                  <strong className="text-white block font-medium">Server-Side EXIF Parsing</strong>
+                  <span>Extracted camera focal length, f-stop, shutter speed, and ISO directly from image headers using ExifReader.</span>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-4 h-4 text-amber-400 mt-0.5 shrink-0" />
                 <div>
-                  <strong className="text-white block font-medium">Next.js 16 App Router &amp; React 19</strong>
-                  <span>Full Server Component architecture providing instant page hydration, zero-bundle static text delivery, and responsive layouts.</span>
+                  <strong className="text-white block font-medium">Next.js 16 &amp; React 19</strong>
+                  <span>Used Server Components for fast page loads, responsive image delivery, and zero-bundle static text.</span>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-4 h-4 text-amber-400 mt-0.5 shrink-0" />
                 <div>
-                  <strong className="text-white block font-medium">Automated Pre-Build Python Pipeline</strong>
-                  <span>Pre-build scripts verify RAW and JPEG asset pairing, check file checksums, and optimize image delivery before deployment.</span>
+                  <strong className="text-white block font-medium">Python Validation Pipeline</strong>
+                  <span>Automated pre-build image checks to verify file integrity, checksums, and RAW-to-JPEG pairing.</span>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-4 h-4 text-amber-400 mt-0.5 shrink-0" />
                 <div>
-                  <strong className="text-white block font-medium">Worldwide Production Delivery</strong>
-                  <span>Live worldwide at amin-photography.vercel.app with verified 98+ Lighthouse score.</span>
+                  <strong className="text-white block font-medium">Live in Production</strong>
+                  <span>Deployed and running live on Vercel at amin-photography.vercel.app with a 98+ Lighthouse score.</span>
                 </div>
               </div>
             </div>
@@ -442,7 +442,7 @@ export function ProjectGrid({ projects, onOpenCaseStudy }: ProjectGridProps) {
             <div className="flex items-center justify-between pb-3 border-b border-white/10 text-slate-400 font-mono">
               <span className="text-blue-400 font-semibold flex items-center gap-1.5 text-xs uppercase tracking-wider">
                 <Zap className="w-4 h-4" />
-                Key Engineering Achievements
+                Key Engineering Highlights
               </span>
               <span className="text-emerald-400 font-medium">Hackathon Sprint</span>
             </div>
@@ -451,24 +451,32 @@ export function ProjectGrid({ projects, onOpenCaseStudy }: ProjectGridProps) {
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-4 h-4 text-blue-400 mt-0.5 shrink-0" />
                 <div>
-                  <strong className="text-white block font-medium">Rapid Full-Stack Prototyping</strong>
-                  <span>Completed full development cycle from concept to tested web application under strict hackathon countdown constraints.</span>
+                  <strong className="text-white block font-medium">Rapid Sprint Delivery</strong>
+                  <span>Built and shipped a working healthcare prototype within strict hackathon time constraints.</span>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-4 h-4 text-blue-400 mt-0.5 shrink-0" />
                 <div>
-                  <strong className="text-white block font-medium">Clinical Workflow Architecture</strong>
-                  <span>Streamlined patient daily health logging interface paired with high-contrast layouts and responsive telemetry endpoints.</span>
+                  <strong className="text-white block font-medium">Patient-Focused Form Design</strong>
+                  <span>Created clean, high-contrast inputs so patients can record daily health metrics in seconds.</span>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-4 h-4 text-blue-400 mt-0.5 shrink-0" />
                 <div>
-                  <strong className="text-white block font-medium">Collaborative Git Delivery</strong>
-                  <span>Demonstrated fast feature scoping, multi-developer branch management, and rapid integration under tight deadlines.</span>
+                  <strong className="text-white block font-medium">Mock Telemetry Endpoints</strong>
+                  <span>Connected the UI to mock health data endpoints for live demo testing.</span>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="w-4 h-4 text-blue-400 mt-0.5 shrink-0" />
+                <div>
+                  <strong className="text-white block font-medium">Team Git Collaboration</strong>
+                  <span>Managed branches, merge conflicts, and fast scoping with teammates under a deadline.</span>
                 </div>
               </div>
             </div>
@@ -486,7 +494,7 @@ export function ProjectGrid({ projects, onOpenCaseStudy }: ProjectGridProps) {
             <div className="flex items-center justify-between pb-3 border-b border-white/10 text-slate-400 font-mono">
               <span className="text-blue-400 font-semibold flex items-center gap-1.5 text-xs uppercase tracking-wider">
                 <ShieldCheck className="w-4 h-4" />
-                Key Engineering Achievements
+                Key Engineering Highlights
               </span>
               <span className="text-emerald-400 font-medium">Production Verified</span>
             </div>

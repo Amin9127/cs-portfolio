@@ -4,7 +4,7 @@ export const projectsData: ProjectItem[] = [
   {
     id: "photography-portfolio",
     title: "Photography Portfolio & Visual Archive",
-    tagline: "A photography archive and web portfolio built with Next.js 16 and React 19. Displays camera optical data directly from image headers, featuring architectural, street, and nature photography.",
+    tagline: "A custom photography portfolio and archive built with Next.js 16 and React 19. It reads camera optical settings directly from image file headers on the server.",
     category: "fullstack",
     featured: true,
     status: "Live Production",
@@ -24,24 +24,24 @@ export const projectsData: ProjectItem[] = [
     ],
     caseStudy: {
       overview: "A custom photography portfolio built to preserve technical shooting data alongside finished photographs.",
-      problem: "Mainstream photo portfolio platforms aggressively compress images and strip away vital camera optical telemetry (aperture, shutter speed, ISO, focal length, lens profile), separating the final visual from the technical shooting conditions under which it was captured.",
-      architecture: "Built with Next.js 16 App Router and React 19 Server Components for instant page hydration and zero-bundle static text delivery. Extracts EXIF tags directly on the server with ExifReader, backed by automated Python scripts for image integrity checks, metadata normalization, and RAW/JPEG asset pairing.",
+      problem: "Most photo sharing platforms strip away camera metadata and heavily compress images. That hides the shooting settings (focal length, f-stop, shutter speed, and ISO) that show how each shot was captured.",
+      architecture: "Built with Next.js 16 and React 19. It uses ExifReader on the server to read EXIF headers directly from high-resolution files before rendering, while automated Python scripts run before builds to verify files, check asset pairs, and normalize camera and lens labels.",
       technicalChallenges: [
-        "Parsing varied EXIF formats across camera brands while normalizing lens model names.",
-        "Preventing image layout shifts during responsive hydration across phone, tablet, and desktop viewports.",
-        "Automating checksum and pairing verification between high-resolution files and web assets before deployment."
+        "Normalizing lens model and camera names across different manufacturer tags.",
+        "Keeping image aspect ratios steady during page loads to stop layout jumps on mobile.",
+        "Writing Python scripts to check that every web image has a valid full-res source file before deploying."
       ],
       keyOutcomes: [
-        "98+ Lighthouse score with fast page hydration.",
-        "Automated pre-build image verification pipeline.",
+        "Fast page loads and a 98+ Lighthouse score.",
+        "A pre-build Python check that catches missing files or corrupt tags before build time.",
         "Live in production at amin-photography.vercel.app."
       ]
     }
   },
   {
     id: "nette-game",
-    title: "Nette's Game: First-Person 3D Systems (Unreal Engine 5.7)",
-    tagline: "A first-person 3D game built in Unreal Engine 5.7. Uses Gameplay State Trees for decoupled logic, asynchronous UMG event dispatchers, and Lumen real-time global illumination.",
+    title: "Nette's Game: First-Person 3D Systems",
+    tagline: "A first-person 3D exploration and puzzle demo built in Unreal Engine 5.7. Uses Gameplay State Trees for quest and player state, UMG widgets for UI challenges, and line traces for object interaction.",
     category: "game-3d",
     featured: true,
     status: "Active Project",
@@ -59,25 +59,25 @@ export const projectsData: ProjectItem[] = [
       "Configured Lumen dynamic global illumination and Nanite virtualized geometry for real-time scene rendering."
     ],
     caseStudy: {
-      overview: "A first-person interactive 3D game focusing on decoupled gameplay architecture and real-time environment rendering.",
-      problem: "Interactive educational 3D games often couple gameplay rules, puzzle triggers, and UI dialogues directly into monolithic level actors, creating brittle scripts that stall the game thread and are difficult to debug or extend.",
-      architecture: "Uses Unreal Engine 5.7 Gameplay State Trees to separate player states, transition conditions, and challenge logic from individual world actors. UI widgets communicate asynchronously with GameMode through event dispatchers, while Lumen dynamic global illumination and Nanite virtualized geometry deliver real-time PBR scene rendering.",
+      overview: "A first-person interactive 3D game demo focusing on decoupled gameplay architecture and clean state management.",
+      problem: "In Unreal projects, it is easy to dump puzzle triggers, player state, and UI dialogs directly into level blueprints or world actors. That makes quests hard to debug, breaks easily when moving actors around, and causes messy spaghetti logic.",
+      architecture: "I used Unreal Engine 5.7 Gameplay State Trees to separate player state, puzzle conditions, and objectives from individual level actors. UMG puzzle widgets talk back to the GameMode using custom event dispatchers, and lighting uses Lumen dynamic illumination and Nanite meshes.",
       technicalChallenges: [
-        "Coordinating asynchronous UMG challenge dialogs with first-person character movement so player controls remain responsive.",
-        "Balancing dynamic Lumen lighting passes and Nanite geometry across detailed interior environments.",
-        "Building an extensible line-trace interaction subsystem to inspect and manipulate arbitrary world actors dynamically."
+        "Pausing and releasing first-person camera and movement controls cleanly when opening interactive spelling challenge widgets.",
+        "Balancing interior lighting with Lumen so indoor rooms stay well-lit without blowing out shadows or overworking the GPU.",
+        "Building a modular line-trace system from the camera center to detect and interact with different scene objects."
       ],
       keyOutcomes: [
-        "Decoupled, modular gameplay state architecture that scales to new mechanics without script bloat.",
-        "High-fidelity PBR surface rendering with dynamic global illumination.",
-        "Fully asynchronous UI and game state synchronization via clean event dispatchers."
+        "Clean separation between player progress and individual level objects, making it easy to add new rooms and puzzles.",
+        "Responsive first-person movement, clean line-trace object interaction, and stable dynamic lighting.",
+        "Decoupled UI dialogs that update game state through clear event dispatchers."
       ]
     }
   },
   {
     id: "lancaster-box-office",
     title: "Lancaster's Music Hall: Box Office & Seating System",
-    tagline: "An enterprise venue management desktop application built in Java 17 and Swing with SQLite, featuring dynamic seating modifications, financial statistics, and role-based marketing interfaces.",
+    tagline: "A desktop ticketing and venue management app built in Java 17 and Swing with SQLite for a university team project. Handles seat reservations, pricing tiers, ticket cancellations, and sales stats.",
     category: "systems-ai",
     featured: true,
     status: "Completed",
@@ -96,25 +96,25 @@ export const projectsData: ProjectItem[] = [
       "Integrated multi-package systems: Calendar event scheduling, TicketDetails, Statistics reporting, and Admin database."
     ],
     caseStudy: {
-      overview: "A comprehensive venue management and ticketing system developed for Lancaster's Music Hall as part of the City, University of London Team Project module, verified by over 1,700 lines of formal JavaDoc documentation.",
-      problem: "Venues require dependable offline desktop management tools to coordinate multi-date event calendars, modify complex tiered seating configurations, process customer cancellations with transactional refund audits, and track sales metrics without relying on fragile external web services or manual recordkeeping.",
-      architecture: "Engineered in Java 17 using a strict Model-View-Controller (MVC) architecture, documented by over 1,700 lines of formal JavaDoc. Deployed across distinct functional packages: ContentPages (Calendar, ModifySeats, Refunds, Statistics, TicketDetails), Database DAO layer (AdminDatabase, MarketingSalesInfo, OperationsInterface), and ElementsUI (custom-styled Swing components with high-DPI rendering).",
+      overview: "A comprehensive venue management and ticketing desktop system developed for Lancaster's Music Hall as part of the City, University of London software engineering team module.",
+      problem: "Venues need a simple, reliable desktop tool to manage events across a calendar, let staff modify tiered seating plans on the fly, handle ticket cancellations with refunds, and view sales numbers without relying on web connections.",
+      architecture: "Built in Java 17 using an MVC pattern across distinct packages. Split between UI pages (Calendar, ModifySeats, Refunds, Statistics), a JDBC data access layer with SQLite for transactions, and custom Swing UI components for buttons, panels, and an interactive seating grid.",
       technicalChallenges: [
-        "Ensuring ACID compliance and transaction rollback during concurrent seat modifications and ticket cancellations.",
-        "Developing custom Swing components (RoundedPanel, RoundedButton) with custom paintComponent overrides for high-DPI displays.",
-        "Managing multi-developer Git merge workflows across distinct functional subsystems (marketing, admin, ticketing, reports)."
+        "Handling database rollbacks in SQLite when a booking or cancellation fails mid-transaction so seats do not get double-booked.",
+        "Overriding paintComponent in Swing to build custom rounded panels and buttons that render sharply on high-resolution screens.",
+        "Coordinating code changes and resolving Git merges across a four-person team working on different parts of the app."
       ],
       keyOutcomes: [
-        "Full desktop deployment featuring interactive seating configuration, live sales metrics, and refund workflows.",
-        "Comprehensive JavaDoc technical documentation covering every package, method contract, and interface.",
-        "Successfully delivered and evaluated as part of Team 43 in the university software engineering curriculum."
+        "Working desktop app with an interactive seating grid, sales reports, and cancellation workflows.",
+        "Clear JavaDoc comments documenting every class, method, and database query.",
+        "Completed and assessed as part of Team 43 for our second-year software engineering module."
       ]
     }
   },
   {
     id: "deep-learning-cnn",
     title: "Deep Learning Convolutional Neural Network Pipeline",
-    tagline: "Computer vision deep learning pipeline built in Python and PyTorch for image classification, comparing baseline vs improved convolutional architectures.",
+    tagline: "A PyTorch image classification project comparing baseline and improved convolutional neural networks on the CIFAR-10 dataset for university coursework.",
     category: "systems-ai",
     featured: true,
     status: "Completed",
@@ -133,24 +133,24 @@ export const projectsData: ProjectItem[] = [
     ],
     caseStudy: {
       overview: "A machine learning and computer vision coursework project developed for the IN3063 Programming and Mathematics in AI module.",
-      problem: "Standard feedforward neural networks suffer from spatial information loss and parameter explosion when handling image datasets, while basic convolutional architectures struggle with vanishing gradients, overfitting, and slow convergence on multi-class benchmarks.",
-      architecture: "Engineered a custom PyTorch deep convolutional neural network incorporating Batch Normalization, dropout regularization, and adaptive learning rate scheduling with Adam optimization, validated through empirical baseline vs. improved benchmarking on the CIFAR-10 dataset with loss curves and confusion matrices.",
+      problem: "Basic feedforward networks do not understand 2D spatial relationships in images, and simple CNNs quickly overfit or plateau when trained on diverse image datasets like CIFAR-10.",
+      architecture: "Built in PyTorch 2.x. Started with a baseline CNN, then built an improved network adding batch normalization after convolutional layers, dropout before fully connected layers, and a StepLR learning rate scheduler with Adam optimization. Compared training loss and validation accuracy with Matplotlib curves.",
       technicalChallenges: [
-        "Tuning hyperparameter grids (batch size, learning rate schedules, dropout probabilities) to prevent early training divergence.",
-        "Handling GPU tensor memory allocation and batch loading efficiency using PyTorch DataLoader workers.",
-        "Visualizing validation loss plateaus and analyzing confusion matrices across multi-class predictions."
+        "Tuning learning rates, batch sizes, and dropout rates so the deeper model learned steadily without diverging.",
+        "Configuring PyTorch DataLoaders with multiprocessing workers to keep the GPU fed without running out of memory.",
+        "Generating confusion matrices to see which animal and vehicle classes were frequently confused."
       ],
       keyOutcomes: [
-        "Trained models achieving high accuracy convergence on standard image classification benchmarks.",
-        "Comparative loss and accuracy history analysis documenting the impact of normalization layers.",
-        "Preserved codebase on GitHub demonstrating deep learning proficiency and collaborative Git workflows."
+        "Achieved significantly higher validation accuracy on CIFAR-10 with the improved architecture over the baseline.",
+        "Documented how batch normalization and learning rate decay smoothed out loss curves and reduced overfitting.",
+        "Saved code, notebooks, and training plots on GitHub for coursework evaluation."
       ]
     }
   },
   {
     id: "concurrency-systems",
     title: "Concurrent Multithreaded Systems & Formal Verification",
-    tagline: "High-performance concurrent Java systems featuring thread-safe packet dispatching, parallel matrix multiplication, and formal LTSA deadlock verification.",
+    tagline: "A set of multithreaded Java systems built for advanced concurrency coursework. Includes a thread-safe packet dispatcher, a parallel matrix multiplier, and formal deadlock verification in LTSA.",
     category: "systems-ai",
     featured: false,
     status: "Completed",
@@ -163,30 +163,30 @@ export const projectsData: ProjectItem[] = [
     ],
     highlights: [
       "Engineered PacketDispatcher with port coordination, rendezvous semantics, and thread-safe bounded buffers.",
-      "Parallel MatrixMultiplier engine partitioning 2D matrix computations across CPU worker threads for near-linear speedup.",
+      "Parallel MatrixMultiplier engine partitioning 2D matrix computations across CPU worker threads for clear speedups.",
       "StewPuzzle synchronization system coordinating multi-threaded producers and consumers with condition variables.",
       "Formally verified mutual exclusion, liveness, and deadlock-freedom using Finite State Processes (FSP) in LTSA."
     ],
     caseStudy: {
-      overview: "A suite of concurrent multi-threaded systems developed for the advanced concurrency coursework, pairing practical Java implementations with formal mathematical verification.",
-      problem: "Multi-threaded applications sharing mutable memory frequently suffer from silent race conditions, buffer overflows under rapid producer throughput, and deadlocks that cannot be reliably reproduced or detected through ad-hoc testing alone.",
-      architecture: "Engineered a suite of concurrent Java 17 systems including an asynchronous PacketDispatcher with rendezvous semantics and timeout handling, a parallel MatrixMultiplier partitioning 2D matrix calculation across CPU worker pools, and the StewPuzzle thread monitor, paired with formal mathematical proof of mutual exclusion, progress, and deadlock-freedom using Finite State Processes (FSP) and the Labelled Transition System Analyser (LTSA).",
+      overview: "A suite of concurrent multi-threaded systems developed for advanced university concurrency coursework, pairing practical Java implementations with formal state-machine verification.",
+      problem: "Multithreaded code that shares memory easily runs into race conditions, buffer overruns, and deadlocks. These bugs are notoriously hard to catch through normal testing because they depend on unpredictable thread timing.",
+      architecture: "Built in Java 17 across three core problems: a PacketDispatcher with rendezvous ports and bounded buffers, a MatrixMultiplier that splits rows across a thread pool, and a synchronized monitor puzzle. I also modeled the thread states mathematically in Finite State Processes (FSP) and checked them in LTSA to prove they were deadlock-free.",
       technicalChallenges: [
-        "Designing thread-safe packet dispatching queues without thread starvation or buffer overflow under high producer throughput.",
-        "Partitioning 2D matrix multiplication across available CPU worker threads while minimizing synchronization overhead.",
-        "Formally modeling shared resource contention in LTSA to prove deadlock-freedom mathematically."
+        "Designing thread-safe packet queues so slow consumers do not starve and fast producers do not overflow buffers.",
+        "Splitting matrix row calculations cleanly across CPU cores without threads fighting over shared variables.",
+        "Writing Finite State Process models that accurately reflect Java thread synchronization and checking for deadlock states in LTSA."
       ],
       keyOutcomes: [
-        "Provably thread-safe concurrent components verified against formal safety and liveness properties.",
-        "Parallel computational speedups achieved across multi-core CPU architectures.",
-        "Demonstrated deep academic and practical understanding of concurrent systems engineering."
+        "Verified thread safety and deadlock freedom both in Java tests and through formal LTSA state analysis.",
+        "Achieved clear execution speedups on large matrix multiplications when running across multiple CPU cores.",
+        "Completed all coursework requirements for the IN3042 and IN2026 concurrency modules."
       ]
     }
   },
   {
     id: "galactic-crafters",
     title: "Galactic Crafters: Automated Logistics & Assembly Grid Simulation",
-    tagline: "A 2D automated manufacturing and resource logistics simulation built in Python and Pygame with custom binary state persistence, featuring directional transport grids, multi-tier assembly chains, and market economy models.",
+    tagline: "A 2D factory automation game built in Python and Pygame for my A-Level Computer Science NEA. Players place conveyors, smelters, and crafters on a grid to automate computer manufacturing and trade on a market.",
     category: "game-3d",
     featured: true,
     status: "Completed",
@@ -206,26 +206,26 @@ export const projectsData: ProjectItem[] = [
       "Full binary serialization via Python pickle protocol saving complete factory layouts, machine tiers, and financial states."
     ],
     caseStudy: {
-      overview: "An automated factory simulation game developed as an extensive Computer Science coursework project, documented in a formal 190,000-character project specification and demonstrated via video recording.",
-      problem: "There is a lack of strategy and puzzle games that are genuinely enjoyable while challenging and improving problem-solving, strategic planning, and logistical thinking skills transferable to real life and STEM fields. Most mainstream games focus solely on passive entertainment rather than spatial optimization, automated systems engineering, and computational resource management.",
-      architecture: "A full-featured PC factory design and assembly simulation where players architect industrial automation layouts on a 40x40 spatial grid. Players strategically position and orient automated machines (Producers, directional Conveyors, Smelters, Crafters, and Sellers) to establish synchronized production pipelines that transform extracted minerals into multi-tier electronic hardware and complete computer assemblies, balancing cash flow, item transit speeds, and market dynamics. Full game state and layout persistence is handled via Python's binary pickle protocol.",
+      overview: "An automated factory simulation game developed as an A-Level Computer Science NEA project, documented in a formal 190,000-character specification and demonstrated on YouTube.",
+      problem: "I wanted to build a strategy and puzzle game focused on logistics and problem solving. Most casual games are passive, so the goal was to create an engaging simulation where players design manufacturing pipelines, optimize spatial layouts, and manage production economics.",
+      architecture: "Built in Python 3.12 with Pygame. Players build on a 40x40 grid, placing machines like extractors, directional conveyor belts, smelters, and crafters. Raw materials (copper, iron, gold, coal) are smelted and routed into crafting trees to assemble circuits, CPUs, GPUs, RAM, and full PCs. Completed items are sold to earn money, with game state saved to disk using Python binary serialization.",
       technicalChallenges: [
-        "Designing non-blocking 4-way conveyor handoff logic that prevents item stacking, clipping, or loss across directional turns.",
-        "Structuring recursive multi-tier crafting dependency trees where higher-tier electronics (CPUs, GPUs, RAM, motherboards, PCs) require synchronized multi-machine supply lines.",
-        "Engineering binary state persistence using Python's pickle protocol to serialize dynamic machine dictionaries, grid placements, and financial histories without data corruption.",
-        "Managing sprite rendering passes and memory consumption across large multi-machine factory layouts."
+        "Writing conveyor handoff logic so items pass smoothly around 90-degree corners without piling up, clipping, or disappearing.",
+        "Managing multi-step crafting recipes where high-tier parts need several machines feeding intermediate items in sync.",
+        "Saving and loading full game states (grid layouts, machine states, inventories, and player cash) using Python's pickle protocol without corrupting files.",
+        "Optimizing sprite rendering and updates so the game runs smoothly even with hundreds of machines and moving items on the grid."
       ],
       keyOutcomes: [
-        "Complete, standalone playable factory simulation game packaged with PyInstaller.",
-        "Recorded demonstration video published to YouTube showcasing complex assembly lines and automated manufacturing.",
-        "Strong foundation in computational spatial modeling, OOP design patterns, and decoupled simulation loops."
+        "Packaged as a standalone Windows application using PyInstaller so it runs without needing Python installed.",
+        "Recorded and published a full gameplay demonstration video on YouTube.",
+        "Extensively documented across a 190,000-character coursework specification covering requirements, design, code, and testing."
       ]
     }
   },
   {
     id: "starter-factory",
     title: "StarterFactory: Networked 3D Factory Simulation",
-    tagline: "A factory simulation in Unreal Engine connected to a custom Java TCP socket client for real-time telemetry and command exchange.",
+    tagline: "A real-time prototype connecting a Java multithreaded TCP socket client to an Unreal Engine 3D simulation to stream machine data and update world actors.",
     category: "systems-ai",
     featured: false,
     status: "Completed",
@@ -244,24 +244,24 @@ export const projectsData: ProjectItem[] = [
     ],
     caseStudy: {
       overview: "A networked prototype connecting external simulation controllers written in Java with a 3D Unreal Engine factory visualization.",
-      problem: "Industrial control logic and digital twin calculations often run in backend Java or Python environments, while high-detail visualizations run in native C++ game engines. Connecting the two requires dependable, low-latency socket communication without stalling the 3D render loop.",
-      architecture: "Uses a custom bidirectional TCP/IP client-server architecture. An asynchronous multithreaded Java 17 TCP socket client communicates with compiled Unreal Engine binaries at sub-10ms latency, utilizing custom packet framing, heartbeat keep-alive checks, and dynamic actor state synchronization.",
+      problem: "When connecting external backend code (like Java services) to a 3D engine like Unreal Engine, network calls cannot run on the main game thread or the 3D view will stutter and freeze.",
+      architecture: "Built with a Java 17 TCP client communicating with Unreal Engine over local sockets. The Java side handles telemetry formatting and runs on a background worker thread. Unreal reads incoming packets asynchronously and maps telemetry fields to actor positions, rotation speeds, and machine states in the 3D scene.",
       technicalChallenges: [
-        "Preventing socket operations from blocking the Unreal Engine main render thread.",
-        "Handling socket disconnects and reconnects cleanly without crashing the running 3D view.",
-        "Aligning byte orders and data formats between Java streams and native Windows C++ types."
+        "Keeping socket listening and packet parsing off the main Unreal Engine thread so gameplay and rendering stay smooth.",
+        "Handling connection drops gracefully so the 3D simulation keeps running while attempting to reconnect.",
+        "Structuring clear message delimiters and string payloads so Java and Unreal parse the exact same data without byte alignment errors."
       ],
       keyOutcomes: [
-        "Dependable bidirectional communication between Java and compiled Unreal Engine builds.",
-        "Sub-10ms packet exchange between Java sockets and Unreal Engine without stalling simulation updates.",
-        "A socket pattern that can be reused for digital twin and robotics experiments."
+        "Reliable real-time message exchange between Java and compiled Unreal Engine builds.",
+        "Fast updates with sub-10ms packet exchange over local loopback sockets.",
+        "A reusable socket bridge pattern for pairing backend Java logic with Unreal Engine visualizations."
       ]
     }
   },
   {
     id: "hack-a-health",
     title: "Hack-A-Health Hackathon Platform",
-    tagline: "A healthcare tracking prototype built with a team during a timed hackathon, focused on fast patient data logging.",
+    tagline: "A web prototype built with a team during a timed healthcare hackathon, designed to make daily health logging fast and easy for patients.",
     category: "fullstack",
     featured: false,
     status: "Hackathon Project",
@@ -280,17 +280,17 @@ export const projectsData: ProjectItem[] = [
     ],
     caseStudy: {
       overview: "A hackathon project created to make recording daily health metrics simpler and faster for patients.",
-      problem: "Many health tracking tools have dense layouts and complicated forms that make daily logging tedious for patients, leading to poor compliance and missed health signals.",
-      architecture: "Built with a clean web frontend designed for fast input, wired up to mock health telemetry endpoints for live testing, developed and integrated under strict hackathon countdown constraints.",
+      problem: "Many health tracking apps have cluttered interfaces and long forms, which discourages patients from logging their daily readings regularly.",
+      architecture: "We built a clean web interface with high-contrast form fields for quick daily inputs, connected to mock health telemetry endpoints so judges could test logging blood pressure, glucose, and symptoms in real time.",
       technicalChallenges: [
-        "Delivering a working, testable demo within the hackathon countdown.",
-        "Managing merge conflicts and parallel branches across teammates with varying Git experience.",
-        "Keeping the UI readable and easy to use for people with different levels of technical comfort."
+        "Scoping features down to what could realistically be built, tested, and styled before the final demo deadline.",
+        "Helping team members coordinate branches and resolve merge conflicts during rapid sprint commits.",
+        "Keeping the interface clear and simple so elderly patients or non-technical users could log data with minimal taps."
       ],
       keyOutcomes: [
-        "Demonstrated a working prototype to judges at the Hack-A-Health event.",
-        "Codebase preserved on GitHub showing team progress during the sprint.",
-        "Valuable practice in quick decision-making and shipping working software under time pressure."
+        "Presented a live, working demo to the hackathon judges on schedule.",
+        "Codebase published on GitHub showing our team commits and sprint history.",
+        "Gained great experience scoping features and collaborating under strict time limits."
       ]
     }
   }

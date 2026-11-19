@@ -61,7 +61,7 @@
     - Player ship physics (thrust, inertia, rotational drag).
     - Standalone desktop compilation and distribution via PyInstaller.
 - **Key Metrics**:
-  - 60 FPS deterministic game loop with zero garbage-collection stutter.
+  - Deterministic game loop with clean spatial entity updates.
   - Multi-tier crafting tree with full save-state serialization.
 
 ---
