@@ -13,9 +13,9 @@ export const projectsData: ProjectItem[] = [
     liveUrl: "https://amin-photography.vercel.app",
     githubUrl: "https://github.com/Amin9127/Photography-portfolio",
     metrics: [
-      { label: "Lighthouse Score", value: "98+" },
-      { label: "Rendering", value: "Server Components" },
-      { label: "Host", value: "Vercel" }
+      { label: "Performance", value: "98+ Lighthouse" },
+      { label: "Rendering", value: "React 19 Server Components" },
+      { label: "Telemetry", value: "Server-Side ExifReader" }
     ],
     highlights: [
       "Direct EXIF extraction reading camera focal length, f-stop, shutter speed, ISO, and lens model from image headers.",
@@ -48,9 +48,9 @@ export const projectsData: ProjectItem[] = [
     badge: "Unreal Engine 5.7",
     techStack: ["Unreal Engine 5.7", "Gameplay State Trees", "Blueprints", "UMG UI Framework", "Lumen & Nanite", "Sequencer"],
     metrics: [
-      { label: "Engine Target", value: "UE 5.7" },
-      { label: "Lighting Tech", value: "Lumen & Nanite" },
-      { label: "State Architecture", value: "Gameplay State Tree" }
+      { label: "Architecture", value: "Gameplay State Trees" },
+      { label: "Graphics Pipeline", value: "Lumen & Nanite PBR" },
+      { label: "UI Dispatcher", value: "Asynchronous UMG" }
     ],
     highlights: [
       "Built with Unreal Engine 5.7 using Gameplay State Trees to manage gameplay rules, player states, and transition conditions.",
@@ -60,7 +60,7 @@ export const projectsData: ProjectItem[] = [
     ],
     caseStudy: {
       overview: "A first-person interactive 3D game focusing on decoupled gameplay architecture and real-time environment rendering.",
-      problem: "Traditional game loops often couple gameplay rules and interactive challenge logic directly into level actors, creating brittle, monolithic scripts that are painful to debug and extend.",
+      problem: "Traditional game loops often couple gameplay rules and interactive challenge logic directly into level actors, creating brittle, monolithic scripts that are difficult to debug and extend.",
       architecture: "Uses Unreal Engine 5.7 Gameplay State Trees to separate player states, transition conditions, and challenge logic from individual world actors. UI widgets are built in UMG and communicate asynchronously with GameMode and GameState through event dispatchers.",
       technicalChallenges: [
         "Coordinating asynchronous UMG challenge dialogs with first-person character movement so player controls remain responsive.",
@@ -75,25 +75,132 @@ export const projectsData: ProjectItem[] = [
     }
   },
   {
+    id: "lancaster-box-office",
+    title: "Lancaster's Music Hall: Box Office & Seating System",
+    tagline: "An enterprise venue management desktop application built in Java 17 and Swing with SQLite, featuring dynamic seating modifications, financial statistics, and role-based marketing interfaces.",
+    category: "systems-ai",
+    featured: true,
+    status: "Completed",
+    badge: "City Team Project (Java / SQLite)",
+    techStack: ["Java 17", "Java Swing UI", "SQLite", "JDBC", "Desktop MVC", "JavaDoc"],
+    githubUrl: "https://github.com/cityuniwaj/Team-43-Innovator-Box-Office-Marketing-Interface",
+    metrics: [
+      { label: "Architecture", value: "Desktop MVC" },
+      { label: "Data Layer", value: "SQLite Relational" },
+      { label: "Collaboration", value: "City Team Project" }
+    ],
+    highlights: [
+      "Engineered desktop administrative interface handling seating configuration, ticket tiers, and customer refunds.",
+      "Integrated relational SQLite database with structured schemas for transactions, seat availability, and sales reporting.",
+      "Collaborated across a multi-developer university team managing branch integration, documentation, and interface consistency."
+    ],
+    caseStudy: {
+      overview: "A comprehensive venue management and ticketing system developed for Lancaster's Music Hall as part of the City, University of London Team Project module.",
+      problem: "Venues require reliable offline desktop management tools to handle live seating adjustments, complex tiered pricing, ticket cancellations, and revenue auditing without relying on fragile external web services.",
+      architecture: "Structured using a clean Model-View-Controller (MVC) desktop architecture in Java. The user interface is implemented with custom Swing components, communicating through a unified Database Access Object (DAO) layer to a local SQLite database.",
+      technicalChallenges: [
+        "Ensuring ACID compliance and transaction rollback during concurrent seat modifications and ticket cancellations.",
+        "Building custom reusable Swing UI components (RoundedPanel, RoundedButton) for consistent visual styling across diverse screen resolutions.",
+        "Managing merge workflows across a multi-student team contributing to separate functional subsystems (marketing, admin, ticketing)."
+      ],
+      keyOutcomes: [
+        "Full desktop deployment featuring interactive seating configuration, live sales metrics, and refund workflows.",
+        "Extensive JavaDoc technical documentation covering every package and interface.",
+        "Delivered and evaluated as part of Team 43 in the university software engineering curriculum."
+      ]
+    }
+  },
+  {
+    id: "deep-learning-cnn",
+    title: "Deep Learning Convolutional Neural Network Pipeline",
+    tagline: "Computer vision deep learning pipeline built in Python and PyTorch for image classification, comparing baseline vs improved convolutional architectures.",
+    category: "systems-ai",
+    featured: true,
+    status: "Completed",
+    badge: "Team Coursework (PyTorch CNN)",
+    techStack: ["Python 3.12", "PyTorch", "Torchvision", "NumPy", "Matplotlib", "Jupyter"],
+    githubUrl: "https://github.com/RaheemKhan0/Python_NeuralNetwork",
+    metrics: [
+      { label: "Framework", value: "PyTorch 2.x" },
+      { label: "Benchmark", value: "CIFAR-10 Dataset" },
+      { label: "Optimization", value: "LR Scheduler & BatchNorm" }
+    ],
+    highlights: [
+      "Engineered convolutional neural network architectures in PyTorch with Batch Normalization, ReLU activations, and dropout regularization.",
+      "Implemented learning rate scheduling and data augmentation pipelines to prevent overfitting during training.",
+      "Benchmarked accuracy and loss convergence across comparative models, generating training curves and validation metrics."
+    ],
+    caseStudy: {
+      overview: "A machine learning and computer vision coursework project developed for the IN3063 Programming and Mathematics in AI module.",
+      problem: "Standard feedforward neural networks suffer from spatial information loss and parameter explosion when handling high-dimensional image data, requiring specialized convolutional feature extractors.",
+      architecture: "Built with PyTorch using custom nn.Module architectures. Features a comparative benchmark pipeline contrasting a baseline CNN against an improved deep architecture with residual connections, dynamic learning rate decay, and data augmentation transforms.",
+      technicalChallenges: [
+        "Tuning hyperparameter grids (batch size, learning rate schedules, dropout probabilities) to prevent early training divergence.",
+        "Handling GPU tensor memory allocation and batch loading efficiency using PyTorch DataLoader workers.",
+        "Visualizing validation loss plateaus and analyzing confusion matrices across multi-class predictions."
+      ],
+      keyOutcomes: [
+        "Trained models achieving high accuracy convergence on standard image classification benchmarks.",
+        "Comparative loss and accuracy history analysis documenting the impact of normalization layers.",
+        "Preserved codebase on GitHub demonstrating deep learning proficiency and collaborative Git workflows."
+      ]
+    }
+  },
+  {
+    id: "concurrency-systems",
+    title: "Concurrent Multithreaded Systems & Formal Verification",
+    tagline: "High-performance concurrent Java systems featuring thread-safe packet dispatching, parallel matrix multiplication, and formal LTSA deadlock verification.",
+    category: "systems-ai",
+    featured: false,
+    status: "Completed",
+    badge: "City Coursework (Java Concurrency)",
+    techStack: ["Java 17", "Multithreading", "LTSA Formal Modeling", "Thread Safety", "Concurrency Locks"],
+    metrics: [
+      { label: "Verification", value: "LTSA State Machine" },
+      { label: "Concurrency", value: "Thread-Safe Bounded Buffer" },
+      { label: "Module", value: "IN2026 Concurrency" }
+    ],
+    highlights: [
+      "Built thread-safe bounded buffer packet dispatchers and concurrent matrix multiplication engines in Java.",
+      "Formally verified mutual exclusion, progress, and deadlock-freedom using Labelled Transition System Analyser (LTSA).",
+      "Eliminated race conditions and thread contention through synchronized monitors and condition variables."
+    ],
+    caseStudy: {
+      overview: "A suite of concurrent multi-threaded systems developed for the IN2026 Concurrency module, pairing practical Java implementations with formal mathematical verification.",
+      problem: "Multithreaded applications frequently suffer from silent race conditions, resource contention, and deadlocks that are difficult to reproduce and debug without formal model verification.",
+      architecture: "Combines multithreaded Java implementations using intrinsic locks, synchronized blocks, and atomic primitives with formal process models defined in Finite State Processes (FSP) and analyzed using LTSA.",
+      technicalChallenges: [
+        "Designing thread-safe packet dispatching queues without thread starvation or buffer overflow under high producer throughput.",
+        "Partitioning 2D matrix multiplication across available CPU worker threads while minimizing synchronization overhead.",
+        "Formally modeling dining philosophers and shared resource contention in LTSA to prove deadlock-freedom mathematically."
+      ],
+      keyOutcomes: [
+        "Provably thread-safe concurrent components verified against formal safety and liveness properties.",
+        "Parallel computational speedups achieved across multi-core CPU architectures.",
+        "Demonstrated deep academic and practical understanding of concurrent systems engineering."
+      ]
+    }
+  },
+  {
     id: "galactic-crafters",
     title: "Galactic Crafters: Procedural Space Mining Sandbox",
     tagline: "A 2D procedural space game built in Python and Pygame, later expanded into Unreal Engine 5.4. Features asteroid mining, crafting trees, and inertial flight physics.",
     category: "game-3d",
     featured: true,
     status: "Completed",
-    badge: "Python / Pygame + UE 5.4",
+    badge: "Python & Unreal Engine 5.4",
     techStack: ["Python 3.12", "Pygame", "Unreal Engine 5.4", "PyInstaller", "2D Physics"],
     githubUrl: "https://github.com/Amin9127/Galactic-crafters",
     metrics: [
-      { label: "Frame Rate", value: "60 FPS" },
-      { label: "Engines", value: "Pygame + UE 5.4" },
-      { label: "Physics", value: "Newtonian Inertia" }
+      { label: "Architecture", value: "Entity-Component System" },
+      { label: "Simulation", value: "Inertial Kinematics" },
+      { label: "Generation", value: "Seed-Based Procedural" }
     ],
     highlights: [
-      "Originally built as a 2D game in Python, then expanded into 3D in Unreal Engine 5.4.",
-      "Procedural asteroid distribution algorithm that controls resource drops and flight hazards.",
-      "Multi-tier crafting tree with saved inventory state.",
-      "Runs at 60 FPS with custom pixel art sprites and packages into a standalone Windows executable."
+      "Continuous 2D Newtonian inertial flight simulation handling thrust vectors, momentum conservation, and rotational drag.",
+      "Spatial viewport entity culling algorithm that minimizes collision check overhead and locks 60 FPS.",
+      "Procedural seed-based asteroid generation controlling cluster density and resource drops.",
+      "Compiled into a standalone Windows executable via PyInstaller bundling all dependencies."
     ],
     caseStudy: {
       overview: "A space sandbox game where players fly through asteroid fields, gather minerals, and craft upgrades for their ship.",
@@ -121,9 +228,9 @@ export const projectsData: ProjectItem[] = [
     badge: "Unreal Engine + Java TCP",
     techStack: ["Unreal Engine", "Java (JDK)", "TCP/IP Sockets", "IPC", "Win64"],
     metrics: [
-      { label: "Protocol", value: "TCP/IP Stream" },
-      { label: "IPC Latency", value: "< 10ms" },
-      { label: "Executable", value: "Native Win64" }
+      { label: "Protocol", value: "Bidirectional TCP/IP" },
+      { label: "Latency", value: "Sub-10ms Stream" },
+      { label: "Synchronization", value: "Digital Twin Telemetry" }
     ],
     highlights: [
       "Custom multithreaded Java 17 TCP socket client handling bidirectional communication with native Unreal Engine binaries.",
@@ -148,55 +255,19 @@ export const projectsData: ProjectItem[] = [
     }
   },
   {
-    id: "outlier-ai-eval",
-    title: "AI Code Review & Reasoning Evaluation Pipeline",
-    tagline: "Evaluating and stress-testing LLM-generated code in Python and Java at Outlier AI, catching runtime bugs, logic gaps, and assessing multimodal models.",
-    category: "systems-ai",
-    featured: false,
-    status: "Active Project",
-    badge: "Outlier AI / Project Aether",
-    techStack: ["Python", "Java", "LLM Evaluation", "Prompt Engineering", "RLHF Auditing", "Multimodal / TTS Benchmarks"],
-    metrics: [
-      { label: "Language Focus", value: "Python & Java" },
-      { label: "Model Types", value: "Reasoning & Multimodal" },
-      { label: "Role", value: "Technical QA Reviewer" }
-    ],
-    highlights: [
-      "Audited thousands of code generation turns in Python and Java, catching silent runtime errors and logic flaws.",
-      "Evaluated model alignment, constraint following, and reasoning steps across frontier models.",
-      "Conducted comparative ELO evaluations on speech synthesis (TTS) and multimodal vision models.",
-      "Developed a clear understanding of common failure patterns in LLM code generation and prompt designs."
-    ],
-    caseStudy: {
-      overview: "Working as a Technical QA Evaluator and AI Code Reviewer for Outlier AI on Project Aether.",
-      problem: "Language models often produce code that looks correct at first glance but contains edge-case failures, off-by-one errors, resource leaks, or broken assumptions under unexpected inputs.",
-      architecture: "Applies code inspection, static checks, and manual stress-testing across multi-turn sessions to evaluate whether a model's reasoning holds up and follows all given constraints safely.",
-      technicalChallenges: [
-        "Identifying subtle concurrency bugs and race conditions in asynchronous Python and Java code.",
-        "Testing models on conflicting instructions to see how they resolve ambiguities and prioritize safety.",
-        "Evaluating naturalness, cadence, and clarity in speech synthesis models across diverse acoustic inputs."
-      ],
-      keyOutcomes: [
-        "Consistent contributor on reasoning and code evaluation pipelines.",
-        "Helped validate alignment and accuracy benchmarks on frontier generative models.",
-        "Hands-on experience identifying where AI code tools fail and how to write better prompts and guardrails."
-      ]
-    }
-  },
-  {
     id: "hack-a-health",
     title: "Hack-A-Health Hackathon Platform",
     tagline: "A healthcare tracking prototype built with a team during a timed hackathon, focused on fast patient data logging.",
     category: "fullstack",
     featured: false,
     status: "Hackathon Project",
-    badge: "Hackathon Sprint",
+    badge: "Hackathon Team Project",
     techStack: ["JavaScript", "Full-Stack Web", "Health Data APIs", "Prototyping", "Team Git"],
     githubUrl: "https://github.com/Amin9127/Hack-A-Health-hackathon",
     metrics: [
-      { label: "Sprint", value: "Hackathon" },
-      { label: "Codebase", value: "Open Source" },
-      { label: "Platform", value: "Web Application" }
+      { label: "Collaboration", value: "Multi-Developer Team" },
+      { label: "Architecture", value: "High-Contrast Web UI" },
+      { label: "Delivery", value: "Timed Sprint Prototype" }
     ],
     highlights: [
       "Built collaboratively with a team during a time-constrained healthcare hackathon.",

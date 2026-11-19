@@ -10,12 +10,13 @@ import {
   CheckCircle2,
   Terminal, 
   SlidersHorizontal,
-  Code2,
   Activity,
   Layers3,
   Search,
   Zap,
-  ShieldCheck
+  ShieldCheck,
+  BrainCircuit,
+  Database
 } from "lucide-react";
 import { GithubIcon } from "@/components/icons/GithubIcon";
 import { ProjectItem, ProjectCategory } from "@/types/portfolio";
@@ -62,7 +63,7 @@ export function ProjectGrid({ projects, onOpenCaseStudy }: ProjectGridProps) {
       case "game-3d":
         return { label: "3D Spatial & Unreal Engine", color: "text-blue-400 bg-blue-500/10 border-blue-500/30" };
       case "systems-ai":
-        return { label: "Systems & AI Evaluation", color: "text-purple-400 bg-purple-500/10 border-purple-500/30" };
+        return { label: "Systems & AI Engineering", color: "text-purple-400 bg-purple-500/10 border-purple-500/30" };
       default:
         return { label: "Engineering", color: "text-slate-300 bg-white/5 border-white/10" };
     }
@@ -117,7 +118,7 @@ export function ProjectGrid({ projects, onOpenCaseStudy }: ProjectGridProps) {
             </div>
 
             <div className="pt-2 border-t border-white/5 flex flex-wrap items-center justify-between gap-2 text-[11px] font-mono text-slate-400">
-              <span>Subsystem: Unreal Engine 5.7</span>
+              <span>Subsystem: Unreal Engine 5.7 Architecture</span>
               <span className="text-blue-400">Decoupled State Machine</span>
             </div>
           </div>
@@ -170,7 +171,163 @@ export function ProjectGrid({ projects, onOpenCaseStudy }: ProjectGridProps) {
 
             <div className="pt-2 border-t border-white/5 flex flex-wrap items-center justify-between gap-2 text-[11px] font-mono text-slate-400">
               <span>Stack: Python 3.12 / Pygame &bull; UE 5.4</span>
-              <span className="text-indigo-400">Deterministic Physics</span>
+              <span className="text-indigo-400">Kinematic Simulation</span>
+            </div>
+          </div>
+        );
+
+      case "lancaster-box-office":
+        return (
+          <div className="p-5 sm:p-6 rounded-2xl bg-black/60 border border-white/10 text-xs space-y-4">
+            <div className="flex items-center justify-between pb-3 border-b border-white/10 text-slate-400 font-mono">
+              <span className="text-purple-400 font-semibold flex items-center gap-1.5 text-xs uppercase tracking-wider">
+                <Database className="w-4 h-4" />
+                Key Engineering Achievements
+              </span>
+              <span className="text-emerald-400 font-medium">City Team Project</span>
+            </div>
+
+            <div className="space-y-3 text-slate-300 leading-relaxed">
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="w-4 h-4 text-purple-400 mt-0.5 shrink-0" />
+                <div>
+                  <strong className="text-white block font-medium">Desktop Model-View-Controller (MVC) Architecture</strong>
+                  <span>Strict decoupling of custom Swing presentation components, controller event dispatchers, and database models.</span>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="w-4 h-4 text-purple-400 mt-0.5 shrink-0" />
+                <div>
+                  <strong className="text-white block font-medium">Relational SQLite Transaction Management</strong>
+                  <span>Engineered schemas and JDBC Data Access Object (DAO) layers managing ticket booking, seating adjustments, and audit reports.</span>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="w-4 h-4 text-purple-400 mt-0.5 shrink-0" />
+                <div>
+                  <strong className="text-white block font-medium">Reusable Custom Swing Component Suite</strong>
+                  <span>Developed modular, custom-styled UI elements (RoundedPanel, dynamic seat layout selectors) for consistent desktop usability.</span>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="w-4 h-4 text-purple-400 mt-0.5 shrink-0" />
+                <div>
+                  <strong className="text-white block font-medium">Multi-Developer Team Integration</strong>
+                  <span>Coordinated Git feature branches, package documentation (JavaDoc), and code reviews across a university engineering group.</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="pt-2 border-t border-white/5 flex flex-wrap items-center justify-between gap-2 text-[11px] font-mono text-slate-400">
+              <span>Stack: Java 17 &bull; SQLite &bull; Swing MVC</span>
+              <span className="text-purple-400">Team 43 Contributed Repo</span>
+            </div>
+          </div>
+        );
+
+      case "deep-learning-cnn":
+        return (
+          <div className="p-5 sm:p-6 rounded-2xl bg-black/60 border border-white/10 text-xs space-y-4">
+            <div className="flex items-center justify-between pb-3 border-b border-white/10 text-slate-400 font-mono">
+              <span className="text-purple-400 font-semibold flex items-center gap-1.5 text-xs uppercase tracking-wider">
+                <BrainCircuit className="w-4 h-4" />
+                Key Engineering Achievements
+              </span>
+              <span className="text-emerald-400 font-medium">PyTorch 2.x</span>
+            </div>
+
+            <div className="space-y-3 text-slate-300 leading-relaxed">
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="w-4 h-4 text-purple-400 mt-0.5 shrink-0" />
+                <div>
+                  <strong className="text-white block font-medium">Deep Convolutional Feature Extractors</strong>
+                  <span>Multi-layer CNN architecture with Batch Normalization, ReLU activations, and dropout to stabilize backpropagation.</span>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="w-4 h-4 text-purple-400 mt-0.5 shrink-0" />
+                <div>
+                  <strong className="text-white block font-medium">Dynamic Learning Rate Scheduling</strong>
+                  <span>Implemented adaptive learning rate decay with Adam optimization to escape saddle points and reach optimal loss convergence.</span>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="w-4 h-4 text-purple-400 mt-0.5 shrink-0" />
+                <div>
+                  <strong className="text-white block font-medium">Data Augmentation &amp; Regularization</strong>
+                  <span>Applied random cropping, horizontal flipping, and normalization transforms to prevent model overfitting on CIFAR-10.</span>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="w-4 h-4 text-purple-400 mt-0.5 shrink-0" />
+                <div>
+                  <strong className="text-white block font-medium">Empirical Baseline Benchmarking</strong>
+                  <span>Evaluated baseline vs improved architectures with training loss curves, validation accuracy trajectories, and confusion matrices.</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="pt-2 border-t border-white/5 flex flex-wrap items-center justify-between gap-2 text-[11px] font-mono text-slate-400">
+              <span>Stack: Python 3.12 &bull; PyTorch &bull; CIFAR-10</span>
+              <span className="text-purple-400">IN3063 Contributed Repo</span>
+            </div>
+          </div>
+        );
+
+      case "concurrency-systems":
+        return (
+          <div className="p-5 sm:p-6 rounded-2xl bg-black/60 border border-white/10 text-xs space-y-4">
+            <div className="flex items-center justify-between pb-3 border-b border-white/10 text-slate-400 font-mono">
+              <span className="text-blue-400 font-semibold flex items-center gap-1.5 text-xs uppercase tracking-wider">
+                <Cpu className="w-4 h-4" />
+                Key Engineering Achievements
+              </span>
+              <span className="text-emerald-400 font-medium">LTSA Verified</span>
+            </div>
+
+            <div className="space-y-3 text-slate-300 leading-relaxed">
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="w-4 h-4 text-blue-400 mt-0.5 shrink-0" />
+                <div>
+                  <strong className="text-white block font-medium">Thread-Safe Bounded Buffer Packet Dispatcher</strong>
+                  <span>Engineered synchronized producer-consumer queue with monitor locks and condition variables, preventing thread starvation.</span>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="w-4 h-4 text-blue-400 mt-0.5 shrink-0" />
+                <div>
+                  <strong className="text-white block font-medium">Parallel Matrix Multiplication Engine</strong>
+                  <span>Partitioned 2D matrix computations across CPU worker threads to achieve near-linear parallel speedup.</span>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="w-4 h-4 text-blue-400 mt-0.5 shrink-0" />
+                <div>
+                  <strong className="text-white block font-medium">Formal LTSA Deadlock Verification</strong>
+                  <span>Modeled thread interactions and shared resource contention in Finite State Processes (FSP) to mathematically verify deadlock-freedom.</span>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="w-4 h-4 text-blue-400 mt-0.5 shrink-0" />
+                <div>
+                  <strong className="text-white block font-medium">Elimination of Race Conditions</strong>
+                  <span>Protected shared mutable state through strict monitor semantics, atomic variable primitives, and defensive copying.</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="pt-2 border-t border-white/5 flex flex-wrap items-center justify-between gap-2 text-[11px] font-mono text-slate-400">
+              <span>Stack: Java 17 &bull; Multithreading &bull; LTSA</span>
+              <span className="text-blue-400">IN2026 Concurrency Module</span>
             </div>
           </div>
         );
@@ -223,59 +380,6 @@ export function ProjectGrid({ projects, onOpenCaseStudy }: ProjectGridProps) {
             <div className="pt-2 border-t border-white/5 flex flex-wrap items-center justify-between gap-2 text-[11px] font-mono text-slate-400">
               <span>Stack: Java 17 &bull; Unreal Engine &bull; TCP/IP</span>
               <span className="text-amber-400">Digital Twin Pipeline</span>
-            </div>
-          </div>
-        );
-
-      case "outlier-ai-eval":
-      case "outlier-ai":
-        return (
-          <div className="p-5 sm:p-6 rounded-2xl bg-black/60 border border-white/10 text-xs space-y-4">
-            <div className="flex items-center justify-between pb-3 border-b border-white/10 text-slate-400 font-mono">
-              <span className="text-purple-400 font-semibold flex items-center gap-1.5 text-xs uppercase tracking-wider">
-                <Code2 className="w-4 h-4" />
-                Key Engineering Achievements
-              </span>
-              <span className="text-emerald-400 font-medium">Production QA</span>
-            </div>
-
-            <div className="space-y-3 text-slate-300 leading-relaxed">
-              <div className="flex items-start gap-3">
-                <CheckCircle2 className="w-4 h-4 text-purple-400 mt-0.5 shrink-0" />
-                <div>
-                  <strong className="text-white block font-medium">Formal Algorithmic Rigor Auditing</strong>
-                  <span>Verifying asymptotic time and space bounds on frontier AI code generation across complex data structures.</span>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-3">
-                <CheckCircle2 className="w-4 h-4 text-purple-400 mt-0.5 shrink-0" />
-                <div>
-                  <strong className="text-white block font-medium">Concurrency &amp; Edge Case Fuzzing</strong>
-                  <span>Stress-testing multi-turn Python and Java code for race conditions, thread safety, integer overflows, and off-by-one errors.</span>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-3">
-                <CheckCircle2 className="w-4 h-4 text-purple-400 mt-0.5 shrink-0" />
-                <div>
-                  <strong className="text-white block font-medium">Code Reasoning &amp; Constraint Verification</strong>
-                  <span>Auditing model problem-solving trajectories against strict requirements to ensure safety, correctness, and zero hallucinations.</span>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-3">
-                <CheckCircle2 className="w-4 h-4 text-purple-400 mt-0.5 shrink-0" />
-                <div>
-                  <strong className="text-white block font-medium">RLHF Benchmark &amp; Rubric Calibration</strong>
-                  <span>Formulating systematic review rubrics to guide reinforcement learning and identify subtle logic flaws in enterprise AI models.</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="pt-2 border-t border-white/5 flex flex-wrap items-center justify-between gap-2 text-[11px] font-mono text-slate-400">
-              <span>Stack: Python 3.12 &bull; Java 17 &bull; RLHF QA</span>
-              <span className="text-purple-400">Outlier AI / Project Aether</span>
             </div>
           </div>
         );
@@ -415,7 +519,7 @@ export function ProjectGrid({ projects, onOpenCaseStudy }: ProjectGridProps) {
               Selected Projects
             </h2>
             <p className="mt-2 text-slate-400 max-w-2xl text-base">
-              Explore projects across 3D game development in Unreal Engine 5.7, network socket IPC, and full-stack web applications.
+              Explore projects across 3D game development in Unreal Engine 5.7, concurrent Java systems, machine learning pipelines, and full-stack web applications.
             </p>
           </div>
 
@@ -490,7 +594,7 @@ export function ProjectGrid({ projects, onOpenCaseStudy }: ProjectGridProps) {
             }`}
           >
             <Cpu className="w-3.5 h-3.5" />
-            <span>Systems &amp; AI QA</span>
+            <span>Systems &amp; AI Engineering</span>
           </button>
           <button
             onClick={() => setSelectedCategory("fullstack")}
@@ -509,7 +613,7 @@ export function ProjectGrid({ projects, onOpenCaseStudy }: ProjectGridProps) {
         {viewMode === "stage" && (
           <div className="space-y-6">
             {/* Project Selector Rail */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-2.5">
               {filteredProjects.map((p) => {
                 const isActive = p.id === activeProject.id;
                 return (
@@ -528,7 +632,7 @@ export function ProjectGrid({ projects, onOpenCaseStudy }: ProjectGridProps) {
                     <div className="font-semibold text-xs mt-1 text-white line-clamp-1">
                       {p.title.split(":")[0]}
                     </div>
-                    <div className="mt-2 text-[10px] font-mono text-blue-400">
+                    <div className="mt-2 text-[10px] font-mono text-blue-400 truncate">
                       {p.badge || "Verified"}
                     </div>
                   </button>
