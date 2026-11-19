@@ -662,11 +662,16 @@ export function ProjectGrid({ projects, onOpenCaseStudy }: ProjectGridProps) {
                     {activeProject.tagline}
                   </p>
 
-                  {/* The Problem Brief */}
-                  <div className="space-y-2 pt-2 text-sm text-slate-300">
+                  {/* Problem & Solution Briefs */}
+                  <div className="space-y-3 pt-2 text-sm text-slate-300">
                     <div className="pl-3 border-l-2 border-white/20">
                       <strong className="text-white block text-xs font-mono uppercase tracking-wider mb-0.5">The Problem:</strong>
-                      <span>{activeProject.caseStudy.problem}</span>
+                      <span className="leading-relaxed">{activeProject.caseStudy.problem}</span>
+                    </div>
+
+                    <div className="pl-3 border-l-2 border-blue-500/40">
+                      <strong className="text-blue-400 block text-xs font-mono uppercase tracking-wider mb-0.5">The Solution &amp; Architecture:</strong>
+                      <span className="leading-relaxed">{activeProject.caseStudy.architecture}</span>
                     </div>
                   </div>
 
