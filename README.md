@@ -1,5 +1,6 @@
 # 💻 Amin Ali: Computer Science & Software Engineering Portfolio
 
+> **Live Website**: [amin-cs.vercel.app](https://amin-cs.vercel.app)  
 > **Final-Year MSci Computer Science (First-Class Honours Track, 72.5% Average)**  
 > **City St George's, University of London &bull; London, UK**  
 > **AI Code Reviewer & Technical QA Evaluator @ Outlier AI**  
@@ -45,24 +46,4 @@ The site includes client-side tools to test camera calculations and 3D math:
 - **Styling**: Tailwind CSS v4 (`@import "tailwindcss";`)
 - **Language**: TypeScript 5
 - **Icons**: Lucide React
-- **Deployment**: Vercel
-
----
-
-## Local Development
-
-### Requirements
-- Node.js 18+
-- npm 10+
-
-### Setup
-```bash
-npm run dev
-```
-Open [http://localhost:3000](http://localhost:3000) in your browser.
-
-### Build
-```bash
-npm run build
-npm start
-```
+- **Live URL**: [amin-cs.vercel.app](https://amin-cs.vercel.app)

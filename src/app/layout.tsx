@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     description: "Showcasing Full-Stack Web, Unreal Engine 5.7 spatial games, and AI engineering systems.",
     type: "website",
     locale: "en_GB",
-    url: "https://github.com/Amin9127"
+    url: "https://amin-cs.vercel.app"
   }
 };
 
