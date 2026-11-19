@@ -679,7 +679,7 @@ export function ProjectGrid({ projects, onOpenCaseStudy }: ProjectGridProps) {
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-black font-semibold text-xs shadow-md transition-all"
                       >
-                        <span>Visit Live Site</span>
+                        <span>{activeProject.liveUrl.includes("youtube") ? "Watch Demo Video" : "Visit Live Site"}</span>
                         <ExternalLink className="w-3.5 h-3.5" />
                       </a>
                     )}
@@ -769,7 +769,7 @@ export function ProjectGrid({ projects, onOpenCaseStudy }: ProjectGridProps) {
                       rel="noopener noreferrer"
                       className="px-3.5 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-black text-xs font-semibold flex items-center gap-1.5"
                     >
-                      <span>Live Site</span>
+                      <span>{project.liveUrl.includes("youtube") ? "Watch Demo" : "Live Site"}</span>
                       <ExternalLink className="w-3.5 h-3.5" />
                     </a>
                   )}

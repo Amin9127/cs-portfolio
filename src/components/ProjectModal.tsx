@@ -153,7 +153,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-black text-xs font-semibold shadow-md transition-all"
               >
-                <span>Visit Live Website</span>
+                <span>{project.liveUrl.includes("youtube") ? "Watch Demo Video" : "Visit Live Website"}</span>
                 <ExternalLink className="w-3.5 h-3.5" />
               </a>
             )}

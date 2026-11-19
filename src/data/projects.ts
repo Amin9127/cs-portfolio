@@ -193,6 +193,7 @@ export const projectsData: ProjectItem[] = [
     badge: "Python & Pygame Simulation",
     techStack: ["Python 3.12", "Pygame Engine", "Directional Grid Logistics", "Binary Serialization (Pickle)", "Economic Modeling", "Unreal Engine 5.4"],
     githubUrl: "https://github.com/Amin9127/Galactic-crafters",
+    liveUrl: "https://www.youtube.com/watch?v=Mv0J8NKr4F8",
     metrics: [
       { label: "Architecture", value: "OOP Machine Hierarchy" },
       { label: "Persistence", value: "Binary Protocol Serialization" },
@@ -205,18 +206,19 @@ export const projectsData: ProjectItem[] = [
       "Full binary serialization via Python pickle protocol saving complete factory layouts, machine tiers, and financial states."
     ],
     caseStudy: {
-      overview: "An automated factory simulation game developed as an extensive Computer Science coursework project, modeling industrial supply chains, directional transport logistics, and dynamic markets.",
-      problem: "Simulating dozens of interconnected production machines and continuous item movement on a 40x40 pixel grid requires strict spatial coordinate management to avoid conveyor jams, item duplication, or state desynchronization.",
-      architecture: "Engineered using an object-oriented sprite architecture in Pygame (classes.py, main.py). The grid coordinate system maps machine orientations, movement vectors, and item handoffs across directional conveyors. Factory layouts and upgrade states are persisted via Python binary serialization (Galactic_Crafters.txt). Mechanics were subsequently prototyped in Unreal Engine 5.4 to explore 3D spatial grids.",
+      overview: "An automated factory simulation game developed as an extensive Computer Science coursework project, documented in a formal 190,000-character project specification and demonstrated via video recording.",
+      problem: "Players struggle with managing spatial logistics, complex multi-tier assembly lines, and balancing resource supply and market sell rates without causing conveyor deadlocks or throughput bottlenecks.",
+      architecture: "Structured with an object-oriented sprite architecture in Pygame (Machine, Producer, Conveyor, Smelter, Crafter, Seller). Incorporates 4-directional spatial orientations, item transfer handoffs on a 40x40 pixel grid, dynamic cashflow and revenue-per-minute calculations, and full game state persistence via Python's binary pickle protocol (Galactic_Crafters.txt). Mechanics were subsequently prototyped in Unreal Engine 5.4 to explore 3D spatial grids.",
       technicalChallenges: [
-        "Designing a collision and handoff protocol between 4-way rotating conveyors to prevent item stacking and transfer drops.",
-        "Implementing recursive crafting dependency trees where higher-tier items require synchronized inputs from multiple upstream smelters and assemblers.",
-        "Building resilient save/load routines that serialize multi-tier object dictionaries and time-stamped revenue histories cleanly."
+        "Designing non-blocking 4-way conveyor handoff logic that prevents item stacking, clipping, or loss across directional turns.",
+        "Structuring recursive multi-tier crafting dependency trees where higher-tier electronics (CPUs, GPUs, RAM, motherboards, PCs) require synchronized multi-machine supply lines.",
+        "Engineering binary state persistence using Python's pickle protocol to serialize dynamic machine dictionaries, grid placements, and financial histories without data corruption.",
+        "Managing sprite rendering cycles and memory consumption to lock a steady 60 FPS across large factory layouts."
       ],
       keyOutcomes: [
-        "Fully playable manufacturing simulation with complex multi-tier assembly trees and balanced market mechanics.",
-        "Standalone executable packaged via PyInstaller bundling all sprites, fonts, and logic.",
-        "Foundation in spatial coordinate math and decoupled state simulation that translated directly into Unreal Engine development."
+        "Complete, standalone playable factory simulation game packaged with PyInstaller.",
+        "Recorded demonstration video published to YouTube showcasing complex assembly lines and automated manufacturing.",
+        "Strong foundation in computational spatial modeling, OOP design patterns, and decoupled simulation loops."
       ]
     }
   },
