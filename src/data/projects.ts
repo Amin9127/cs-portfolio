@@ -81,32 +81,33 @@ export const projectsData: ProjectItem[] = [
     category: "systems-ai",
     featured: true,
     status: "Completed",
-    badge: "City Team Project (Java / SQLite)",
-    techStack: ["Java 17", "Java Swing UI", "SQLite", "JDBC", "Desktop MVC", "JavaDoc"],
+    badge: "City Team Project (Java 17 / SQLite)",
+    techStack: ["Java 17", "Java Swing UI", "SQLite", "JDBC", "Desktop MVC", "JavaDoc Documentation"],
     githubUrl: "https://github.com/cityuniwaj/Team-43-Innovator-Box-Office-Marketing-Interface",
     metrics: [
-      { label: "Architecture", value: "Desktop MVC" },
-      { label: "Data Layer", value: "SQLite Relational" },
-      { label: "Collaboration", value: "City Team Project" }
+      { label: "Architecture", value: "Desktop MVC Pattern" },
+      { label: "Data Layer", value: "Transactional SQLite JDBC" },
+      { label: "Documentation", value: "Comprehensive JavaDoc" }
     ],
     highlights: [
-      "Engineered desktop administrative interface handling seating configuration, ticket tiers, and customer refunds.",
-      "Integrated relational SQLite database with structured schemas for transactions, seat availability, and sales reporting.",
-      "Collaborated across a multi-developer university team managing branch integration, documentation, and interface consistency."
+      "Engineered desktop Model-View-Controller architecture separating custom Swing presentation from business logic.",
+      "Built transactional SQLite schemas handling seating modifications, ticket tier pricing, and customer refund audits.",
+      "Designed reusable custom Swing UI suite (RoundedPanel, RoundedButton, dynamic venue seating grid).",
+      "Integrated multi-package systems: Calendar event scheduling, TicketDetails, Statistics reporting, and Admin database."
     ],
     caseStudy: {
-      overview: "A comprehensive venue management and ticketing system developed for Lancaster's Music Hall as part of the City, University of London Team Project module.",
+      overview: "A comprehensive venue management and ticketing system developed for Lancaster's Music Hall as part of the City, University of London Team Project module, verified by over 1,700 lines of formal JavaDoc documentation.",
       problem: "Venues require reliable offline desktop management tools to handle live seating adjustments, complex tiered pricing, ticket cancellations, and revenue auditing without relying on fragile external web services.",
-      architecture: "Structured using a clean Model-View-Controller (MVC) desktop architecture in Java. The user interface is implemented with custom Swing components, communicating through a unified Database Access Object (DAO) layer to a local SQLite database.",
+      architecture: "Engineered in Java 17 using a strict Model-View-Controller (MVC) architecture. Separated into functional packages: ContentPages (Calendar, ModifySeats, Refunds, Statistics, TicketDetails), Database DAO layer (AdminDatabase, MarketingSalesInfo, OperationsInterface), and ElementsUI (custom styled Swing components).",
       technicalChallenges: [
         "Ensuring ACID compliance and transaction rollback during concurrent seat modifications and ticket cancellations.",
-        "Building custom reusable Swing UI components (RoundedPanel, RoundedButton) for consistent visual styling across diverse screen resolutions.",
-        "Managing merge workflows across a multi-student team contributing to separate functional subsystems (marketing, admin, ticketing)."
+        "Developing custom Swing components (RoundedPanel, RoundedButton) with custom paintComponent overrides for high-DPI displays.",
+        "Managing multi-developer Git merge workflows across distinct functional subsystems (marketing, admin, ticketing, reports)."
       ],
       keyOutcomes: [
         "Full desktop deployment featuring interactive seating configuration, live sales metrics, and refund workflows.",
-        "Extensive JavaDoc technical documentation covering every package and interface.",
-        "Delivered and evaluated as part of Team 43 in the university software engineering curriculum."
+        "Comprehensive JavaDoc technical documentation covering every package, method contract, and interface.",
+        "Successfully delivered and evaluated as part of Team 43 in the university software engineering curriculum."
       ]
     }
   },
@@ -118,7 +119,7 @@ export const projectsData: ProjectItem[] = [
     featured: true,
     status: "Completed",
     badge: "Team Coursework (PyTorch CNN)",
-    techStack: ["Python 3.12", "PyTorch", "Torchvision", "NumPy", "Matplotlib", "Jupyter"],
+    techStack: ["Python 3.12", "PyTorch 2.x", "Torchvision", "NumPy", "Matplotlib", "Jupyter"],
     githubUrl: "https://github.com/RaheemKhan0/Python_NeuralNetwork",
     metrics: [
       { label: "Framework", value: "PyTorch 2.x" },
@@ -158,21 +159,22 @@ export const projectsData: ProjectItem[] = [
     metrics: [
       { label: "Verification", value: "LTSA State Machine" },
       { label: "Concurrency", value: "Thread-Safe Bounded Buffer" },
-      { label: "Module", value: "IN2026 Concurrency" }
+      { label: "Module", value: "IN3042 / IN2026 Concurrency" }
     ],
     highlights: [
-      "Built thread-safe bounded buffer packet dispatchers and concurrent matrix multiplication engines in Java.",
-      "Formally verified mutual exclusion, progress, and deadlock-freedom using Labelled Transition System Analyser (LTSA).",
-      "Eliminated race conditions and thread contention through synchronized monitors and condition variables."
+      "Engineered PacketDispatcher with port coordination, rendezvous semantics, and thread-safe bounded buffers.",
+      "Parallel MatrixMultiplier engine partitioning 2D matrix computations across CPU worker threads for near-linear speedup.",
+      "StewPuzzle synchronization system coordinating multi-threaded producers and consumers with condition variables.",
+      "Formally verified mutual exclusion, liveness, and deadlock-freedom using Finite State Processes (FSP) in LTSA."
     ],
     caseStudy: {
-      overview: "A suite of concurrent multi-threaded systems developed for the IN2026 Concurrency module, pairing practical Java implementations with formal mathematical verification.",
+      overview: "A suite of concurrent multi-threaded systems developed for the advanced concurrency coursework, pairing practical Java implementations with formal mathematical verification.",
       problem: "Multithreaded applications frequently suffer from silent race conditions, resource contention, and deadlocks that are difficult to reproduce and debug without formal model verification.",
       architecture: "Combines multithreaded Java implementations using intrinsic locks, synchronized blocks, and atomic primitives with formal process models defined in Finite State Processes (FSP) and analyzed using LTSA.",
       technicalChallenges: [
         "Designing thread-safe packet dispatching queues without thread starvation or buffer overflow under high producer throughput.",
         "Partitioning 2D matrix multiplication across available CPU worker threads while minimizing synchronization overhead.",
-        "Formally modeling dining philosophers and shared resource contention in LTSA to prove deadlock-freedom mathematically."
+        "Formally modeling shared resource contention in LTSA to prove deadlock-freedom mathematically."
       ],
       keyOutcomes: [
         "Provably thread-safe concurrent components verified against formal safety and liveness properties.",
@@ -183,38 +185,38 @@ export const projectsData: ProjectItem[] = [
   },
   {
     id: "galactic-crafters",
-    title: "Galactic Crafters: Procedural Space Mining Sandbox",
-    tagline: "A 2D procedural space game built in Python and Pygame, later expanded into Unreal Engine 5.4. Features asteroid mining, crafting trees, and inertial flight physics.",
+    title: "Galactic Crafters: Automated Logistics & Assembly Grid Simulation",
+    tagline: "A 2D automated manufacturing and resource logistics simulation built in Python and Pygame with custom binary state persistence, featuring directional transport grids, multi-tier assembly chains, and market economy models.",
     category: "game-3d",
     featured: true,
     status: "Completed",
-    badge: "Python & Unreal Engine 5.4",
-    techStack: ["Python 3.12", "Pygame", "Unreal Engine 5.4", "PyInstaller", "2D Physics"],
+    badge: "Python & Pygame Simulation",
+    techStack: ["Python 3.12", "Pygame Engine", "Directional Grid Logistics", "Binary Serialization (Pickle)", "Economic Modeling", "Unreal Engine 5.4"],
     githubUrl: "https://github.com/Amin9127/Galactic-crafters",
     metrics: [
-      { label: "Architecture", value: "Entity-Component System" },
-      { label: "Simulation", value: "Inertial Kinematics" },
-      { label: "Generation", value: "Seed-Based Procedural" }
+      { label: "Architecture", value: "OOP Machine Hierarchy" },
+      { label: "Persistence", value: "Binary Protocol Serialization" },
+      { label: "Production", value: "Multi-Tier Assembly Graph" }
     ],
     highlights: [
-      "Continuous 2D Newtonian inertial flight simulation handling thrust vectors, momentum conservation, and rotational drag.",
-      "Spatial viewport entity culling algorithm that minimizes collision check overhead and locks 60 FPS.",
-      "Procedural seed-based asteroid generation controlling cluster density and resource drops.",
-      "Compiled into a standalone Windows executable via PyInstaller bundling all dependencies."
+      "Object-oriented machine hierarchy (Producer, Conveyor, Smelter, Crafter, Seller) with 4-way rotational grid coordinate vectors.",
+      "Recursive assembly graph: raw ores (Copper, Iron, Gold, Coal, Lead) through smelters into circuits, CPUs, GPUs, RAM, and full PCs.",
+      "Dynamic market economy calculating real-time resource supplies, selling values, and continuous revenue per minute.",
+      "Full binary serialization via Python pickle protocol saving complete factory layouts, machine tiers, and financial states."
     ],
     caseStudy: {
-      overview: "A space sandbox game where players fly through asteroid fields, gather minerals, and craft upgrades for their ship.",
-      problem: "Handling continuous procedural asteroid spawning while maintaining accurate collision checks and steady frame rates without memory hiccups.",
-      architecture: "Built with a modular entity-component structure in Python (data/classes.py, main.py). Objects outside the player view are culled to keep updates fast. Later recreated key mechanics in Unreal Engine 5.4 to test 3D meshes and spatial physics.",
+      overview: "An automated factory simulation game developed as an extensive Computer Science coursework project, modeling industrial supply chains, directional transport logistics, and dynamic markets.",
+      problem: "Simulating dozens of interconnected production machines and continuous item movement on a 40x40 pixel grid requires strict spatial coordinate management to avoid conveyor jams, item duplication, or state desynchronization.",
+      architecture: "Engineered using an object-oriented sprite architecture in Pygame (classes.py, main.py). The grid coordinate system maps machine orientations, movement vectors, and item handoffs across directional conveyors. Factory layouts and upgrade states are persisted via Python binary serialization (Galactic_Crafters.txt). Mechanics were subsequently prototyped in Unreal Engine 5.4 to explore 3D spatial grids.",
       technicalChallenges: [
-        "Tuning 2D inertial physics (thrust, momentum, rotational drag) so ship movement feels responsive on a keyboard.",
-        "Optimizing collision checks between the player ship, mining lasers, and dozens of active asteroids.",
-        "Packaging Python code, sprites, and audio into a single standalone executable using PyInstaller."
+        "Designing a collision and handoff protocol between 4-way rotating conveyors to prevent item stacking and transfer drops.",
+        "Implementing recursive crafting dependency trees where higher-tier items require synchronized inputs from multiple upstream smelters and assemblers.",
+        "Building resilient save/load routines that serialize multi-tier object dictionaries and time-stamped revenue histories cleanly."
       ],
       keyOutcomes: [
-        "Published release on GitHub that runs without needing Python installed.",
-        "Consistent 60 FPS performance during busy asteroid sequences.",
-        "Practical experience moving from 2D game loops into Unreal Engine 3D coordinate space."
+        "Fully playable manufacturing simulation with complex multi-tier assembly trees and balanced market mechanics.",
+        "Standalone executable packaged via PyInstaller bundling all sprites, fonts, and logic.",
+        "Foundation in spatial coordinate math and decoupled state simulation that translated directly into Unreal Engine development."
       ]
     }
   },

@@ -132,46 +132,46 @@ export function ProjectGrid({ projects, onOpenCaseStudy }: ProjectGridProps) {
                 <Activity className="w-4 h-4" />
                 Key Engineering Achievements
               </span>
-              <span className="text-emerald-400 font-medium">60 FPS Locked</span>
+              <span className="text-emerald-400 font-medium">Grid Logistics Engine</span>
             </div>
 
             <div className="space-y-3 text-slate-300 leading-relaxed">
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-4 h-4 text-indigo-400 mt-0.5 shrink-0" />
                 <div>
-                  <strong className="text-white block font-medium">Newtonian Inertial Flight Physics</strong>
-                  <span>Custom continuous simulation handling 2D thrust vectors, momentum conservation, and realistic rotational drag.</span>
+                  <strong className="text-white block font-medium">OOP Machine Hierarchy &amp; 4-Way Vector Routing</strong>
+                  <span>Polymorphic machine classes (Producer, Conveyor, Smelter, Crafter, Seller) with 4-way rotational vectors on a 40x40 spatial grid.</span>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-4 h-4 text-indigo-400 mt-0.5 shrink-0" />
                 <div>
-                  <strong className="text-white block font-medium">Spatial Viewport Entity Culling</strong>
-                  <span>Dynamic off-screen culling algorithm that minimizes collision check overhead and prevents memory spikes during dense asteroid clusters.</span>
+                  <strong className="text-white block font-medium">Multi-Tier Electronics Assembly Graph</strong>
+                  <span>Recursive manufacturing dependency graph transforming raw ores (Copper, Iron, Gold, Coal) into circuits, CPUs, GPUs, RAM, and full PC units.</span>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-4 h-4 text-indigo-400 mt-0.5 shrink-0" />
                 <div>
-                  <strong className="text-white block font-medium">Procedural Seed-Based Generation</strong>
-                  <span>Algorithmic distribution controlling asteroid trajectory drifts, cluster density, and mineral resource drop rates.</span>
+                  <strong className="text-white block font-medium">Dynamic Economic &amp; Cashflow Engine</strong>
+                  <span>Real-time supply tracking, market rate adjustments, and continuous revenue per minute calculations with zero frame drops.</span>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-4 h-4 text-indigo-400 mt-0.5 shrink-0" />
                 <div>
-                  <strong className="text-white block font-medium">Zero-Dependency Standalone Build</strong>
-                  <span>Compiled via PyInstaller into a standalone Windows binary bundling game logic, C-extensions, pixel art, and audio.</span>
+                  <strong className="text-white block font-medium">Binary State Persistence Protocol</strong>
+                  <span>Serialized complete multi-tier factory layouts, machine upgrade tiers, and financial states using Python binary serialization.</span>
                 </div>
               </div>
             </div>
 
             <div className="pt-2 border-t border-white/5 flex flex-wrap items-center justify-between gap-2 text-[11px] font-mono text-slate-400">
               <span>Stack: Python 3.12 / Pygame &bull; UE 5.4</span>
-              <span className="text-indigo-400">Kinematic Simulation</span>
+              <span className="text-indigo-400">Directional Logistics Simulation</span>
             </div>
           </div>
         );
@@ -288,46 +288,46 @@ export function ProjectGrid({ projects, onOpenCaseStudy }: ProjectGridProps) {
                 <Cpu className="w-4 h-4" />
                 Key Engineering Achievements
               </span>
-              <span className="text-emerald-400 font-medium">LTSA Verified</span>
+              <span className="text-emerald-400 font-medium">LTSA Formal Proof</span>
             </div>
 
             <div className="space-y-3 text-slate-300 leading-relaxed">
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-4 h-4 text-blue-400 mt-0.5 shrink-0" />
                 <div>
-                  <strong className="text-white block font-medium">Thread-Safe Bounded Buffer Packet Dispatcher</strong>
-                  <span>Engineered synchronized producer-consumer queue with monitor locks and condition variables, preventing thread starvation.</span>
+                  <strong className="text-white block font-medium">Asynchronous PacketDispatcher with Rendezvous Semantics</strong>
+                  <span>Engineered thread-safe port coordination supporting both blocking/non-buffered rendezvous and non-blocking buffered packet polling.</span>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-4 h-4 text-blue-400 mt-0.5 shrink-0" />
                 <div>
-                  <strong className="text-white block font-medium">Parallel Matrix Multiplication Engine</strong>
-                  <span>Partitioned 2D matrix computations across CPU worker threads to achieve near-linear parallel speedup.</span>
+                  <strong className="text-white block font-medium">Parallel Matrix Multiplication Worker Pool</strong>
+                  <span>Partitioned 2D matrix computational workloads across available CPU worker threads, eliminating false sharing and lock contention.</span>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-4 h-4 text-blue-400 mt-0.5 shrink-0" />
                 <div>
-                  <strong className="text-white block font-medium">Formal LTSA Deadlock Verification</strong>
-                  <span>Modeled thread interactions and shared resource contention in Finite State Processes (FSP) to mathematically verify deadlock-freedom.</span>
+                  <strong className="text-white block font-medium">Multi-Threaded StewPuzzle Synchronization</strong>
+                  <span>Modeled concurrent producer-consumer thread rendezvous with synchronized monitors, condition variables, and starvation avoidance.</span>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-4 h-4 text-blue-400 mt-0.5 shrink-0" />
                 <div>
-                  <strong className="text-white block font-medium">Elimination of Race Conditions</strong>
-                  <span>Protected shared mutable state through strict monitor semantics, atomic variable primitives, and defensive copying.</span>
+                  <strong className="text-white block font-medium">Formal LTSA Deadlock &amp; Safety Verification</strong>
+                  <span>Mathematically proved mutual exclusion, progress, and deadlock-freedom by modeling thread interaction graphs in Finite State Processes (FSP).</span>
                 </div>
               </div>
             </div>
 
             <div className="pt-2 border-t border-white/5 flex flex-wrap items-center justify-between gap-2 text-[11px] font-mono text-slate-400">
-              <span>Stack: Java 17 &bull; Multithreading &bull; LTSA</span>
-              <span className="text-blue-400">IN2026 Concurrency Module</span>
+              <span>Stack: Java 17 &bull; Multithreading &bull; LTSA / FSP</span>
+              <span className="text-blue-400">IN3042 / IN2026 Concurrency Module</span>
             </div>
           </div>
         );
