@@ -80,7 +80,7 @@ export function ProjectGrid({ projects, onOpenCaseStudy }: ProjectGridProps) {
                 <Box className="w-4 h-4" />
                 Key Engineering Achievements
               </span>
-              <span className="text-emerald-400 font-medium">UE 5.7 &bull; 60 FPS</span>
+              <span className="text-emerald-400 font-medium">Unreal Engine 5.7</span>
             </div>
 
             <div className="space-y-3 text-slate-300 leading-relaxed">
@@ -96,7 +96,7 @@ export function ProjectGrid({ projects, onOpenCaseStudy }: ProjectGridProps) {
                 <CheckCircle2 className="w-4 h-4 text-blue-400 mt-0.5 shrink-0" />
                 <div>
                   <strong className="text-white block font-medium">Asynchronous UI Event Dispatchers</strong>
-                  <span>UMG challenge interfaces communicate with GameMode and GameState through decoupled event dispatchers without hitching the main thread.</span>
+                  <span>UMG challenge interfaces communicate with GameMode and GameState through decoupled event dispatchers without blocking the main game thread.</span>
                 </div>
               </div>
 
@@ -104,7 +104,7 @@ export function ProjectGrid({ projects, onOpenCaseStudy }: ProjectGridProps) {
                 <CheckCircle2 className="w-4 h-4 text-blue-400 mt-0.5 shrink-0" />
                 <div>
                   <strong className="text-white block font-medium">Lumen &amp; Nanite PBR Optimization</strong>
-                  <span>Virtualized geometry and dynamic global illumination shaders tuned for steady frame pacing at a locked 60 FPS.</span>
+                  <span>Virtualized geometry and dynamic global illumination shaders configured for real-time environment rendering.</span>
                 </div>
               </div>
 
@@ -156,7 +156,7 @@ export function ProjectGrid({ projects, onOpenCaseStudy }: ProjectGridProps) {
                 <CheckCircle2 className="w-4 h-4 text-indigo-400 mt-0.5 shrink-0" />
                 <div>
                   <strong className="text-white block font-medium">Dynamic Economic &amp; Cashflow Engine</strong>
-                  <span>Real-time supply tracking, market rate adjustments, and continuous revenue per minute calculations with zero frame drops.</span>
+                  <span>Real-time supply tracking, market rate adjustments, and continuous revenue per minute calculations during active simulation.</span>
                 </div>
               </div>
 

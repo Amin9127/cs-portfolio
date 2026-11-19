@@ -56,20 +56,20 @@ export const projectsData: ProjectItem[] = [
       "Built with Unreal Engine 5.7 using Gameplay State Trees to manage gameplay rules, player states, and transition conditions.",
       "Asynchronous UMG challenge interfaces communicating with GameMode and GameState through custom event dispatchers.",
       "First-person modular line-trace interaction system for dynamic object evaluation in 3D space.",
-      "Tuned Lumen dynamic global illumination and Nanite virtualized geometry to sustain locked 60 FPS performance."
+      "Configured Lumen dynamic global illumination and Nanite virtualized geometry for real-time scene rendering."
     ],
     caseStudy: {
       overview: "A first-person interactive 3D game focusing on decoupled gameplay architecture and real-time environment rendering.",
-      problem: "Interactive educational 3D games often couple gameplay rules, puzzle triggers, and UI dialogues directly into monolithic level actors, causing main-thread frame hitches and creating brittle scripts that are difficult to debug or extend.",
-      architecture: "Uses Unreal Engine 5.7 Gameplay State Trees to separate player states, transition conditions, and challenge logic from individual world actors. UI widgets communicate asynchronously with GameMode through event dispatchers, while Lumen dynamic global illumination and Nanite virtualized geometry sustain a locked 60 FPS.",
+      problem: "Interactive educational 3D games often couple gameplay rules, puzzle triggers, and UI dialogues directly into monolithic level actors, creating brittle scripts that stall the game thread and are difficult to debug or extend.",
+      architecture: "Uses Unreal Engine 5.7 Gameplay State Trees to separate player states, transition conditions, and challenge logic from individual world actors. UI widgets communicate asynchronously with GameMode through event dispatchers, while Lumen dynamic global illumination and Nanite virtualized geometry deliver real-time PBR scene rendering.",
       technicalChallenges: [
         "Coordinating asynchronous UMG challenge dialogs with first-person character movement so player controls remain responsive.",
-        "Tuning dynamic Lumen global illumination and Nanite geometry to keep frame pacing smooth without GPU hitches.",
+        "Balancing dynamic Lumen lighting passes and Nanite geometry across detailed interior environments.",
         "Building an extensible line-trace interaction subsystem to inspect and manipulate arbitrary world actors dynamically."
       ],
       keyOutcomes: [
         "Decoupled, modular gameplay state architecture that scales to new mechanics without script bloat.",
-        "Stable 60 FPS performance with dynamic lighting and high-fidelity PBR surface rendering.",
+        "High-fidelity PBR surface rendering with dynamic global illumination.",
         "Fully asynchronous UI and game state synchronization via clean event dispatchers."
       ]
     }
@@ -213,7 +213,7 @@ export const projectsData: ProjectItem[] = [
         "Designing non-blocking 4-way conveyor handoff logic that prevents item stacking, clipping, or loss across directional turns.",
         "Structuring recursive multi-tier crafting dependency trees where higher-tier electronics (CPUs, GPUs, RAM, motherboards, PCs) require synchronized multi-machine supply lines.",
         "Engineering binary state persistence using Python's pickle protocol to serialize dynamic machine dictionaries, grid placements, and financial histories without data corruption.",
-        "Managing sprite rendering cycles and memory consumption to lock a steady 60 FPS across large factory layouts."
+        "Managing sprite rendering passes and memory consumption across large multi-machine factory layouts."
       ],
       keyOutcomes: [
         "Complete, standalone playable factory simulation game packaged with PyInstaller.",
@@ -253,7 +253,7 @@ export const projectsData: ProjectItem[] = [
       ],
       keyOutcomes: [
         "Dependable bidirectional communication between Java and compiled Unreal Engine builds.",
-        "Zero frame drops in Unreal Engine during high-frequency message streams.",
+        "Sub-10ms packet exchange between Java sockets and Unreal Engine without stalling simulation updates.",
         "A socket pattern that can be reused for digital twin and robotics experiments."
       ]
     }
