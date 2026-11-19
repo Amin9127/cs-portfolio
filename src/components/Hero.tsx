@@ -18,10 +18,9 @@ export function Hero({ onOpenDossier }: HeroProps) {
   };
 
   return (
-    <section id="top" className="relative pt-12 pb-20 md:pt-20 md:pb-28 overflow-hidden">
-      {/* Background radial glows */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute top-1/3 left-1/4 w-[400px] h-[250px] bg-purple-600/10 rounded-full blur-[100px] pointer-events-none" />
+    <section id="top" className="relative pt-12 pb-16 md:pt-20 md:pb-24 overflow-hidden">
+      {/* Background radial glow */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-blue-600/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-3xl">
@@ -52,7 +51,7 @@ export function Hero({ onOpenDossier }: HeroProps) {
               href="#flagship"
               className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm shadow-lg shadow-blue-600/25 transition-all transform hover:-translate-y-0.5"
             >
-              <span>View Featured Project</span>
+              <span>Explore Projects</span>
               <ArrowRight className="w-4 h-4" />
             </a>
 
@@ -61,7 +60,7 @@ export function Hero({ onOpenDossier }: HeroProps) {
               className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 text-slate-200 font-semibold text-sm transition-all transform hover:-translate-y-0.5"
             >
               <Download className="w-4 h-4 text-blue-400" />
-              <span>View Master Dossier / CV</span>
+              <span>Master Dossier / CV</span>
             </button>
 
             <button
@@ -83,25 +82,17 @@ export function Hero({ onOpenDossier }: HeroProps) {
             </button>
           </div>
 
-          {/* Proof-of-Work Metrics Strip */}
-          <div className="mt-12 pt-8 border-t border-white/10 grid grid-cols-2 sm:grid-cols-4 gap-6">
-            <div>
-              <div className="text-2xl sm:text-3xl font-bold text-white tracking-tight">72.5%</div>
-              <div className="text-xs text-slate-400 mt-1 uppercase tracking-wider font-mono">First-Class Standing</div>
-            </div>
-            <div>
-              <div className="text-2xl sm:text-3xl font-bold text-blue-400 tracking-tight">UE 5.7</div>
-              <div className="text-xs text-slate-400 mt-1 uppercase tracking-wider font-mono">Unreal Engine Active</div>
-            </div>
-            <div>
-              <div className="text-2xl sm:text-3xl font-bold text-amber-400 tracking-tight">Next.js 16</div>
-              <div className="text-xs text-slate-400 mt-1 uppercase tracking-wider font-mono">React 19 App Router</div>
-            </div>
-            <div>
-              <div className="text-2xl sm:text-3xl font-bold text-emerald-400 tracking-tight">40 hrs/wk</div>
-              <div className="text-xs text-slate-400 mt-1 uppercase tracking-wider font-mono">UK Immediate Avail.</div>
-            </div>
+          {/* Clean Credentials Strip */}
+          <div className="mt-10 pt-6 border-t border-white/10 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs font-mono text-slate-400">
+            <span>MSci Computer Science <strong className="text-white">(72.5% First-Class Track)</strong></span>
+            <span className="text-white/20">&bull;</span>
+            <span>Unreal Engine 5.7 &bull; C++ &bull; Blueprints</span>
+            <span className="text-white/20">&bull;</span>
+            <span>Next.js 16 &bull; React 19 &bull; TypeScript</span>
+            <span className="text-white/20">&bull;</span>
+            <span>AI Code Reviewer @ Outlier AI</span>
           </div>
+
         </div>
       </div>
     </section>

@@ -3,38 +3,39 @@ import { ProjectItem } from "@/types/portfolio";
 export const projectsData: ProjectItem[] = [
   {
     id: "photography-portfolio",
-    title: "Photography Portfolio & Optical Archive",
-    tagline: "A photography archive and web portfolio built with Next.js 16 and React 19. Displays camera EXIF telemetry, includes an interactive RAW-to-color comparison slider, and runs an automated tagging pipeline.",
+    title: "Photography Portfolio & Visual Archive",
+    tagline: "A photography archive and web portfolio built with Next.js 16 and React 19. Displays camera optical data directly from image headers, featuring architectural, street, and nature photography.",
     category: "fullstack",
     featured: true,
     status: "Live Production",
     badge: "Web & Photography",
-    techStack: ["Next.js 16.4", "React 19.3", "Tailwind CSS v4", "TypeScript 5", "ExifReader", "Jose", "Python Scripts"],
+    techStack: ["Next.js 16.4", "React 19.3", "Tailwind CSS v4", "TypeScript 5", "ExifReader", "Python Scripts"],
+    liveUrl: "https://amin-photography.vercel.app",
+    githubUrl: "https://github.com/Amin9127/Photography-portfolio",
     localPath: "C:\\Users\\amina\\Desktop\\AI projects\\photography_portfolio",
     metrics: [
       { label: "Lighthouse Score", value: "98+" },
-      { label: "Telemetry Latency", value: "< 50ms" },
-      { label: "Architecture", value: "Server Components" }
+      { label: "Rendering", value: "Server Components" },
+      { label: "Host", value: "Vercel" }
     ],
     highlights: [
-      "Dynamic EXIF extraction reading camera focal length, f-stop, shutter speed, ISO, and lens model.",
-      "Custom Before and After slider (BeforeAfterSlider.tsx) comparing raw camera sensor captures with finished color grading.",
-      "Scene categorization and lighting classification using multimodal AI vision (aiVision.ts).",
-      "Python batch scripts to verify RAW-pair integrity, normalize metadata, and optimize images for the web."
+      "Direct EXIF extraction reading camera focal length, f-stop, shutter speed, ISO, and lens model from image headers.",
+      "Fast page loads and responsive image delivery built with Next.js 16 App Router and React 19.",
+      "Python batch scripts to verify image integrity, normalize metadata, and check asset pairs before build time."
     ],
     caseStudy: {
       overview: "A custom photography portfolio built to preserve technical shooting data alongside finished photographs.",
-      problem: "Most portfolio platforms display compressed images and discard the camera settings (aperture, shutter speed, ISO, focal length) and color-grading work that went into the shot.",
-      architecture: "Built with Next.js 16 App Router and React 19 Server Components for fast initial page loads and zero-bundle static text delivery. The client-side telemetry engine reads EXIF tags with ExifReader, while Python scripts handle batch metadata verification and RAW/JPEG asset pairing.",
+      problem: "Most photo portfolio platforms compress images and discard the camera settings (aperture, shutter speed, ISO, focal length) that give context to how a shot was captured.",
+      architecture: "Built with Next.js 16 App Router and React 19 Server Components for fast initial page loads and zero-bundle static text delivery. The site extracts EXIF tags directly with ExifReader, while Python scripts handle batch metadata verification and asset pairing.",
       technicalChallenges: [
-        "Keeping the dual-layer comparison slider responsive on touchscreens without layout shift.",
         "Parsing varied EXIF formats across camera brands while normalizing lens model names.",
-        "Preventing unintended image dragging and context menus on mobile without breaking standard browser controls."
+        "Preventing image layout shifts during responsive hydration across phone, tablet, and desktop viewports.",
+        "Automating checksum and pairing verification between high-resolution files and web assets before deployment."
       ],
       keyOutcomes: [
         "98+ Lighthouse score with fast page hydration.",
-        "Tested image ingestion pipeline with automated checksum and pair checks.",
-        "Responsive layout working from small phone screens up to 4K displays."
+        "Automated pre-build image verification pipeline.",
+        "Live in production at amin-photography.vercel.app."
       ]
     }
   },
