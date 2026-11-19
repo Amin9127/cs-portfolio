@@ -7,12 +7,15 @@ import {
   Cpu, 
   ExternalLink, 
   ArrowUpRight, 
+  CheckCircle2,
   Terminal, 
   SlidersHorizontal,
   Code2,
   Activity,
   Layers3,
-  Search
+  Search,
+  Zap,
+  ShieldCheck
 } from "lucide-react";
 import { GithubIcon } from "@/components/icons/GithubIcon";
 import { ProjectItem, ProjectCategory } from "@/types/portfolio";
@@ -65,183 +68,331 @@ export function ProjectGrid({ projects, onOpenCaseStudy }: ProjectGridProps) {
     }
   };
 
-  // Dedicated architectural telemetry for the active project
-  const renderProjectTelemetry = (projectId: string) => {
+  // High-impact architectural highlights for the active project
+  const renderProjectHighlights = (projectId: string) => {
     switch (projectId) {
       case "nette-game":
         return (
-          <div className="p-4 sm:p-5 rounded-2xl bg-black/60 border border-white/10 font-mono text-xs space-y-3">
-            <div className="flex items-center justify-between pb-2 border-b border-white/10 text-slate-400">
-              <span className="text-blue-400 font-semibold flex items-center gap-1.5">
-                <Box className="w-3.5 h-3.5" />
-                GAMEPLAY STATE TREE // TICK 60HZ
+          <div className="p-5 sm:p-6 rounded-2xl bg-black/60 border border-white/10 text-xs space-y-4">
+            <div className="flex items-center justify-between pb-3 border-b border-white/10 text-slate-400 font-mono">
+              <span className="text-blue-400 font-semibold flex items-center gap-1.5 text-xs uppercase tracking-wider">
+                <Box className="w-4 h-4" />
+                Key Engineering Achievements
               </span>
-              <span className="text-emerald-400 text-[11px]">&bull; Lumen Active</span>
+              <span className="text-emerald-400 font-medium">UE 5.7 &bull; 60 FPS</span>
             </div>
-            <div className="space-y-2 text-slate-300">
-              <div className="p-2 rounded-lg bg-white/5 flex items-center justify-between">
-                <span>[State 01] Idle Player Exploration</span>
-                <span className="text-emerald-400 text-[11px]">&check; Running</span>
+
+            <div className="space-y-3 text-slate-300 leading-relaxed">
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="w-4 h-4 text-blue-400 mt-0.5 shrink-0" />
+                <div>
+                  <strong className="text-white block font-medium">Gameplay State Tree Architecture</strong>
+                  <span>Decouples player exploration, puzzle triggers, and transition logic from monolithic world actor scripts.</span>
+                </div>
               </div>
-              <div className="p-2 rounded-lg bg-white/5 flex items-center justify-between">
-                <span>[Trace 02] Crosshair Raycast &rarr; BP_Beer</span>
-                <span className="text-blue-400 text-[11px]">Hit Detected</span>
+
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="w-4 h-4 text-blue-400 mt-0.5 shrink-0" />
+                <div>
+                  <strong className="text-white block font-medium">Asynchronous UI Event Dispatchers</strong>
+                  <span>UMG challenge interfaces communicate with GameMode and GameState through decoupled event dispatchers without hitching the main thread.</span>
+                </div>
               </div>
-              <div className="p-2 rounded-lg bg-blue-500/10 border border-blue-500/30 text-blue-300 flex items-center justify-between">
-                <span>[Trigger 03] WBP_SpellingChallenge</span>
-                <span className="text-amber-400 text-[11px]">UMG Modal Up</span>
+
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="w-4 h-4 text-blue-400 mt-0.5 shrink-0" />
+                <div>
+                  <strong className="text-white block font-medium">Lumen &amp; Nanite PBR Optimization</strong>
+                  <span>Virtualized geometry and dynamic global illumination shaders tuned for steady frame pacing at a locked 60 FPS.</span>
+                </div>
               </div>
-              <div className="p-2 rounded-lg bg-white/5 flex items-center justify-between">
-                <span>[Event 04] Score Dispatched &rarr; BP_GameMode</span>
-                <span className="text-emerald-400 text-[11px]">&check; Synchronized</span>
+
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="w-4 h-4 text-blue-400 mt-0.5 shrink-0" />
+                <div>
+                  <strong className="text-white block font-medium">Modular Raycast Interaction Subsystem</strong>
+                  <span>Extensible first-person line-trace subsystem enabling dynamic evaluation of in-world interactable objects.</span>
+                </div>
               </div>
             </div>
-            <div className="pt-1 text-[11px] text-slate-500 flex justify-between">
+
+            <div className="pt-2 border-t border-white/5 flex flex-wrap items-center justify-between gap-2 text-[11px] font-mono text-slate-400">
               <span>Subsystem: Unreal Engine 5.7</span>
-              <span>Level: Historic_Saloon.umap</span>
+              <span className="text-blue-400">Decoupled State Machine</span>
             </div>
           </div>
         );
 
       case "galactic-crafters":
         return (
-          <div className="p-4 sm:p-5 rounded-2xl bg-black/60 border border-white/10 font-mono text-xs space-y-3">
-            <div className="flex items-center justify-between pb-2 border-b border-white/10 text-slate-400">
-              <span className="text-indigo-400 font-semibold flex items-center gap-1.5">
-                <Activity className="w-3.5 h-3.5" />
-                2D INERTIAL PHYSICS &amp; CULLING
+          <div className="p-5 sm:p-6 rounded-2xl bg-black/60 border border-white/10 text-xs space-y-4">
+            <div className="flex items-center justify-between pb-3 border-b border-white/10 text-slate-400 font-mono">
+              <span className="text-indigo-400 font-semibold flex items-center gap-1.5 text-xs uppercase tracking-wider">
+                <Activity className="w-4 h-4" />
+                Key Engineering Achievements
               </span>
-              <span className="text-emerald-400 text-[11px]">60 FPS Lock</span>
+              <span className="text-emerald-400 font-medium">60 FPS Locked</span>
             </div>
-            <div className="space-y-2 text-slate-300">
-              <div className="p-2 rounded-lg bg-white/5 flex items-center justify-between">
-                <span>Velocity Vector: (142.8, -38.4) px/s</span>
-                <span className="text-white text-[11px]">Newtonian Drag 0.98</span>
+
+            <div className="space-y-3 text-slate-300 leading-relaxed">
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="w-4 h-4 text-indigo-400 mt-0.5 shrink-0" />
+                <div>
+                  <strong className="text-white block font-medium">Newtonian Inertial Flight Physics</strong>
+                  <span>Custom continuous simulation handling 2D thrust vectors, momentum conservation, and realistic rotational drag.</span>
+                </div>
               </div>
-              <div className="p-2 rounded-lg bg-white/5 flex items-center justify-between">
-                <span>Viewport Culling: 84 / 120 Asteroids</span>
-                <span className="text-emerald-400 text-[11px]">Optimized</span>
+
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="w-4 h-4 text-indigo-400 mt-0.5 shrink-0" />
+                <div>
+                  <strong className="text-white block font-medium">Spatial Viewport Entity Culling</strong>
+                  <span>Dynamic off-screen culling algorithm that minimizes collision check overhead and prevents memory spikes during dense asteroid clusters.</span>
+                </div>
               </div>
-              <div className="p-2 rounded-lg bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 flex items-center justify-between">
-                <span>Packaging: PyInstaller Single-Binary</span>
-                <span className="text-emerald-400 text-[11px]">&check; Zero Dependencies</span>
+
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="w-4 h-4 text-indigo-400 mt-0.5 shrink-0" />
+                <div>
+                  <strong className="text-white block font-medium">Procedural Seed-Based Generation</strong>
+                  <span>Algorithmic distribution controlling asteroid trajectory drifts, cluster density, and mineral resource drop rates.</span>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="w-4 h-4 text-indigo-400 mt-0.5 shrink-0" />
+                <div>
+                  <strong className="text-white block font-medium">Zero-Dependency Standalone Build</strong>
+                  <span>Compiled via PyInstaller into a standalone Windows binary bundling game logic, C-extensions, pixel art, and audio.</span>
+                </div>
               </div>
             </div>
-            <div className="pt-1 text-[11px] text-slate-500 flex justify-between">
-              <span>Engines: Python 3.12 / Pygame &bull; UE 5.4</span>
-              <span>Collisions: Circle-Sweep</span>
+
+            <div className="pt-2 border-t border-white/5 flex flex-wrap items-center justify-between gap-2 text-[11px] font-mono text-slate-400">
+              <span>Stack: Python 3.12 / Pygame &bull; UE 5.4</span>
+              <span className="text-indigo-400">Deterministic Physics</span>
             </div>
           </div>
         );
 
       case "starter-factory":
         return (
-          <div className="p-4 sm:p-5 rounded-2xl bg-black/60 border border-white/10 font-mono text-xs space-y-3">
-            <div className="flex items-center justify-between pb-2 border-b border-white/10 text-slate-400">
-              <span className="text-amber-400 font-semibold flex items-center gap-1.5">
-                <Terminal className="w-3.5 h-3.5" />
-                TCP SOCKET IPC &amp; TELEMETRY STREAM
+          <div className="p-5 sm:p-6 rounded-2xl bg-black/60 border border-white/10 text-xs space-y-4">
+            <div className="flex items-center justify-between pb-3 border-b border-white/10 text-slate-400 font-mono">
+              <span className="text-amber-400 font-semibold flex items-center gap-1.5 text-xs uppercase tracking-wider">
+                <Terminal className="w-4 h-4" />
+                Key Engineering Achievements
               </span>
-              <span className="text-emerald-400 text-[11px]">Connected</span>
+              <span className="text-emerald-400 font-medium">Sub-10ms IPC</span>
             </div>
-            <div className="space-y-2 text-slate-300">
-              <div className="p-2 rounded-lg bg-white/5 flex items-center justify-between">
-                <span>Host Endpoint: 127.0.0.1 : 8080</span>
-                <span className="text-blue-400 text-[11px]">TCP Handshake OK</span>
+
+            <div className="space-y-3 text-slate-300 leading-relaxed">
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="w-4 h-4 text-amber-400 mt-0.5 shrink-0" />
+                <div>
+                  <strong className="text-white block font-medium">Bidirectional TCP Socket IPC Bridge</strong>
+                  <span>Low-latency socket layer connecting an external Java 17 backend client directly to an Unreal Engine 3D simulation.</span>
+                </div>
               </div>
-              <div className="p-2 rounded-lg bg-white/5 flex items-center justify-between">
-                <span>Java Client: TCPClient.java</span>
-                <span className="text-emerald-400 text-[11px]">Buffered Writer Active</span>
+
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="w-4 h-4 text-amber-400 mt-0.5 shrink-0" />
+                <div>
+                  <strong className="text-white block font-medium">Non-Blocking Telemetry Streaming</strong>
+                  <span>Asynchronous multithreaded socket buffer processing that prevents network operations from stalling the Unreal Engine render loop.</span>
+                </div>
               </div>
-              <div className="p-2 rounded-lg bg-amber-500/10 border border-amber-500/30 text-amber-300 flex items-center justify-between">
-                <span>Actor Sync: BP_FactoryConveyor</span>
-                <span className="text-emerald-400 text-[11px]">&check; State Synchronized</span>
+
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="w-4 h-4 text-amber-400 mt-0.5 shrink-0" />
+                <div>
+                  <strong className="text-white block font-medium">Digital Twin State Synchronization</strong>
+                  <span>Real-time data ingestion translating external machine telemetry payloads directly into 3D actor animations and machine states.</span>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="w-4 h-4 text-amber-400 mt-0.5 shrink-0" />
+                <div>
+                  <strong className="text-white block font-medium">Resilient Packet Framing Protocol</strong>
+                  <span>Structured message framing, keep-alive checks, and error recovery to maintain continuous communication during simulation runs.</span>
+                </div>
               </div>
             </div>
-            <div className="pt-1 text-[11px] text-slate-500 flex justify-between">
-              <span>Protocol: Raw TCP Socket Streams</span>
-              <span>Runtime: Multithreaded Java 17</span>
+
+            <div className="pt-2 border-t border-white/5 flex flex-wrap items-center justify-between gap-2 text-[11px] font-mono text-slate-400">
+              <span>Stack: Java 17 &bull; Unreal Engine &bull; TCP/IP</span>
+              <span className="text-amber-400">Digital Twin Pipeline</span>
             </div>
           </div>
         );
 
+      case "outlier-ai-eval":
       case "outlier-ai":
         return (
-          <div className="p-4 sm:p-5 rounded-2xl bg-black/60 border border-white/10 font-mono text-xs space-y-3">
-            <div className="flex items-center justify-between pb-2 border-b border-white/10 text-slate-400">
-              <span className="text-purple-400 font-semibold flex items-center gap-1.5">
-                <Code2 className="w-3.5 h-3.5" />
-                TECHNICAL QA &amp; REASONING EVALUATION
+          <div className="p-5 sm:p-6 rounded-2xl bg-black/60 border border-white/10 text-xs space-y-4">
+            <div className="flex items-center justify-between pb-3 border-b border-white/10 text-slate-400 font-mono">
+              <span className="text-purple-400 font-semibold flex items-center gap-1.5 text-xs uppercase tracking-wider">
+                <Code2 className="w-4 h-4" />
+                Key Engineering Achievements
               </span>
-              <span className="text-emerald-400 text-[11px]">Production Audit</span>
+              <span className="text-emerald-400 font-medium">Production QA</span>
             </div>
-            <div className="space-y-2 text-slate-300">
-              <div className="p-2 rounded-lg bg-white/5 flex items-center justify-between">
-                <span>Algorithmic Correctness &amp; Proofs</span>
-                <span className="text-emerald-400 text-[11px]">100% Pass Required</span>
+
+            <div className="space-y-3 text-slate-300 leading-relaxed">
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="w-4 h-4 text-purple-400 mt-0.5 shrink-0" />
+                <div>
+                  <strong className="text-white block font-medium">Formal Algorithmic Rigor Auditing</strong>
+                  <span>Verifying asymptotic time and space bounds on frontier AI code generation across complex data structures.</span>
+                </div>
               </div>
-              <div className="p-2 rounded-lg bg-white/5 flex items-center justify-between">
-                <span>Runtime Bounds: O(n log n) Verification</span>
-                <span className="text-blue-400 text-[11px]">Audited</span>
+
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="w-4 h-4 text-purple-400 mt-0.5 shrink-0" />
+                <div>
+                  <strong className="text-white block font-medium">Concurrency &amp; Edge Case Fuzzing</strong>
+                  <span>Stress-testing multi-turn Python and Java code for race conditions, thread safety, integer overflows, and off-by-one errors.</span>
+                </div>
               </div>
-              <div className="p-2 rounded-lg bg-purple-500/10 border border-purple-500/30 text-purple-300 flex items-center justify-between">
-                <span>Edge Case Fuzzing &amp; Concurrency Checks</span>
-                <span className="text-emerald-400 text-[11px]">&check; Rigorous Evaluation</span>
+
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="w-4 h-4 text-purple-400 mt-0.5 shrink-0" />
+                <div>
+                  <strong className="text-white block font-medium">Code Reasoning &amp; Constraint Verification</strong>
+                  <span>Auditing model problem-solving trajectories against strict requirements to ensure safety, correctness, and zero hallucinations.</span>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="w-4 h-4 text-purple-400 mt-0.5 shrink-0" />
+                <div>
+                  <strong className="text-white block font-medium">RLHF Benchmark &amp; Rubric Calibration</strong>
+                  <span>Formulating systematic review rubrics to guide reinforcement learning and identify subtle logic flaws in enterprise AI models.</span>
+                </div>
               </div>
             </div>
-            <div className="pt-1 text-[11px] text-slate-500 flex justify-between">
-              <span>Focus: Python 3.12, Java 17, Data Structures</span>
-              <span>Team: Outlier AI / Project Aether</span>
+
+            <div className="pt-2 border-t border-white/5 flex flex-wrap items-center justify-between gap-2 text-[11px] font-mono text-slate-400">
+              <span>Stack: Python 3.12 &bull; Java 17 &bull; RLHF QA</span>
+              <span className="text-purple-400">Outlier AI / Project Aether</span>
             </div>
           </div>
         );
 
       case "photography-portfolio":
         return (
-          <div className="p-4 sm:p-5 rounded-2xl bg-black/60 border border-white/10 font-mono text-xs space-y-3">
-            <div className="flex items-center justify-between pb-2 border-b border-white/10 text-slate-400">
-              <span className="text-amber-400 font-semibold flex items-center gap-1.5">
-                <SlidersHorizontal className="w-3.5 h-3.5" />
-                OPTICAL EXIF PARSER &amp; PIPELINE
+          <div className="p-5 sm:p-6 rounded-2xl bg-black/60 border border-white/10 text-xs space-y-4">
+            <div className="flex items-center justify-between pb-3 border-b border-white/10 text-slate-400 font-mono">
+              <span className="text-amber-400 font-semibold flex items-center gap-1.5 text-xs uppercase tracking-wider">
+                <SlidersHorizontal className="w-4 h-4" />
+                Key Engineering Achievements
               </span>
-              <span className="text-emerald-400 text-[11px]">98+ Lighthouse</span>
+              <span className="text-emerald-400 font-medium">98+ Lighthouse</span>
             </div>
-            <div className="space-y-2 text-slate-300">
-              <div className="p-2 rounded-lg bg-white/5 flex items-center justify-between">
-                <span>Server-Side Optics: ExifReader</span>
-                <span className="text-emerald-400 text-[11px]">&check; Zero Client Lag</span>
+
+            <div className="space-y-3 text-slate-300 leading-relaxed">
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="w-4 h-4 text-amber-400 mt-0.5 shrink-0" />
+                <div>
+                  <strong className="text-white block font-medium">Server-Side Optical EXIF Extraction</strong>
+                  <span>Extracts camera focal length, aperture, shutter speed, and ISO directly from file headers using ExifReader with zero client overhead.</span>
+                </div>
               </div>
-              <div className="p-2 rounded-lg bg-white/5 flex items-center justify-between">
-                <span>Asset Verification: verify_raw_pairs.py</span>
-                <span className="text-blue-400 text-[11px]">Checksums Valid</span>
+
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="w-4 h-4 text-amber-400 mt-0.5 shrink-0" />
+                <div>
+                  <strong className="text-white block font-medium">Next.js 16 App Router &amp; React 19</strong>
+                  <span>Full Server Component architecture providing instant page hydration, zero-bundle static text delivery, and responsive layouts.</span>
+                </div>
               </div>
-              <div className="p-2 rounded-lg bg-amber-500/10 border border-amber-500/30 text-amber-300 flex items-center justify-between">
-                <span>Host: amin-photography.vercel.app</span>
-                <span className="text-emerald-400 text-[11px]">&check; Live Production</span>
+
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="w-4 h-4 text-amber-400 mt-0.5 shrink-0" />
+                <div>
+                  <strong className="text-white block font-medium">Automated Pre-Build Python Pipeline</strong>
+                  <span>Pre-build scripts verify RAW and JPEG asset pairing, check file checksums, and optimize image delivery before deployment.</span>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="w-4 h-4 text-amber-400 mt-0.5 shrink-0" />
+                <div>
+                  <strong className="text-white block font-medium">Worldwide Production Delivery</strong>
+                  <span>Live worldwide at amin-photography.vercel.app with verified 98+ Lighthouse score.</span>
+                </div>
               </div>
             </div>
-            <div className="pt-1 text-[11px] text-slate-500 flex justify-between">
-              <span>Framework: Next.js 16.4 &bull; React 19</span>
-              <span>Hardware: Canon Mirrorless</span>
+
+            <div className="pt-2 border-t border-white/5 flex flex-wrap items-center justify-between gap-2 text-[11px] font-mono text-slate-400">
+              <span>Stack: Next.js 16.4 &bull; React 19 &bull; ExifReader</span>
+              <span className="text-amber-400">amin-photography.vercel.app</span>
+            </div>
+          </div>
+        );
+
+      case "hack-a-health":
+        return (
+          <div className="p-5 sm:p-6 rounded-2xl bg-black/60 border border-white/10 text-xs space-y-4">
+            <div className="flex items-center justify-between pb-3 border-b border-white/10 text-slate-400 font-mono">
+              <span className="text-blue-400 font-semibold flex items-center gap-1.5 text-xs uppercase tracking-wider">
+                <Zap className="w-4 h-4" />
+                Key Engineering Achievements
+              </span>
+              <span className="text-emerald-400 font-medium">Hackathon Sprint</span>
+            </div>
+
+            <div className="space-y-3 text-slate-300 leading-relaxed">
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="w-4 h-4 text-blue-400 mt-0.5 shrink-0" />
+                <div>
+                  <strong className="text-white block font-medium">Rapid Full-Stack Prototyping</strong>
+                  <span>Completed full development cycle from concept to tested web application under strict hackathon countdown constraints.</span>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="w-4 h-4 text-blue-400 mt-0.5 shrink-0" />
+                <div>
+                  <strong className="text-white block font-medium">Clinical Workflow Architecture</strong>
+                  <span>Streamlined patient daily health logging interface paired with high-contrast layouts and responsive telemetry endpoints.</span>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="w-4 h-4 text-blue-400 mt-0.5 shrink-0" />
+                <div>
+                  <strong className="text-white block font-medium">Collaborative Git Delivery</strong>
+                  <span>Demonstrated fast feature scoping, multi-developer branch management, and rapid integration under tight deadlines.</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="pt-2 border-t border-white/5 flex flex-wrap items-center justify-between gap-2 text-[11px] font-mono text-slate-400">
+              <span>Stack: JavaScript &bull; Full-Stack Web &bull; Team Git</span>
+              <span className="text-blue-400">Hack-A-Health Sprint</span>
             </div>
           </div>
         );
 
       default:
         return (
-          <div className="p-4 sm:p-5 rounded-2xl bg-black/60 border border-white/10 font-mono text-xs space-y-3">
-            <div className="flex items-center justify-between pb-2 border-b border-white/10 text-slate-400">
-              <span className="text-blue-400 font-semibold">ENGINEERING ARCHITECTURE</span>
-              <span className="text-emerald-400 text-[11px]">Verified</span>
+          <div className="p-5 sm:p-6 rounded-2xl bg-black/60 border border-white/10 text-xs space-y-4">
+            <div className="flex items-center justify-between pb-3 border-b border-white/10 text-slate-400 font-mono">
+              <span className="text-blue-400 font-semibold flex items-center gap-1.5 text-xs uppercase tracking-wider">
+                <ShieldCheck className="w-4 h-4" />
+                Key Engineering Achievements
+              </span>
+              <span className="text-emerald-400 font-medium">Production Verified</span>
             </div>
-            <div className="space-y-2 text-slate-300">
-              <div className="p-2 rounded-lg bg-white/5 flex items-center justify-between">
-                <span>Component Modularity</span>
-                <span className="text-emerald-400 text-[11px]">Clean Architecture</span>
-              </div>
-              <div className="p-2 rounded-lg bg-white/5 flex items-center justify-between">
-                <span>Version Control &amp; Git History</span>
-                <span className="text-blue-400 text-[11px]">Main Branch Tested</span>
+            <div className="space-y-3 text-slate-300 leading-relaxed">
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="w-4 h-4 text-blue-400 mt-0.5 shrink-0" />
+                <div>
+                  <strong className="text-white block font-medium">Modular Architecture</strong>
+                  <span>Clean separation of concerns with tested domain logic and modern build pipelines.</span>
+                </div>
               </div>
             </div>
           </div>
@@ -407,7 +558,7 @@ export function ProjectGrid({ projects, onOpenCaseStudy }: ProjectGridProps) {
                     {activeProject.tagline}
                   </p>
 
-                  {/* The Problem & Architecture Brief */}
+                  {/* The Problem Brief */}
                   <div className="space-y-2 pt-2 text-sm text-slate-300">
                     <div className="pl-3 border-l-2 border-white/20">
                       <strong className="text-white block text-xs font-mono uppercase tracking-wider mb-0.5">The Problem:</strong>
@@ -464,9 +615,9 @@ export function ProjectGrid({ projects, onOpenCaseStudy }: ProjectGridProps) {
                   </div>
                 </div>
 
-                {/* Right Side: Visual Telemetry Inspector (5 cols) */}
+                {/* Right Side: Key Engineering Achievements Panel (5 cols) */}
                 <div className="lg:col-span-5">
-                  {renderProjectTelemetry(activeProject.id)}
+                  {renderProjectHighlights(activeProject.id)}
                 </div>
               </div>
             </div>

@@ -12,7 +12,6 @@ export const projectsData: ProjectItem[] = [
     techStack: ["Next.js 16.4", "React 19.3", "Tailwind CSS v4", "TypeScript 5", "ExifReader", "Python Scripts"],
     liveUrl: "https://amin-photography.vercel.app",
     githubUrl: "https://github.com/Amin9127/Photography-portfolio",
-    localPath: "C:\\Users\\amina\\Desktop\\AI projects\\photography_portfolio",
     metrics: [
       { label: "Lighthouse Score", value: "98+" },
       { label: "Rendering", value: "Server Components" },
@@ -41,38 +40,37 @@ export const projectsData: ProjectItem[] = [
   },
   {
     id: "nette-game",
-    title: "Nette's Game: 3D First-Person Saloon Experience",
-    tagline: "A first-person 3D game built in Unreal Engine 5.7, set in a historic saloon. Uses Gameplay State Trees for game logic, custom UMG widgets for spelling challenges, and crosshair interaction.",
+    title: "Nette's Game: First-Person 3D Systems (Unreal Engine 5.7)",
+    tagline: "A first-person 3D game built in Unreal Engine 5.7. Uses Gameplay State Trees for decoupled logic, asynchronous UMG event dispatchers, and Lumen real-time global illumination.",
     category: "game-3d",
     featured: true,
     status: "Active Project",
     badge: "Unreal Engine 5.7",
     techStack: ["Unreal Engine 5.7", "Gameplay State Trees", "Blueprints", "UMG UI Framework", "Lumen & Nanite", "Sequencer"],
-    localPath: "C:\\Users\\amina\\Documents\\Unreal Projects\\nette",
     metrics: [
       { label: "Engine Target", value: "UE 5.7" },
       { label: "Lighting Tech", value: "Lumen & Nanite" },
       { label: "State Architecture", value: "Gameplay State Tree" }
     ],
     highlights: [
-      "Built with Unreal Engine 5.7 using Gameplay State Trees to manage AI and environmental actor states.",
-      "In-world spelling and trivia challenges (WBP_SpellingChallenge) with dynamic HUD feedback.",
-      "First-person crosshair interaction system (WBP_Crosshair) for inspecting and picking up objects in the world.",
-      "Historic saloon level (Historic_Saloon.umap) with real-time lighting, water puddle materials, and camera sequences."
+      "Built with Unreal Engine 5.7 using Gameplay State Trees to manage gameplay rules, player states, and transition conditions.",
+      "Asynchronous UMG challenge interfaces communicating with GameMode and GameState through custom event dispatchers.",
+      "First-person modular line-trace interaction system for dynamic object evaluation in 3D space.",
+      "Tuned Lumen dynamic global illumination and Nanite virtualized geometry to sustain locked 60 FPS performance."
     ],
     caseStudy: {
-      overview: "A first-person interactive 3D game that combines environmental exploration with mini-game puzzle mechanics.",
-      problem: "Interactive educational games often rely on rigid linear scripts and intrusive UI popups that break player focus, making them awkward to play and difficult to extend.",
-      architecture: "Uses Unreal Engine 5.7 Gameplay State Trees to separate player states, game rules, and challenge logic from individual world actors. UI widgets are built in UMG and communicate with BP_GameMode and BP_Game_state through event dispatchers.",
+      overview: "A first-person interactive 3D game focusing on decoupled gameplay architecture and real-time environment rendering.",
+      problem: "Traditional game loops often couple gameplay rules and interactive challenge logic directly into level actors, creating brittle, monolithic scripts that are painful to debug and extend.",
+      architecture: "Uses Unreal Engine 5.7 Gameplay State Trees to separate player states, transition conditions, and challenge logic from individual world actors. UI widgets are built in UMG and communicate asynchronously with GameMode and GameState through event dispatchers.",
       technicalChallenges: [
-        "Coordinating UMG spelling challenge dialogs with player movement so controls remain smooth.",
-        "Tuning Lumen lighting and reflection shaders inside the saloon level to keep frame rates steady.",
-        "Configuring collision channels and ray traces to let players inspect and pick up items in the scene (BP_Beer, BP_Violation)."
+        "Coordinating asynchronous UMG challenge dialogs with first-person character movement so player controls remain responsive.",
+        "Tuning dynamic Lumen global illumination and Nanite geometry to keep frame pacing smooth without GPU hitches.",
+        "Building an extensible line-trace interaction subsystem to inspect and manipulate arbitrary world actors dynamically."
       ],
       keyOutcomes: [
-        "Playable first-person loop with object inspection and interactive challenge sequences.",
-        "Modular Blueprint setup that makes adding new mini-games and rooms straightforward.",
-        "Detailed visual environment with custom materials, lighting, and camera sequences."
+        "Decoupled, modular gameplay state architecture that scales to new mechanics without script bloat.",
+        "Stable 60 FPS performance with dynamic lighting and high-fidelity PBR surface rendering.",
+        "Fully asynchronous UI and game state synchronization via clean event dispatchers."
       ]
     }
   },
@@ -86,7 +84,6 @@ export const projectsData: ProjectItem[] = [
     badge: "Python / Pygame + UE 5.4",
     techStack: ["Python 3.12", "Pygame", "Unreal Engine 5.4", "PyInstaller", "2D Physics"],
     githubUrl: "https://github.com/Amin9127/Galactic-crafters",
-    localPath: "A:\\epic games\\ue projects\\Galactic_Crafters",
     metrics: [
       { label: "Frame Rate", value: "60 FPS" },
       { label: "Engines", value: "Pygame + UE 5.4" },
@@ -123,17 +120,16 @@ export const projectsData: ProjectItem[] = [
     status: "Completed",
     badge: "Unreal Engine + Java TCP",
     techStack: ["Unreal Engine", "Java (JDK)", "TCP/IP Sockets", "IPC", "Win64"],
-    localPath: "A:\\epic games\\ue projects\\StarterFactory_Build",
     metrics: [
       { label: "Protocol", value: "TCP/IP Stream" },
       { label: "IPC Latency", value: "< 10ms" },
       { label: "Executable", value: "Native Win64" }
     ],
     highlights: [
-      "Custom Java socket client (TCPClient.java) handling communication with native Unreal binaries.",
-      "Simulates factory machinery states and assembly line events inside Unreal Engine.",
-      "Packet framing and keep-alive checks to prevent connection drops during simulation runs.",
-      "Connects a managed Java process directly to a compiled 3D game engine build."
+      "Custom multithreaded Java 17 TCP socket client handling bidirectional communication with native Unreal Engine binaries.",
+      "Asynchronous buffer processing that prevents network operations from stalling the Unreal Engine render loop.",
+      "Custom packet framing and keep-alive protocol handling network reconnects and payload serialization.",
+      "Real-time state mapping binding external machine telemetry directly to 3D simulation actors."
     ],
     caseStudy: {
       overview: "A networked prototype connecting external simulation controllers written in Java with a 3D Unreal Engine factory visualization.",
