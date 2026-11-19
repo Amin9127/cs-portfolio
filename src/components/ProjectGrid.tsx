@@ -39,13 +39,13 @@ export function ProjectGrid({ projects, onOpenCaseStudy }: ProjectGridProps) {
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-300 text-xs font-medium mb-3">
               <Sparkles className="w-3.5 h-3.5" />
-              <span>Engineered Projects &amp; Software Systems</span>
+              <span>Selected Work</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
-              Verified Project Catalog
+              Projects
             </h2>
             <p className="mt-2 text-slate-400 max-w-2xl text-base">
-              A curated catalog of software projects spanning full-stack web platforms, Unreal Engine 5.7 games, socket-based IPC networks, and AI reasoning pipelines.
+              A selection of projects across web development, 3D games in Unreal Engine, socket networking, and AI code evaluation.
             </p>
           </div>
 
@@ -54,7 +54,7 @@ export function ProjectGrid({ projects, onOpenCaseStudy }: ProjectGridProps) {
             <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
             <input
               type="text"
-              placeholder="Filter by tech or name (e.g. Next.js, UE 5.7, Python)..."
+              placeholder="Search by tech or name (e.g. Next.js, UE 5.7, Python)..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full pl-10 pr-4 py-2 rounded-xl bg-white/5 border border-white/10 text-white placeholder-slate-500 text-xs focus:outline-none focus:border-blue-500/50 transition-all font-mono"
@@ -105,7 +105,7 @@ export function ProjectGrid({ projects, onOpenCaseStudy }: ProjectGridProps) {
             }`}
           >
             <Cpu className="w-3.5 h-3.5" />
-            <span>Systems &amp; AI Engineering</span>
+            <span>Systems &amp; AI</span>
           </button>
         </div>
 
@@ -123,9 +123,9 @@ export function ProjectGrid({ projects, onOpenCaseStudy }: ProjectGridProps) {
         ) : (
           <div className="p-12 text-center rounded-2xl bg-white/5 border border-white/10">
             <Filter className="w-8 h-8 text-slate-500 mx-auto mb-3" />
-            <h3 className="text-base font-semibold text-white">No matching projects found</h3>
+            <h3 className="text-base font-semibold text-white">No matching projects</h3>
             <p className="mt-1 text-slate-400 text-sm">
-              Try adjusting your search query or switching categories.
+              Try a different keyword or reset filters.
             </p>
             <button
               onClick={() => {

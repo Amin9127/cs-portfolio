@@ -3,7 +3,7 @@ import { CandidateProfile } from "@/types/portfolio";
 export const candidateProfile: CandidateProfile = {
   name: "Amin Ali",
   title: "MSci Computer Science Student & Software Engineer",
-  tagline: "Building high-performance full-stack web platforms, 3D interactive spatial engines, and resilient distributed systems.",
+  tagline: "Full-stack developer and 3D game builder based in London.",
   location: "London, United Kingdom",
   email: "aminali656565@gmail.com",
   universityEmail: "amin.ali@city.ac.uk",
@@ -19,12 +19,12 @@ export const candidateProfile: CandidateProfile = {
       {
         code: "INM422",
         title: "Algorithms & Advanced Data Structures",
-        focus: "Rigorous asymptotic complexity analysis, red-black tree invariants, heaps, Prim/Kruskal minimum spanning trees, and graph theory."
+        focus: "Asymptotic complexity analysis, red-black tree balancing, heaps, Prim and Kruskal minimum spanning trees, and graph algorithms."
       },
       {
         code: "INM450",
         title: "MSci Individual Engineering Thesis",
-        focus: "Applied engineering research into offline-first geospatial systems, atomic client synchronization, and optical projection modeling."
+        focus: "Individual research project on offline geospatial mobile architecture, local caching, and optical projection math."
       }
     ]
   },
@@ -35,10 +35,10 @@ export const candidateProfile: CandidateProfile = {
       project: "Project Aether",
       period: "2024 - Present",
       highlights: [
-        "Audit and stress-test LLM-generated production code across Python and Java, catching silent runtime exceptions, memory leaks, and edge-case logic flaws.",
-        "Evaluate multi-turn reasoning chains, prompt coherence, and model alignment on frontier reasoning models.",
-        "Perform qualitative and comparative ELO rating assessments across frontier TTS voice synthesis and multimodal vision models.",
-        "Develop deep practical intuition for why production prompt chains break and how to harden AI applications against hallucinations."
+        "Audit and stress-test LLM-generated code in Python and Java, catching runtime exceptions, memory leaks, and edge-case logic bugs.",
+        "Evaluate multi-turn reasoning steps, prompt constraints, and output correctness on frontier reasoning models.",
+        "Run comparative ELO evaluations on frontier speech synthesis (TTS) and multimodal vision models.",
+        "Analyze failure modes in LLM code generation to improve prompt evaluation benchmarks."
       ]
     }
   ],

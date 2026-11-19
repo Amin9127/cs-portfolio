@@ -47,8 +47,8 @@ export function InteractivePlayground() {
   const getLensCategory = (fl: number) => {
     if (fl < 24) return "Ultra-Wide Angle";
     if (fl < 35) return "Wide Angle";
-    if (fl <= 50) return "Standard / Natural Human Perspective";
-    if (fl <= 105) return "Short Telephoto / Portrait";
+    if (fl <= 50) return "Standard Perspective";
+    if (fl <= 105) return "Short Telephoto";
     return "Super Telephoto";
   };
 
@@ -73,13 +73,13 @@ export function InteractivePlayground() {
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-300 text-xs font-medium mb-3">
               <Sliders className="w-3.5 h-3.5" />
-              <span>Interactive Engineering Laboratory</span>
+              <span>Interactive Tools</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
-              Live Systems Playground
+              Interactive Demos
             </h2>
             <p className="mt-2 text-slate-400 max-w-2xl text-base">
-              Test real client-side algorithms and telemetry calculations right in your browser, from optical camera physics to 3D spatial vector geometry.
+              Try out real browser-based calculations from camera physics to 3D spatial vector geometry.
             </p>
           </div>
 
@@ -106,7 +106,7 @@ export function InteractivePlayground() {
               }`}
             >
               <Camera className="w-3.5 h-3.5" />
-              <span>Optical FoV Calculator</span>
+              <span>Field of View</span>
             </button>
 
             <button
@@ -118,7 +118,7 @@ export function InteractivePlayground() {
               }`}
             >
               <Box className="w-3.5 h-3.5" />
-              <span>3D Spatial Vectors</span>
+              <span>3D Vectors</span>
             </button>
           </div>
         </div>
@@ -129,13 +129,13 @@ export function InteractivePlayground() {
             <div className="flex flex-col md:flex-row md:items-center justify-between pb-6 border-b border-white/10 gap-4">
               <div>
                 <span className="text-xs font-mono text-amber-400 uppercase tracking-wider block mb-1">
-                  Photography Portfolio Feature Showcase
+                  Photography Portfolio Preview
                 </span>
                 <h3 className="text-xl font-bold text-white">
-                  Interactive Optical Telemetry &amp; Before/After Comparison
+                  RAW vs Finished Color Grade
                 </h3>
                 <p className="text-sm text-slate-400 mt-1">
-                  Drag the slider handle to inspect the difference between uncompressed sensor captures and finished grading.
+                  Drag the slider handle to compare flat camera sensor data with the final color grade.
                 </p>
               </div>
 
@@ -164,13 +164,13 @@ export function InteractivePlayground() {
               <div className="absolute inset-0 bg-gradient-to-tr from-amber-900/40 via-indigo-950/70 to-blue-900/50 flex flex-col justify-between p-6">
                 <div className="flex justify-end">
                   <span className="px-3 py-1 rounded-full bg-amber-500/20 border border-amber-500/40 text-amber-300 text-xs font-mono font-medium">
-                    AFTER: Finished Color Grade (Rich Contrast &amp; Highlight Roll-off)
+                    AFTER: Color Graded
                   </span>
                 </div>
                 <div className="text-slate-300 text-xs font-mono bg-black/60 p-3 rounded-lg border border-white/10 max-w-sm">
-                  <div>Color Profile: Film Emulation Rec.709</div>
-                  <div>Shadow Recovery: +18 &bull; Highlight Roll-off: -24</div>
-                  <div>AI Vision Class: Golden Hour Architecture</div>
+                  <div>Color Profile: Rec.709</div>
+                  <div>Shadows: +18, Highlights: -24</div>
+                  <div>Tag: Golden Hour Architecture</div>
                 </div>
               </div>
 
@@ -186,8 +186,8 @@ export function InteractivePlayground() {
                 </div>
                 <div className="text-slate-300 text-xs font-mono bg-black/70 p-3 rounded-lg border border-white/10 max-w-sm whitespace-nowrap">
                   <div>Dynamic Range: 14.2 EV Uncompressed</div>
-                  <div>Linear Gamma 1.0 &bull; Neutral Matrix</div>
-                  <div>Native Sensor ISO: 400</div>
+                  <div>Linear Gamma 1.0</div>
+                  <div>Sensor ISO: 400</div>
                 </div>
               </div>
 
@@ -203,8 +203,8 @@ export function InteractivePlayground() {
             </div>
 
             <div className="mt-4 flex items-center justify-between text-xs text-slate-400 font-mono">
-              <span>Touch or drag across the frame to compare</span>
-              <span>Split Position: {sliderPosition.toFixed(0)}%</span>
+              <span>Drag across the frame to compare</span>
+              <span>Split: {sliderPosition.toFixed(0)}%</span>
             </div>
           </div>
         )}
@@ -214,18 +214,18 @@ export function InteractivePlayground() {
           <div className="glow-card rounded-2xl p-6 md:p-8">
             <div className="pb-6 border-b border-white/10">
               <span className="text-xs font-mono text-blue-400 uppercase tracking-wider block mb-1">
-                Optical Trigonometry Engine
+                Camera Optics
               </span>
               <h3 className="text-xl font-bold text-white">
-                Focal Length &amp; Field of View (FoV) Simulator
+                Focal Length &amp; Field of View
               </h3>
               <p className="text-sm text-slate-400 mt-1">
-                Computes diagonal field-of-view angles and hyperfocal sharpness zones on a standard 35mm full-frame sensor.
+                Computes diagonal field-of-view angles and hyperfocal distance on a 35mm full-frame sensor.
               </p>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mt-6">
-              {/* Controls Column (6 cols) */}
+              {/* Controls Column */}
               <div className="lg:col-span-6 space-y-6">
                 <div>
                   <div className="flex justify-between text-xs font-mono mb-2">
@@ -271,7 +271,7 @@ export function InteractivePlayground() {
 
                 {/* Mathematical Formula Preview */}
                 <div className="p-4 rounded-xl bg-black/40 border border-white/5 font-mono text-xs space-y-1.5 text-slate-300">
-                  <div className="text-slate-400 text-[10px] uppercase">Optical Formula:</div>
+                  <div className="text-slate-400 text-[10px] uppercase">Formula:</div>
                   <div className="text-blue-300">
                     FoV = 2 * arctan(43.27 / (2 * {focalLength})) = {fovDegrees}&deg;
                   </div>
@@ -281,21 +281,19 @@ export function InteractivePlayground() {
                 </div>
               </div>
 
-              {/* Visual Cone Diagram Column (6 cols) */}
+              {/* Visual Cone Diagram Column */}
               <div className="lg:col-span-6 flex flex-col justify-between p-6 rounded-xl bg-black/40 border border-white/5">
                 <div className="flex items-center justify-between pb-3 border-b border-white/10 text-xs font-mono">
-                  <span className="text-slate-400">Category:</span>
+                  <span className="text-slate-400">Lens Type:</span>
                   <span className="text-white font-semibold">{getLensCategory(focalLength)}</span>
                 </div>
 
                 {/* Visual Angle Cone Representation */}
                 <div className="py-8 flex items-center justify-center">
                   <svg className="w-64 h-48 overflow-visible" viewBox="-100 -80 200 160">
-                    {/* Camera Body Icon */}
                     <rect x="-18" y="-14" width="36" height="28" rx="4" fill="#1e293b" stroke="#3b82f6" strokeWidth="2" />
                     <circle cx="0" cy="0" r="8" fill="#0f172a" stroke="#60a5fa" strokeWidth="1.5" />
 
-                    {/* Dynamic Vision Cone */}
                     {(() => {
                       const halfAngleRad = ((Number(fovDegrees) / 2) * Math.PI) / 180;
                       const distance = 90;
@@ -344,13 +342,13 @@ export function InteractivePlayground() {
           <div className="glow-card rounded-2xl p-6 md:p-8">
             <div className="pb-6 border-b border-white/10">
               <span className="text-xs font-mono text-purple-400 uppercase tracking-wider block mb-1">
-                Unreal Engine 5.7 Vector Geometry
+                Unreal Engine 3D Vectors
               </span>
               <h3 className="text-xl font-bold text-white">
-                3D Spatial Orientation &amp; Forward Vector Inspector
+                3D Orientation &amp; Forward Vectors
               </h3>
               <p className="text-sm text-slate-400 mt-1">
-                Calculates real-time 3D directional vectors from Euler pitch, yaw, and roll rotations as used in camera traces and pawn state machines.
+                Calculates normalized 3D forward vectors from Euler pitch, yaw, and roll rotations as used in camera traces.
               </p>
             </div>
 
@@ -419,7 +417,7 @@ export function InteractivePlayground() {
               {/* Vector Output Display */}
               <div className="lg:col-span-6 p-6 rounded-xl bg-black/40 border border-white/5 font-mono text-xs space-y-4">
                 <div className="text-slate-400 uppercase text-[10px] tracking-wider pb-2 border-b border-white/10">
-                  Unreal Engine Normalized Forward Vector (X, Y, Z)
+                  Normalized Forward Vector (X, Y, Z)
                 </div>
 
                 <div className="grid grid-cols-3 gap-3">

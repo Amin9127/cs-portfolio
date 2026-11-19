@@ -20,15 +20,15 @@ export function ContactSection() {
         <div className="max-w-3xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-300 text-xs font-medium mb-3">
             <Send className="w-3.5 h-3.5" />
-            <span>Get in Touch</span>
+            <span>Contact</span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
-            Let&apos;s Build Something Ambitious
+            Get in Touch
           </h2>
 
           <p className="mt-3 text-slate-300 text-base leading-relaxed">
-            I am actively seeking <strong className="text-white">Junior Software Engineer</strong>, <strong className="text-white">Full-Stack Developer</strong>, or <strong className="text-white">3D Systems</strong> opportunities across London or remote. If you value fast execution, verifiable code, and high autonomy, I would love to connect.
+            I am open to <strong className="text-white">Junior Software Engineer</strong>, <strong className="text-white">Full-Stack Developer</strong>, or <strong className="text-white">3D Systems</strong> roles in London or remote. If you are hiring or would like to talk through any of these projects, reach out below.
           </p>
 
           {/* Contact Action Cards */}
@@ -36,7 +36,7 @@ export function ContactSection() {
             {/* Primary Email */}
             <div className="p-6 rounded-2xl bg-[#11131a] border border-white/10 hover:border-blue-500/30 transition-all">
               <div className="flex items-center justify-between mb-3">
-                <span className="text-xs font-mono uppercase text-slate-400">Direct Application Email</span>
+                <span className="text-xs font-mono uppercase text-slate-400">Direct Email</span>
                 <Mail className="w-4 h-4 text-blue-400" />
               </div>
               <div className="text-sm font-semibold text-white font-mono break-all">
@@ -50,7 +50,7 @@ export function ContactSection() {
                   {copied ? (
                     <>
                       <Check className="w-3.5 h-3.5" />
-                      <span>Copied to Clipboard!</span>
+                      <span>Copied</span>
                     </>
                   ) : (
                     <>
@@ -60,10 +60,10 @@ export function ContactSection() {
                   )}
                 </button>
                 <a
-                  href={`mailto:${candidateProfile.email}?subject=Software%20Engineering%20Opportunity`}
+                  href={`mailto:${candidateProfile.email}?subject=Software%20Engineering%20Role`}
                   className="px-3 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 hover:text-white text-xs font-medium"
                 >
-                  Launch Client
+                  Open App
                 </a>
               </div>
             </div>
@@ -72,14 +72,14 @@ export function ContactSection() {
             <div className="p-6 rounded-2xl bg-[#11131a] border border-white/10 hover:border-purple-500/30 transition-all flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between mb-3">
-                  <span className="text-xs font-mono uppercase text-slate-400">Code Repositories</span>
+                  <span className="text-xs font-mono uppercase text-slate-400">GitHub Repositories</span>
                   <GithubIcon className="w-4 h-4 text-purple-400" />
                 </div>
                 <div className="text-sm font-semibold text-white font-mono">
                   github.com/Amin9127
                 </div>
                 <p className="mt-1 text-xs text-slate-400">
-                  Explore open-source implementations, hackathons, and games.
+                  Open source code, hackathon repos, and personal projects.
                 </p>
               </div>
 
@@ -98,7 +98,7 @@ export function ContactSection() {
           </div>
 
           <div className="mt-6 text-xs text-slate-500 font-mono">
-            University Affiliation: <span className="text-slate-400">{candidateProfile.universityEmail}</span> &bull; Location: <span className="text-slate-400">Central London, UK</span>
+            University Email: <span className="text-slate-400">{candidateProfile.universityEmail}</span> &bull; Location: <span className="text-slate-400">Central London, UK</span>
           </div>
         </div>
       </div>

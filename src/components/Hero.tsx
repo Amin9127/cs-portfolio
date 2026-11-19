@@ -28,22 +28,22 @@ export function Hero({ onOpenDossier }: HeroProps) {
           {/* Status Badge */}
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-300 text-xs font-medium mb-6">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span>Final-Year MSci Computer Science (72.5% First-Class Standing) &bull; London, UK</span>
+            <span>Final-Year MSci Computer Science (72.5% First-Class Track) &bull; London, UK</span>
           </div>
 
           {/* Main Headline */}
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.12]">
-            Engineering full-stack web platforms,{" "}
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.14]">
+            I build web applications,{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-300 to-amber-300">
-              3D interactive spatial worlds
+              3D games in Unreal Engine
             </span>
-            , and resilient systems.
+            , and systems tools.
           </h1>
 
           {/* Narrative Subtitle */}
           <p className="mt-6 text-lg sm:text-xl text-slate-300 leading-relaxed font-normal">
             I am <span className="text-white font-medium">Amin Ali</span>, a final-year MSci Computer Science student at{" "}
-            <span className="text-white font-medium">City St George&apos;s, University of London</span> and an AI Code Reviewer on Outlier AI&apos;s Project Aether. I build high-velocity systems spanning modern Next.js 16 web architectures, Unreal Engine 5.7 games, and distributed socket networks.
+            <span className="text-white font-medium">City St George&apos;s, University of London</span> and an AI code reviewer at Outlier AI. I focus on practical software development: modern Next.js 16 frontends, Unreal Engine 5.7 gameplay, and socket communication.
           </p>
 
           {/* Action CTAs */}
@@ -52,7 +52,7 @@ export function Hero({ onOpenDossier }: HeroProps) {
               href="#flagship"
               className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm shadow-lg shadow-blue-600/25 transition-all transform hover:-translate-y-0.5"
             >
-              <span>Explore Flagship Showcase</span>
+              <span>View Featured Project</span>
               <ArrowRight className="w-4 h-4" />
             </a>
 

@@ -77,7 +77,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
           <div>
             <h3 className="text-xs uppercase font-mono font-semibold tracking-wider text-amber-400 mb-2 flex items-center gap-1.5">
               <AlertTriangle className="w-3.5 h-3.5" />
-              Problem &amp; System Constraints
+              The Problem
             </h3>
             <div className="p-4 rounded-xl bg-amber-500/5 border border-amber-500/20 text-slate-300">
               {project.caseStudy.problem}
@@ -88,7 +88,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
           <div>
             <h3 className="text-xs uppercase font-mono font-semibold tracking-wider text-blue-400 mb-2 flex items-center gap-1.5">
               <Cpu className="w-3.5 h-3.5" />
-              Architectural Design &amp; Execution
+              How It&apos;s Built
             </h3>
             <div className="p-4 rounded-xl bg-blue-500/5 border border-blue-500/20 text-slate-300">
               {project.caseStudy.architecture}
@@ -99,7 +99,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
           <div>
             <h3 className="text-xs uppercase font-mono font-semibold tracking-wider text-purple-400 mb-2 flex items-center gap-1.5">
               <Terminal className="w-3.5 h-3.5" />
-              Key Engineering Obstacles Solved
+              Key Challenges Solved
             </h3>
             <ul className="space-y-2">
               {project.caseStudy.technicalChallenges.map((challenge, idx) => (
@@ -115,7 +115,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
           <div>
             <h3 className="text-xs uppercase font-mono font-semibold tracking-wider text-emerald-400 mb-2 flex items-center gap-1.5">
               <CheckCircle2 className="w-3.5 h-3.5" />
-              Verified Outcomes &amp; Impact
+              Outcomes &amp; Results
             </h3>
             <ul className="space-y-2">
               {project.caseStudy.keyOutcomes.map((outcome, idx) => (
@@ -146,7 +146,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
         {/* Modal Footer Actions */}
         <div className="p-4 sm:p-6 border-t border-white/10 flex flex-wrap items-center justify-between gap-3 bg-slate-900/40">
           <div className="text-xs font-mono text-slate-400">
-            {project.localPath && <span>Repository Path: <code className="text-slate-300">{project.localPath}</code></span>}
+            {project.localPath && <span>Local Path: <code className="text-slate-300">{project.localPath}</code></span>}
           </div>
 
           <div className="flex items-center gap-3">

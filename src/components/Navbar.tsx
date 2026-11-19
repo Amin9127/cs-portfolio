@@ -47,10 +47,10 @@ export function Navbar({ onOpenDossier }: NavbarProps) {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-6 text-sm text-slate-300 font-medium">
           <a href="#flagship" className="hover:text-blue-400 transition-colors">
-            Flagship Showcase
+            Featured Work
           </a>
           <a href="#projects" className="hover:text-blue-400 transition-colors">
-            All Projects
+            Projects
           </a>
           <a href="#playground" className="hover:text-blue-400 transition-colors">
             Interactive Demos
@@ -59,7 +59,7 @@ export function Navbar({ onOpenDossier }: NavbarProps) {
             Skills
           </a>
           <a href="#experience" className="hover:text-blue-400 transition-colors">
-            Education &amp; Experience
+            Experience
           </a>
           <a href="#contact" className="hover:text-blue-400 transition-colors">
             Contact
@@ -77,7 +77,7 @@ export function Navbar({ onOpenDossier }: NavbarProps) {
           </button>
 
           <a
-            href="https://github.com/Amin9127"
+            href="https://github.com/Amin9127/cs-portfolio"
             target="_blank"
             rel="noopener noreferrer"
             className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 hover:border-white/30 flex items-center justify-center text-slate-300 hover:text-white transition-all"
@@ -105,14 +105,14 @@ export function Navbar({ onOpenDossier }: NavbarProps) {
             onClick={() => setMobileMenuOpen(false)}
             className="block py-2 text-slate-200 text-sm font-medium hover:text-blue-400"
           >
-            Flagship Showcase
+            Featured Work
           </a>
           <a
             href="#projects"
             onClick={() => setMobileMenuOpen(false)}
             className="block py-2 text-slate-200 text-sm font-medium hover:text-blue-400"
           >
-            All Projects
+            Projects
           </a>
           <a
             href="#playground"
@@ -133,7 +133,7 @@ export function Navbar({ onOpenDossier }: NavbarProps) {
             onClick={() => setMobileMenuOpen(false)}
             className="block py-2 text-slate-200 text-sm font-medium hover:text-blue-400"
           >
-            Education &amp; Experience
+            Experience
           </a>
           <a
             href="#contact"
@@ -154,7 +154,7 @@ export function Navbar({ onOpenDossier }: NavbarProps) {
               <span>Master Dossier</span>
             </button>
             <a
-              href="https://github.com/Amin9127"
+              href="https://github.com/Amin9127/cs-portfolio"
               target="_blank"
               rel="noopener noreferrer"
               className="px-3 py-2 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-slate-300"

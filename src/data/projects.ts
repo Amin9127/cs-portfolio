@@ -4,124 +4,124 @@ export const projectsData: ProjectItem[] = [
   {
     id: "photography-portfolio",
     title: "Photography Portfolio & Optical Archive",
-    tagline: "High-performance photographic exhibition engine featuring live optical EXIF telemetry, interactive RAW-to-color grading slider, and AI Vision categorization.",
+    tagline: "A photography archive and web portfolio built with Next.js 16 and React 19. Displays camera EXIF telemetry, includes an interactive RAW-to-color comparison slider, and runs an automated tagging pipeline.",
     category: "fullstack",
     featured: true,
     status: "Live Production",
-    badge: "Flagship Production Platform",
-    techStack: ["Next.js 16.4", "React 19.3", "Tailwind CSS v4", "TypeScript 5", "ExifReader", "Jose", "Python Batch Automation"],
+    badge: "Web & Photography",
+    techStack: ["Next.js 16.4", "React 19.3", "Tailwind CSS v4", "TypeScript 5", "ExifReader", "Jose", "Python Scripts"],
     localPath: "C:\\Users\\amina\\Desktop\\AI projects\\photography_portfolio",
     metrics: [
-      { label: "Lighthouse Performance", value: "98+" },
-      { label: "Telemetry Render Latency", value: "< 50ms" },
+      { label: "Lighthouse Score", value: "98+" },
+      { label: "Telemetry Latency", value: "< 50ms" },
       { label: "Architecture", value: "Server Components" }
     ],
     highlights: [
-      "Dynamic Optical EXIF extraction reading camera focal length, f-stop, shutter duration, ISO, and lens profile.",
-      "High-performance GPU-accelerated Before/After slider (BeforeAfterSlider.tsx) comparing raw digital sensor captures against graded finals.",
-      "Automated scene categorization and lighting classification driven by multimodal AI Vision (aiVision.ts).",
-      "Automated Python batch scripts verifying RAW-pair integrity, metadata normalization, and web asset optimization."
+      "Dynamic EXIF extraction reading camera focal length, f-stop, shutter speed, ISO, and lens model.",
+      "Custom Before and After slider (BeforeAfterSlider.tsx) comparing raw camera sensor captures with finished color grading.",
+      "Scene categorization and lighting classification using multimodal AI vision (aiVision.ts).",
+      "Python batch scripts to verify RAW-pair integrity, normalize metadata, and optimize images for the web."
     ],
     caseStudy: {
-      overview: "A custom-engineered visual exhibition platform built to treat photography as an optical science rather than flattened static pixels.",
-      problem: "Standard web portfolios compress photographs into generic web images, discarding the technical decisions (aperture, shutter speed, ISO, focal length) and developmental color-grading craftsmanship executed by the photographer.",
-      architecture: "Architected around Next.js 16 App Router and React 19 Server Components for instant initial paint and zero-bundle static text delivery. The client-side interactive telemetry engine parses EXIF arrays using ExifReader, while an isolated Python processing pipeline handles batch metadata verification and RAW/JPEG asset pairing.",
+      overview: "A custom photography portfolio built to preserve technical shooting data alongside finished photographs.",
+      problem: "Most portfolio platforms display compressed images and discard the camera settings (aperture, shutter speed, ISO, focal length) and color-grading work that went into the shot.",
+      architecture: "Built with Next.js 16 App Router and React 19 Server Components for fast initial page loads and zero-bundle static text delivery. The client-side telemetry engine reads EXIF tags with ExifReader, while Python scripts handle batch metadata verification and RAW/JPEG asset pairing.",
       technicalChallenges: [
-        "Eliminating touch/drag latency on the dual-layer canvas comparison slider across mobile and high-DPI screens without layout shifts.",
-        "Parsing heterogeneous EXIF structures across different camera manufacturers while normalizing proprietary lens model tags.",
-        "Ensuring bulletproof photo protection against casual drag-and-drop and context menus without sacrificing user accessibility."
+        "Keeping the dual-layer comparison slider responsive on touchscreens without layout shift.",
+        "Parsing varied EXIF formats across camera brands while normalizing lens model names.",
+        "Preventing unintended image dragging and context menus on mobile without breaking standard browser controls."
       ],
       keyOutcomes: [
-        "98+ Lighthouse performance score with instantaneous client hydration.",
-        "Production-tested image ingestion pipeline with automated checksum and pair validation.",
-        "Seamless responsive experience from 375px mobile screens to 4K displays."
+        "98+ Lighthouse score with fast page hydration.",
+        "Tested image ingestion pipeline with automated checksum and pair checks.",
+        "Responsive layout working from small phone screens up to 4K displays."
       ]
     }
   },
   {
     id: "nette-game",
     title: "Nette's Game: 3D First-Person Saloon Experience",
-    tagline: "Immersive first-person 3D interactive narrative built in Unreal Engine 5.7 with Gameplay State Trees, custom UMG spelling challenges, and realistic PBR scene rendering.",
+    tagline: "A first-person 3D game built in Unreal Engine 5.7, set in a historic saloon. Uses Gameplay State Trees for game logic, custom UMG widgets for spelling challenges, and crosshair interaction.",
     category: "game-3d",
     featured: true,
     status: "Active Project",
-    badge: "Unreal Engine 5.7 Project",
-    techStack: ["Unreal Engine 5.7", "Gameplay State Trees", "Blueprints", "UMG UI Framework", "Lumen & Nanite", "Cinematic Sequences"],
+    badge: "Unreal Engine 5.7",
+    techStack: ["Unreal Engine 5.7", "Gameplay State Trees", "Blueprints", "UMG UI Framework", "Lumen & Nanite", "Sequencer"],
     localPath: "C:\\Users\\amina\\Documents\\Unreal Projects\\nette",
     metrics: [
-      { label: "Engine Target", value: "UE 5.7 (Early Access)" },
-      { label: "Rendering Tech", value: "Lumen & Nanite" },
+      { label: "Engine Target", value: "UE 5.7" },
+      { label: "Lighting Tech", value: "Lumen & Nanite" },
       { label: "State Architecture", value: "Gameplay State Tree" }
     ],
     highlights: [
-      "Built with cutting-edge Unreal Engine 5.7 leveraging modern Gameplay State Trees for stateful AI and environmental interactions.",
-      "Custom in-world gamified spelling and trivia challenges (WBP_SpellingChallenge) with dynamic HUD feedback.",
-      "Interactive first-person crosshair system (WBP_Crosshair) for seamless object inspection and world interaction.",
-      "Detailed Historic Saloon environment (Historic_Saloon.umap) featuring real-time lighting, water puddle shaders, and sequenced cinematics."
+      "Built with Unreal Engine 5.7 using Gameplay State Trees to manage AI and environmental actor states.",
+      "In-world spelling and trivia challenges (WBP_SpellingChallenge) with dynamic HUD feedback.",
+      "First-person crosshair interaction system (WBP_Crosshair) for inspecting and picking up objects in the world.",
+      "Historic saloon level (Historic_Saloon.umap) with real-time lighting, water puddle materials, and camera sequences."
     ],
     caseStudy: {
-      overview: "A rich first-person narrative and gamified 3D experience designed to blend atmospheric world-building with reactive educational challenge mechanics.",
-      problem: "Traditional 3D interactive educational games frequently suffer from rigid scripted events, clumsy UI overlays that break player immersion, and monolithic game mode architectures that are difficult to extend.",
-      architecture: "Utilizes Unreal Engine 5.7's Gameplay State Tree architecture to cleanly decouple gameplay logic, player state, and challenge evaluation from individual actors. UI widgets are built in UMG with event dispatchers communicating directly with BP_GameMode and BP_Game_state.",
+      overview: "A first-person interactive 3D game that combines environmental exploration with mini-game puzzle mechanics.",
+      problem: "Interactive educational games often rely on rigid linear scripts and intrusive UI popups that break player focus, making them awkward to play and difficult to extend.",
+      architecture: "Uses Unreal Engine 5.7 Gameplay State Trees to separate player states, game rules, and challenge logic from individual world actors. UI widgets are built in UMG and communicate with BP_GameMode and BP_Game_state through event dispatchers.",
       technicalChallenges: [
-        "Coordinating dynamic UMG spelling challenge widgets with first-person player controls without locking player movement improperly.",
-        "Tuning Lumen global illumination and custom water reflection shaders inside the Historic Saloon map to maintain smooth frame rates.",
-        "Setting up custom collision channels and trace interactions for picking up and examining saloon items (BP_Beer, BP_Violation)."
+        "Coordinating UMG spelling challenge dialogs with player movement so controls remain smooth.",
+        "Tuning Lumen lighting and reflection shaders inside the saloon level to keep frame rates steady.",
+        "Configuring collision channels and ray traces to let players inspect and pick up items in the scene (BP_Beer, BP_Violation)."
       ],
       keyOutcomes: [
-        "Fully playable first-person loop with intuitive inspection and interactive challenge sequences.",
-        "Clean, decoupled Blueprint architecture that scales to additional mini-games and rooms.",
-        "High-fidelity visual polish with custom puddle materials, lighting, and camera sequences."
+        "Playable first-person loop with object inspection and interactive challenge sequences.",
+        "Modular Blueprint setup that makes adding new mini-games and rooms straightforward.",
+        "Detailed visual environment with custom materials, lighting, and camera sequences."
       ]
     }
   },
   {
     id: "galactic-crafters",
     title: "Galactic Crafters: Procedural Space Mining Sandbox",
-    tagline: "Cross-engine space exploration and crafting game featuring procedural asteroid field generation, resource harvesting, and Newtonian flight mechanics.",
+    tagline: "A 2D procedural space game built in Python and Pygame, later expanded into Unreal Engine 5.4. Features asteroid mining, crafting trees, and inertial flight physics.",
     category: "game-3d",
     featured: true,
     status: "Completed",
-    badge: "Python / Pygame + Unreal Engine 5.4",
-    techStack: ["Python 3.12", "Pygame", "Unreal Engine 5.4", "PyInstaller", "Vector Physics"],
+    badge: "Python / Pygame + UE 5.4",
+    techStack: ["Python 3.12", "Pygame", "Unreal Engine 5.4", "PyInstaller", "2D Physics"],
     githubUrl: "https://github.com/Amin9127/Galactic-crafters",
     localPath: "A:\\epic games\\ue projects\\Galactic_Crafters",
     metrics: [
-      { label: "Frame Rate", value: "60 FPS Constant" },
+      { label: "Frame Rate", value: "60 FPS" },
       { label: "Engines", value: "Pygame + UE 5.4" },
-      { label: "Physics", value: "Inertial Newtonian" }
+      { label: "Physics", value: "Newtonian Inertia" }
     ],
     highlights: [
-      "Dual-engine architecture: conceived and published as a 2D Python game, then expanded into 3D within Unreal Engine 5.4.",
-      "Procedural asteroid distribution algorithm balancing rare mineral spawns and collision hazards.",
-      "Multi-tier inventory and crafting tree with component state serialization.",
-      "Deterministic 60 FPS game loop with custom pixel art sprites and standalone PyInstaller executable packaging."
+      "Originally built as a 2D game in Python, then expanded into 3D in Unreal Engine 5.4.",
+      "Procedural asteroid distribution algorithm that controls resource drops and flight hazards.",
+      "Multi-tier crafting tree with saved inventory state.",
+      "Runs at 60 FPS with custom pixel art sprites and packages into a standalone Windows executable."
     ],
     caseStudy: {
-      overview: "A space sandbox game challenging players to navigate treacherous asteroid fields, harvest minerals, and craft upgrades to survive deep-space expeditions.",
-      problem: "Balancing endless procedural resource scattering with performant collision checking and an intuitive crafting progression curve without causing garbage-collection stutter.",
-      architecture: "Engineered with a clean modular entity-component pattern in Python (data/classes.py, main.py). Asteroids and space debris are culled outside the active viewport to maintain deterministic update cycles. Later ported core mechanics into Unreal Engine 5.4 to explore 3D mesh modeling and vector spatial physics.",
+      overview: "A space sandbox game where players fly through asteroid fields, gather minerals, and craft upgrades for their ship.",
+      problem: "Handling continuous procedural asteroid spawning while maintaining accurate collision checks and steady frame rates without memory hiccups.",
+      architecture: "Built with a modular entity-component structure in Python (data/classes.py, main.py). Objects outside the player view are culled to keep updates fast. Later recreated key mechanics in Unreal Engine 5.4 to test 3D meshes and spatial physics.",
       technicalChallenges: [
-        "Implementing realistic 2D Newtonian thrust, inertia, and rotational drag that feel responsive on keyboard controls.",
-        "Optimizing broad-phase and narrow-phase collision detection between the player ship, mining lasers, and dozens of active asteroids.",
-        "Packaging Python dependencies, fonts, and sound assets into a zero-dependency standalone Windows executable."
+        "Tuning 2D inertial physics (thrust, momentum, rotational drag) so ship movement feels responsive on a keyboard.",
+        "Optimizing collision checks between the player ship, mining lasers, and dozens of active asteroids.",
+        "Packaging Python code, sprites, and audio into a single standalone executable using PyInstaller."
       ],
       keyOutcomes: [
-        "Successful standalone release on GitHub with zero external installation requirements.",
-        "Smooth, steady 60 FPS performance across low-end and high-end hardware alike.",
-        "Seamless conceptual bridge from 2D game loops to Unreal Engine 3D world geometry."
+        "Published release on GitHub that runs without needing Python installed.",
+        "Consistent 60 FPS performance during busy asteroid sequences.",
+        "Practical experience moving from 2D game loops into Unreal Engine 3D coordinate space."
       ]
     }
   },
   {
     id: "starter-factory",
     title: "StarterFactory: Networked 3D Factory Simulation",
-    tagline: "Distributed simulation architecture interfacing an Unreal Engine 3D factory visualization with a custom Java TCP/IP socket client for real-time telemetry and control.",
+    tagline: "A factory simulation in Unreal Engine connected to a custom Java TCP socket client for real-time telemetry and command exchange.",
     category: "systems-ai",
     featured: false,
     status: "Completed",
-    badge: "Unreal Engine + Java TCP Socket",
-    techStack: ["Unreal Engine", "Java (JDK)", "TCP/IP Sockets", "Inter-Process Communication", "Win64"],
+    badge: "Unreal Engine + Java TCP",
+    techStack: ["Unreal Engine", "Java (JDK)", "TCP/IP Sockets", "IPC", "Win64"],
     localPath: "A:\\epic games\\ue projects\\StarterFactory_Build",
     metrics: [
       { label: "Protocol", value: "TCP/IP Stream" },
@@ -129,96 +129,96 @@ export const projectsData: ProjectItem[] = [
       { label: "Executable", value: "Native Win64" }
     ],
     highlights: [
-      "Custom Java socket client (TCPClient.java) managing high-throughput asynchronous communication with native binaries.",
-      "Simulates real-time factory floor machinery states and automated assembly line operations in Unreal Engine.",
-      "Packet framing and heartbeat verification ensuring zero connection drops during heavy simulation payloads.",
-      "Clean demonstration of bridging managed JVM backends with compiled native 3D engine processes."
+      "Custom Java socket client (TCPClient.java) handling communication with native Unreal binaries.",
+      "Simulates factory machinery states and assembly line events inside Unreal Engine.",
+      "Packet framing and keep-alive checks to prevent connection drops during simulation runs.",
+      "Connects a managed Java process directly to a compiled 3D game engine build."
     ],
     caseStudy: {
-      overview: "A networked systems prototype bridging external industrial simulation controllers written in Java with real-time 3D Unreal Engine visualizations.",
-      problem: "High-level enterprise controllers and data pipelines often run on managed platforms (Java/Python), while high-fidelity spatial visualizations require native C++ game engines. Direct IPC requires reliable, low-overhead socket handling.",
-      architecture: "Implements a custom TCP client/server protocol. The Java TCPClient connects to a dedicated listening socket within the Unreal Engine process, transmitting framed binary commands and receiving telemetry updates at sub-10ms latency.",
+      overview: "A networked prototype connecting external simulation controllers written in Java with a 3D Unreal Engine factory visualization.",
+      problem: "Factory logic often lives in backend Java or Python environments, while high-detail visualizations run in native C++ game engines. Connecting the two requires dependable, low-latency socket communication.",
+      architecture: "Uses a custom TCP client and server setup. The Java TCPClient connects to a socket opened by the Unreal Engine binary, sending framed control commands and receiving real-time state updates at sub-10ms latency.",
       technicalChallenges: [
-        "Preventing socket blocking on the Unreal Engine main rendering thread by managing network packets asynchronously.",
-        "Handling network disconnects and reconnects gracefully without crashing the running 3D visualization.",
-        "Ensuring cross-platform endianness and byte-order compatibility between Java streams and native Windows C++ datatypes."
+        "Preventing socket operations from blocking the Unreal Engine main render thread.",
+        "Handling socket disconnects and reconnects cleanly without crashing the running 3D view.",
+        "Aligning byte orders and data formats between Java streams and native Windows C++ types."
       ],
       keyOutcomes: [
-        "Reliable bidirectional socket communication between Java and compiled Unreal Engine binaries.",
-        "Zero frame drops in Unreal Engine during continuous high-frequency telemetry streaming.",
-        "Extensible socket architecture suitable for robotics and digital twin simulations."
+        "Dependable bidirectional communication between Java and compiled Unreal Engine builds.",
+        "Zero frame drops in Unreal Engine during high-frequency message streams.",
+        "A socket pattern that can be reused for digital twin and robotics experiments."
       ]
     }
   },
   {
     id: "outlier-ai-eval",
     title: "AI Code Review & Reasoning Evaluation Pipeline",
-    tagline: "High-trust technical evaluation auditing LLM-generated production code across Python and Java, catching silent runtime edge cases and benchmarking frontier multimodal models.",
+    tagline: "Evaluating and stress-testing LLM-generated code in Python and Java at Outlier AI, catching runtime bugs, logic gaps, and assessing multimodal models.",
     category: "systems-ai",
     featured: false,
     status: "Active Project",
     badge: "Outlier AI / Project Aether",
     techStack: ["Python", "Java", "LLM Evaluation", "Prompt Engineering", "RLHF Auditing", "Multimodal / TTS Benchmarks"],
     metrics: [
-      { label: "Audit Focus", value: "Python & Java" },
-      { label: "Model Families", value: "Reasoning & Multimodal" },
-      { label: "Role Level", value: "High-Trust Evaluator" }
+      { label: "Language Focus", value: "Python & Java" },
+      { label: "Model Types", value: "Reasoning & Multimodal" },
+      { label: "Role", value: "Technical QA Reviewer" }
     ],
     highlights: [
-      "Audited thousands of multi-turn code generation prompts across Python and Java, catching silent runtime bugs and logic gaps.",
-      "Rigorous evaluation of model alignment, token economy, and reasoning chain coherence on frontier models.",
-      "Performed qualitative and comparative ELO rating assessments across frontier TTS voice synthesis and multimodal vision models.",
-      "Deep daily intuition for where modern LLMs shine, where prompt chains break down, and how to build resilient AI systems."
+      "Audited thousands of code generation turns in Python and Java, catching silent runtime errors and logic flaws.",
+      "Evaluated model alignment, constraint following, and reasoning steps across frontier models.",
+      "Conducted comparative ELO evaluations on speech synthesis (TTS) and multimodal vision models.",
+      "Developed a clear understanding of common failure patterns in LLM code generation and prompt designs."
     ],
     caseStudy: {
-      overview: "Active industry contribution as a high-trust Technical QA Evaluator and AI Code Reviewer for Outlier AI on Project Aether.",
-      problem: "Modern LLMs frequently generate superficially plausible code that conceals catastrophic runtime bugs, off-by-one errors, memory leaks, and subtle algorithmic degradations under adversarial input.",
-      architecture: "Applies rigorous manual code review, automated static analysis, and multi-turn adversarial stress testing to evaluate whether model reasoning paths are sound, aligned with user constraints, and safe for production execution.",
+      overview: "Working as a Technical QA Evaluator and AI Code Reviewer for Outlier AI on Project Aether.",
+      problem: "Language models often produce code that looks correct at first glance but contains edge-case failures, off-by-one errors, resource leaks, or broken assumptions under unexpected inputs.",
+      architecture: "Applies code inspection, static checks, and manual stress-testing across multi-turn sessions to evaluate whether a model's reasoning holds up and follows all given constraints safely.",
       technicalChallenges: [
-        "Detecting insidious non-deterministic errors in complex asynchronous Python code and Java concurrent collections.",
-        "Evaluating boundary cases where prompt instructions contain conflicting constraints, scoring how gracefully models prioritize safety and correctness.",
-        "Benchmarking subjective and objective quality in next-generation speech synthesis (TTS) models under varying acoustic conditions."
+        "Identifying subtle concurrency bugs and race conditions in asynchronous Python and Java code.",
+        "Testing models on conflicting instructions to see how they resolve ambiguities and prioritize safety.",
+        "Evaluating naturalness, cadence, and clarity in speech synthesis models across diverse acoustic inputs."
       ],
       keyOutcomes: [
-        "Consistently recognized as a high-trust contributor on complex reasoning pipelines.",
-        "Direct contribution to the alignment and safety benchmarks of frontier generative models.",
-        "Mastery of prompt engineering nuances, failure modes, and defensive AI system design."
+        "Consistent contributor on reasoning and code evaluation pipelines.",
+        "Helped validate alignment and accuracy benchmarks on frontier generative models.",
+        "Hands-on experience identifying where AI code tools fail and how to write better prompts and guardrails."
       ]
     }
   },
   {
     id: "hack-a-health",
     title: "Hack-A-Health Hackathon Platform",
-    tagline: "Rapidly prototyped collaborative healthcare web application developed under competitive hackathon constraints to streamline patient health tracking.",
+    tagline: "A healthcare tracking prototype built with a team during a timed hackathon, focused on fast patient data logging.",
     category: "fullstack",
     featured: false,
     status: "Hackathon Project",
-    badge: "Hackathon Project",
-    techStack: ["JavaScript", "Full-Stack Web", "Health Data APIs", "Rapid Prototyping", "Git Collaboration"],
+    badge: "Hackathon Sprint",
+    techStack: ["JavaScript", "Full-Stack Web", "Health Data APIs", "Prototyping", "Team Git"],
     githubUrl: "https://github.com/Amin9127/Hack-A-Health-hackathon",
     metrics: [
-      { label: "Sprint Duration", value: "Hackathon Sprint" },
-      { label: "Source Code", value: "Open Source" },
+      { label: "Sprint", value: "Hackathon" },
+      { label: "Codebase", value: "Open Source" },
       { label: "Platform", value: "Web Application" }
     ],
     highlights: [
-      "Built collaboratively during a time-constrained competitive healthcare hackathon.",
-      "Streamlines health metric inputs and patient monitoring through an accessible, high-contrast user interface.",
-      "Demonstrates rapid agile development, Git teamwork, and rapid feature prioritization under strict deadlines."
+      "Built collaboratively with a team during a time-constrained healthcare hackathon.",
+      "Helps patients log daily health numbers through a clear, high-contrast interface.",
+      "Demonstrated rapid feature scoping, Git collaboration, and shipping a working demo under a deadline."
     ],
     caseStudy: {
-      overview: "An intensive hackathon sprint project focused on lowering barriers for patients to record, track, and share critical daily health telemetry.",
-      problem: "Healthcare tracking tools are often cluttered with unintuitive medical jargon and complex input flows that discourage consistent daily patient compliance.",
-      architecture: "Engineered with a lightweight, accessible web frontend designed for clarity and speed, connecting to simulated health telemetry endpoints.",
+      overview: "A hackathon project created to make recording daily health metrics simpler and faster for patients.",
+      problem: "Many health tracking tools have dense layouts and complicated forms that make daily logging tedious.",
+      architecture: "Built with a clean web frontend designed for fast input, wired up to mock health telemetry endpoints for live testing.",
       technicalChallenges: [
-        "Delivering a functional, testable MVP within strict hackathon countdown constraints.",
-        "Resolving concurrent merge conflicts and feature branches across a multi-member hackathon team.",
-        "Designing high-contrast UI components accessible for users with varying visual capabilities."
+        "Delivering a working, testable demo within the hackathon countdown.",
+        "Managing merge conflicts and parallel branches across teammates with varying Git experience.",
+        "Keeping the UI readable and easy to use for people with different levels of technical comfort."
       ],
       keyOutcomes: [
-        "Successfully delivered and demonstrated a working health prototype at the Hack-A-Health hackathon.",
-        "Open-source codebase preserved on GitHub showcasing collaborative velocity.",
-        "Hands-on experience in rapid feature triage, MVP scoping, and team Git workflows."
+        "Demonstrated a working prototype to judges at the Hack-A-Health event.",
+        "Codebase preserved on GitHub showing team progress during the sprint.",
+        "Valuable practice in quick decision-making and shipping working software under time pressure."
       ]
     }
   }
