@@ -3,61 +3,61 @@ import { CandidateProfile } from "@/types/portfolio";
 export const candidateProfile: CandidateProfile = {
   name: "Amin Ali",
   title: "MSci Computer Science Student & Software Engineer",
-  tagline: "Full-stack developer and 3D game builder based in London.",
+  tagline: "Python, Java, PyTorch computer vision, and Unreal Engine 5 systems builder based in London.",
   location: "London, United Kingdom",
   email: "aminali656565@gmail.com",
-  universityEmail: "amin.ali@city.ac.uk",
   github: "https://github.com/Amin9127",
-  availability: "Available up to 40 hours/week (Immediate / Full-Time Graduate & Junior Roles)",
+  itchIo: "https://amin9127.itch.io",
+  photographyUrl: "https://amin-photography.vercel.app",
   degree: {
     institution: "City St George's, University of London",
     program: "MSci Computer Science (Integrated Master's)",
-    level: "4-Year Integrated Master's Degree",
-    status: "Final-Year Student (Expected completion 2027)",
-    gradeAverage: "First-Class Honours Track (72.5% overall grade average)",
+    status: "Final-Year Student",
     modules: [
       {
-        code: "INM422",
-        title: "Algorithms & Advanced Data Structures",
-        focus: "Asymptotic complexity analysis, red-black tree balancing, heaps, Prim and Kruskal minimum spanning trees, and graph algorithms."
+        title: "Computer Vision & Deep Learning",
+        focus: "Custom PyTorch convolutional networks, dynamic image augmentations, frequency-weighted loss functions, and HOG with SVM/MLP baselines.",
       },
       {
-        code: "INM450",
-        title: "MSci Individual Engineering Thesis",
-        focus: "Individual research project on offline geospatial mobile architecture, local caching, and optical projection math."
-      }
-    ]
+        title: "Principles of AI & Pattern Recognition",
+        focus: "OpenCV grid segmentation, feature scaling, multinomial classification, and probability calibration analysis.",
+      },
+      {
+        title: "Algorithms, Data Structures & Concurrency",
+        focus: "Asymptotic complexity bounds, red-black trees, minimum spanning trees, multithreaded Java synchronization, and formal LTSA verification.",
+      },
+    ],
   },
   experience: [
     {
-      role: "Technical QA Evaluator & AI Code Reviewer",
+      role: "Technical QA Evaluator & Model Assessor",
       organization: "Outlier AI",
       project: "Project Aether",
-      period: "2024 - Present",
+      period: "Oct 2026 - Present",
       highlights: [
-        "Audit and stress-test LLM-generated code in Python and Java, catching runtime exceptions, memory leaks, and edge-case logic bugs.",
-        "Evaluate multi-turn reasoning steps, prompt constraints, and output correctness on frontier reasoning models.",
-        "Run comparative ELO evaluations on frontier speech synthesis (TTS) and multimodal vision models.",
-        "Analyze failure modes in LLM code generation to improve prompt evaluation benchmarks."
-      ]
-    }
+        "Evaluate multi-turn conversation quality, instruction adherence, and reasoning chains across frontier LLMs.",
+        "Rate comparative ELO performance on frontier text-to-speech (TTS) and multimodal vision-language models.",
+        "Audit generated code and prompt logic to catch silent edge cases, incorrect assumptions, and alignment drift.",
+        "Document repeatable failure modes in multi-step prompts to improve evaluation benchmarks.",
+      ],
+    },
   ],
   skills: [
     {
-      category: "Languages",
-      items: ["Python (3.11/3.12)", "TypeScript", "JavaScript (ES6+)", "Java (JDK)", "SQL", "C++ / Blueprints", "HTML5 & Modern CSS"]
+      category: "Core Languages",
+      items: ["Python (3.11 / 3.12)", "Java (JDK 17)", "SQL (SQLite)"],
     },
     {
-      category: "Web & Full-Stack",
-      items: ["Next.js 16 (App Router)", "React 19", "FastAPI (Python)", "Tailwind CSS v4", "Node.js", "Server Components", "RESTful APIs"]
+      category: "ML & Computer Vision",
+      items: ["PyTorch", "OpenCV", "Scikit-learn", "NumPy", "Pandas", "Matplotlib"],
     },
     {
       category: "3D & Game Systems",
-      items: ["Unreal Engine 5.7 / 5.4", "Gameplay State Trees", "UMG UI Framework", "Lumen & Nanite", "Pygame", "Vector Math & Transforms"]
+      items: ["Unreal Engine 5", "Blueprints", "Gameplay State Trees", "UMG UI", "Pygame", "3D Vector Math"],
     },
     {
-      category: "Databases & Systems",
-      items: ["PostgreSQL", "Supabase", "TCP/IP Sockets", "Offline-First Sync", "Git & GitHub", "Linux Shell", "Pytest"]
-    }
-  ]
+      category: "Web & Engineering Tools",
+      items: ["AI-Assisted Full-Stack (Next.js / React / Tailwind)", "ExifReader", "PyInstaller", "Git & GitHub", "Linux Shell"],
+    },
+  ],
 };

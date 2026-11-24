@@ -1,23 +1,27 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, Copy, Check, Send, ArrowUpRight } from "lucide-react";
+import { Mail, Copy, Check, Send, ArrowUpRight, Gamepad2 } from "lucide-react";
 import { GithubIcon } from "@/components/icons/GithubIcon";
 import { candidateProfile } from "@/data/profile";
 
 export function ContactSection() {
   const [copied, setCopied] = useState(false);
 
-  const handleCopyEmail = () => {
-    navigator.clipboard.writeText(candidateProfile.email);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+  const handleCopyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(candidateProfile.email);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      window.location.href = `mailto:${candidateProfile.email}`;
+    }
   };
 
   return (
     <section id="contact" className="py-16 md:py-24 border-t border-white/10 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto text-center">
+        <div className="max-w-4xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-300 text-xs font-medium mb-3">
             <Send className="w-3.5 h-3.5" />
             <span>Contact</span>
@@ -27,20 +31,20 @@ export function ContactSection() {
             Get in Touch
           </h2>
 
-          <p className="mt-3 text-slate-300 text-base leading-relaxed">
-            I am open to <strong className="text-white">Junior Software Engineer</strong>, <strong className="text-white">Full-Stack Developer</strong>, or <strong className="text-white">3D Systems</strong> roles in London or remote. If you are hiring or would like to talk through any of these projects, reach out below.
+          <p className="mt-3 text-slate-300 text-base leading-relaxed max-w-2xl mx-auto">
+            Open to Junior Software Engineer, Python / ML Engineer, and 3D Systems roles in London or remote. Reach out or browse the source repositories below.
           </p>
 
-          {/* Contact Action Cards */}
-          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 text-left">
-            {/* Primary Email */}
-            <div className="p-6 rounded-2xl bg-[#11131a] border border-white/10 hover:border-blue-500/30 transition-all">
-              <div className="flex items-center justify-between mb-3">
-                <span className="text-xs font-mono uppercase text-slate-400">Direct Email</span>
-                <Mail className="w-4 h-4 text-blue-400" />
-              </div>
-              <div className="text-sm font-semibold text-white font-mono break-all">
-                {candidateProfile.email}
+          <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4 text-left">
+            <div className="p-6 rounded-2xl bg-[#11131a] border border-white/10 hover:border-blue-500/30 transition-all flex flex-col justify-between">
+              <div>
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-xs font-mono uppercase text-slate-400">Email</span>
+                  <Mail className="w-4 h-4 text-blue-400" />
+                </div>
+                <div className="text-sm font-semibold text-white font-mono break-all">
+                  {candidateProfile.email}
+                </div>
               </div>
               <div className="mt-4 flex items-center gap-2">
                 <button
@@ -55,7 +59,7 @@ export function ContactSection() {
                   ) : (
                     <>
                       <Copy className="w-3.5 h-3.5" />
-                      <span>Copy Email</span>
+                      <span>Copy</span>
                     </>
                   )}
                 </button>
@@ -63,26 +67,24 @@ export function ContactSection() {
                   href={`mailto:${candidateProfile.email}?subject=Software%20Engineering%20Role`}
                   className="px-3 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 hover:text-white text-xs font-medium"
                 >
-                  Open App
+                  Mail
                 </a>
               </div>
             </div>
 
-            {/* GitHub & University */}
             <div className="p-6 rounded-2xl bg-[#11131a] border border-white/10 hover:border-purple-500/30 transition-all flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between mb-3">
-                  <span className="text-xs font-mono uppercase text-slate-400">GitHub Repositories</span>
+                  <span className="text-xs font-mono uppercase text-slate-400">GitHub</span>
                   <GithubIcon className="w-4 h-4 text-purple-400" />
                 </div>
                 <div className="text-sm font-semibold text-white font-mono">
                   github.com/Amin9127
                 </div>
                 <p className="mt-1 text-xs text-slate-400">
-                  Open source code, hackathon repos, and personal projects.
+                  Python codebases, Java coursework, and hackathon repos.
                 </p>
               </div>
-
               <div className="mt-4">
                 <a
                   href={candidateProfile.github}
@@ -90,15 +92,37 @@ export function ContactSection() {
                   rel="noopener noreferrer"
                   className="w-full flex items-center justify-center gap-2 px-3 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-slate-200 hover:text-white text-xs font-semibold transition-all"
                 >
-                  <span>Visit GitHub Profile</span>
+                  <span>Visit GitHub</span>
                   <ArrowUpRight className="w-3.5 h-3.5" />
                 </a>
               </div>
             </div>
-          </div>
 
-          <div className="mt-6 text-xs text-slate-500 font-mono">
-            University Email: <span className="text-slate-400">{candidateProfile.universityEmail}</span> &bull; Location: <span className="text-slate-400">Central London, UK</span>
+            <div className="p-6 rounded-2xl bg-[#11131a] border border-white/10 hover:border-indigo-500/30 transition-all flex flex-col justify-between">
+              <div>
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-xs font-mono uppercase text-slate-400">Game Builds</span>
+                  <Gamepad2 className="w-4 h-4 text-indigo-400" />
+                </div>
+                <div className="text-sm font-semibold text-white font-mono">
+                  amin9127.itch.io
+                </div>
+                <p className="mt-1 text-xs text-slate-400">
+                  Playable builds and demos including Galactic Crafters.
+                </p>
+              </div>
+              <div className="mt-4">
+                <a
+                  href={candidateProfile.itchIo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full flex items-center justify-center gap-2 px-3 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-slate-200 hover:text-white text-xs font-semibold transition-all"
+                >
+                  <span>Visit itch.io</span>
+                  <ArrowUpRight className="w-3.5 h-3.5" />
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>

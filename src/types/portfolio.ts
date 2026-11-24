@@ -5,6 +5,11 @@ export interface ProjectMetric {
   value: string;
 }
 
+export interface EngineeringHighlight {
+  title: string;
+  detail: string;
+}
+
 export interface CaseStudy {
   overview: string;
   problem: string;
@@ -23,9 +28,13 @@ export interface ProjectItem {
   techStack: string[];
   metrics: ProjectMetric[];
   highlights: string[];
+  engineeringHighlights: EngineeringHighlight[];
+  stageHeaderLabel: string;
+  stageFooterTag: string;
   githubUrl?: string;
   liveUrl?: string;
-  localPath?: string;
+  itchUrl?: string;
+  youtubeId?: string;
   caseStudy: CaseStudy;
   badge?: string;
 }
@@ -36,17 +45,14 @@ export interface CandidateProfile {
   tagline: string;
   location: string;
   email: string;
-  universityEmail: string;
   github: string;
-  availability: string;
+  itchIo: string;
+  photographyUrl: string;
   degree: {
     institution: string;
     program: string;
-    level: string;
     status: string;
-    gradeAverage: string;
     modules: {
-      code: string;
       title: string;
       focus: string;
     }[];
