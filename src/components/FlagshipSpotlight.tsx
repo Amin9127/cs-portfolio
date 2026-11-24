@@ -67,22 +67,23 @@ export function FlagshipSpotlight({ project }: FlagshipSpotlightProps) {
               href={liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="group block rounded-2xl overflow-hidden border border-white/10 hover:border-amber-500/50 bg-[#0f1219] shadow-xl transition-all"
+              className="group block rounded-2xl overflow-hidden border border-white/10 hover:border-amber-500/50 bg-[#0f1219] shadow-xl transition-all max-w-md mx-auto lg:max-w-none"
             >
-              <div className="relative aspect-[3/2] w-full">
+              <div className="relative aspect-[4/5] max-h-[520px] w-full">
                 <Image
-                  src="/images/demo/light-trails-graded.jpg"
-                  alt="Canon EOS M3 long-exposure photograph from amin-photography.vercel.app"
+                  src="/images/demo/arch-and-doors.jpg"
+                  alt="Canon EOS M3 photograph of Victorian Gothic pointed terracotta archway, tiled corridor, and inner courtyard doors"
                   fill
                   sizes="(max-width: 1024px) 100vw, 42vw"
-                  className="object-cover group-hover:scale-[1.02] transition-transform duration-300"
+                  className="object-cover object-center group-hover:scale-[1.02] transition-transform duration-300"
+                  priority
                 />
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-4 flex items-end justify-between gap-3">
                   <div className="font-mono text-[11px] text-slate-200 space-y-0.5">
-                    <div className="text-amber-300 font-semibold">Canon EOS M3 &bull; 18mm</div>
-                    <div className="text-slate-300">f/4.0 &bull; 2.5s &bull; ISO 125</div>
+                    <div className="text-amber-300 font-semibold">Canon EOS M3 &bull; EF-M 18-55mm</div>
+                    <div className="text-slate-300">f/4.5 &bull; 1/80s &bull; ISO 200</div>
                   </div>
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-amber-500 text-black text-xs font-semibold shadow-md">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-amber-500 text-black text-xs font-semibold shadow-md shrink-0">
                     <span>Open Live Site</span>
                     <ExternalLink className="w-3.5 h-3.5" />
                   </span>

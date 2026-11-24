@@ -121,13 +121,13 @@ export default async function ProjectCaseStudyPage({ params }: ProjectPageProps)
           {project.id === "photography-portfolio" ? (
             <div className="rounded-2xl overflow-hidden border border-amber-500/30 bg-[#0f1219] p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-5">
               <div className="flex items-center gap-4">
-                <div className="relative w-32 h-20 rounded-xl overflow-hidden border border-white/10 shrink-0">
+                <div className="relative w-24 h-28 sm:w-28 sm:h-32 rounded-xl overflow-hidden border border-white/10 shrink-0">
                   <Image
-                    src="/images/demo/light-trails-graded.jpg"
-                    alt="Canon EOS M3 photograph from amin-photography.vercel.app"
+                    src="/images/demo/arch-and-doors.jpg"
+                    alt="Canon EOS M3 photograph of Victorian Gothic pointed terracotta archway and courtyard doors from amin-photography.vercel.app"
                     fill
                     sizes="128px"
-                    className="object-cover"
+                    className="object-cover object-center"
                   />
                 </div>
                 <div className="space-y-1">
