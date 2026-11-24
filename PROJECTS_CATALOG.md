@@ -33,7 +33,7 @@
 - **Stack**: Python, OpenCV (`cv2`), Scikit-learn, NumPy, Pandas, Matplotlib
 - **Summary**: Automated OpenCV cell segmentation and normalization from multi-writer numeral sheets, multinomial L-BFGS classification, and confidence calibration diagnostics.
 
-## 5. Nette's Game: First-Person 3D Systems
+## 5. First-Person 3D Systems & Puzzle Engine
 - **Category**: Games & 3D Systems
 - **Stack**: Unreal Engine 5.7, Gameplay State Trees, Blueprints, UMG UI, Lumen & Nanite
 - **Summary**: First-person interactive 3D project using UE 5.7 Gameplay State Trees, decoupled UMG challenge dispatchers, and modular camera line-trace interaction.

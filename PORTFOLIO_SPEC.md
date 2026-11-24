@@ -5,7 +5,7 @@ This specification documents the architecture and functional structure of **Amin
 
 The site highlights verified work across:
 1. **Optical Web & Python Verification**: Photography Portfolio (`amin-photography.vercel.app`) with server-side EXIF parsing and Python RAW-pair verification scripts.
-2. **Python Game Architecture & 3D Systems**: Galactic Crafters (`amin9127.itch.io`, Python/Pygame), Nette's Game (Unreal Engine 5.7 Gameplay State Trees), and StarterFactory (Unreal Engine + Java TCP IPC).
+2. **Python Game Architecture & 3D Systems**: Galactic Crafters (`amin9127.itch.io`, Python/Pygame), First-Person 3D Systems (Unreal Engine 5.7 Gameplay State Trees), and IN2011 TCP Sockets (Java socket networking).
 3. **Machine Learning & Computer Vision**: Custom PyTorch `AgeGroupCNN` with weighted cross-entropy loss and OpenCV/Scikit-learn Handwritten Digit Recognition.
 4. **Java & Systems Engineering**: Lancaster's Music Hall (Java 17 Swing MVC / SQLite) and Concurrent Multithreaded Systems verified in LTSA.
 5. **AI Model Assessment**: Technical QA Evaluator and Model Assessor at Outlier AI (Project Aether).

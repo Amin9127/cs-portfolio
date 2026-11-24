@@ -228,8 +228,8 @@ export const projectsData: ProjectItem[] = [
     },
   },
   {
-    id: "nette-game",
-    title: "Nette's Game: First-Person 3D Systems",
+    id: "first-person-3d-systems",
+    title: "First-Person 3D Systems & Puzzle Engine",
     tagline: "A first-person 3D exploration and puzzle demo built in Unreal Engine 5.7. Uses Gameplay State Trees for quest and player state, UMG widgets for UI challenges, and line traces for interaction.",
     category: "game-3d",
     featured: true,

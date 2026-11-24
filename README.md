@@ -23,7 +23,7 @@ A web portfolio built with Next.js 16 and React 19 to present engineering work a
    - Inverse-frequency weighted `CrossEntropyLoss` solving dataset skew, benchmarked against HOG + SVM/MLP baselines.
 4. **Handwritten Digit Recognition & Calibration Engine**:
    - OpenCV (`cv2`) grid extraction and Scikit-learn multinomial classification with confidence calibration diagnostics.
-5. **Nette's Game (Unreal Engine 5.7)**, **Hack-A-Health (Python)**, **Lancaster's Music Hall (Java 17 / SQLite)**, and **Concurrency Systems (Java / LTSA)**.
+5. **First-Person 3D Systems (Unreal Engine 5.7)**, **Hack-A-Health (Python)**, **Lancaster's Music Hall (Java 17 / SQLite)**, **Concurrency Systems (Java / LTSA)**, and **IN2011 TCP Sockets (Java)**.
 
 ---
 
