@@ -1,9 +1,10 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Terminal, Menu, X, Gamepad2 } from "lucide-react";
+import { Terminal, Menu, X, Gamepad2, Search } from "lucide-react";
 import { GithubIcon } from "@/components/icons/GithubIcon";
 import { candidateProfile } from "@/data/profile";
+import { CommandPalette } from "@/components/CommandPalette";
 
 const NAV_ITEMS = [
   { id: "flagship", label: "Featured Work" },
@@ -17,8 +18,18 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string>("");
+  const [commandPaletteOpen, setCommandPaletteOpen] = useState(false);
 
   useEffect(() => {
+    // Global Cmd+K / Ctrl+K listener
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === "k") {
+        e.preventDefault();
+        setCommandPaletteOpen((prev) => !prev);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
@@ -42,6 +53,7 @@ export function Navbar() {
     }
 
     return () => {
+      window.removeEventListener("keydown", handleKeyDown);
       window.removeEventListener("scroll", handleScroll);
       observer.disconnect();
     };
@@ -87,36 +99,50 @@ export function Navbar() {
           })}
         </nav>
 
-        <div className="hidden sm:flex items-center gap-2.5">
-          <a
-            href={candidateProfile.itchIo}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 hover:border-indigo-500/40 hover:bg-indigo-500/10 text-slate-200 text-xs font-medium transition-all"
+        <div className="flex items-center gap-2">
+          <button
+            onClick={() => setCommandPaletteOpen(true)}
+            className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg bg-white/5 border border-white/10 hover:border-white/25 hover:bg-white/10 text-slate-300 text-xs font-mono transition-all"
+            title="Open Command Palette (Ctrl+K / Cmd+K)"
           >
-            <Gamepad2 className="w-3.5 h-3.5 text-indigo-400" />
-            <span>itch.io</span>
-          </a>
+            <Search className="w-3.5 h-3.5 text-slate-400" />
+            <span className="hidden sm:inline text-slate-400">Search</span>
+            <kbd className="hidden sm:inline-flex items-center px-1.5 py-0.5 rounded bg-white/10 border border-white/10 text-[10px] text-slate-400">
+              ⌘K
+            </kbd>
+          </button>
 
-          <a
-            href={candidateProfile.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 hover:border-white/30 flex items-center justify-center text-slate-300 hover:text-white transition-all"
-            aria-label="GitHub Profile"
+          <div className="hidden sm:flex items-center gap-2.5">
+            <a
+              href={candidateProfile.itchIo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 hover:border-indigo-500/40 hover:bg-indigo-500/10 text-slate-200 text-xs font-medium transition-all"
+            >
+              <Gamepad2 className="w-3.5 h-3.5 text-indigo-400" />
+              <span>itch.io</span>
+            </a>
+
+            <a
+              href={candidateProfile.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 hover:border-white/30 flex items-center justify-center text-slate-300 hover:text-white transition-all"
+              aria-label="GitHub Profile"
+            >
+              <GithubIcon className="w-4 h-4" />
+            </a>
+          </div>
+
+          <button
+            onClick={() => setMobileMenuOpen((prev) => !prev)}
+            className="md:hidden p-2 rounded-lg bg-white/5 border border-white/10 text-slate-300"
+            aria-label="Toggle Menu"
+            aria-expanded={mobileMenuOpen}
           >
-            <GithubIcon className="w-4 h-4" />
-          </a>
+            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
         </div>
-
-        <button
-          onClick={() => setMobileMenuOpen((prev) => !prev)}
-          className="md:hidden p-2 rounded-lg bg-white/5 border border-white/10 text-slate-300"
-          aria-label="Toggle Menu"
-          aria-expanded={mobileMenuOpen}
-        >
-          {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-        </button>
       </div>
 
       {mobileMenuOpen ? (
@@ -153,6 +179,11 @@ export function Navbar() {
           </div>
         </div>
       ) : null}
+
+      <CommandPalette
+        isOpen={commandPaletteOpen}
+        onClose={() => setCommandPaletteOpen(false)}
+      />
     </header>
   );
 }

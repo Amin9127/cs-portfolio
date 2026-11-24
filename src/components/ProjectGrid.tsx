@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef, useEffect } from "react";
 import Link from "next/link";
 import {
   Layers,
@@ -14,6 +14,8 @@ import {
   Gamepad2,
   Play,
   RotateCcw,
+  LayoutGrid,
+  Columns3,
 } from "lucide-react";
 import { GithubIcon } from "@/components/icons/GithubIcon";
 import { ProjectItem, ProjectCategory } from "@/types/portfolio";
@@ -49,7 +51,24 @@ export function ProjectGrid({ projects, onOpenCaseStudy }: ProjectGridProps) {
     projects.find((p) => p.id === "galactic-crafters")?.id || projects[0]?.id || ""
   );
   const [searchQuery, setSearchQuery] = useState("");
-  const [viewMode, setViewMode] = useState<"stage" | "list">("stage");
+  const [viewMode, setViewMode] = useState<"bento" | "stage">("bento");
+  const searchInputRef = useRef<HTMLInputElement>(null);
+
+  // Focus search with '/' key
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (
+        e.key === "/" &&
+        document.activeElement?.tagName !== "INPUT" &&
+        document.activeElement?.tagName !== "TEXTAREA"
+      ) {
+        e.preventDefault();
+        searchInputRef.current?.focus();
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
 
   const filteredProjects = useMemo(() => {
     const q = searchQuery.toLowerCase().trim();
@@ -99,35 +118,41 @@ export function ProjectGrid({ projects, onOpenCaseStudy }: ProjectGridProps) {
             <div className="w-full sm:w-64 relative">
               <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
               <input
+                ref={searchInputRef}
                 type="text"
                 aria-label="Search projects or technologies"
-                placeholder="Search projects or tech..."
+                placeholder="Search projects or tech... (/)"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-9 pr-4 py-2 rounded-xl bg-white/5 border border-white/10 text-white placeholder-slate-500 text-xs focus:outline-none focus:border-blue-500/50 transition-all font-mono"
+                className="w-full pl-9 pr-8 py-2 rounded-xl bg-white/5 border border-white/10 text-white placeholder-slate-400 text-xs focus:outline-none focus:border-blue-500/50 transition-all font-mono"
               />
+              <kbd className="absolute right-2.5 top-1/2 -translate-y-1/2 px-1.5 py-0.5 rounded bg-white/5 border border-white/10 text-[10px] text-slate-400 font-mono pointer-events-none">
+                /
+              </kbd>
             </div>
 
             <div className="flex items-center bg-white/5 p-1 rounded-xl border border-white/10 text-xs font-medium">
               <button
+                onClick={() => setViewMode("bento")}
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg transition-all ${
+                  viewMode === "bento"
+                    ? "bg-blue-600 text-white shadow-sm"
+                    : "text-slate-400 hover:text-white"
+                }`}
+              >
+                <LayoutGrid className="w-3.5 h-3.5" />
+                <span>Bento Grid</span>
+              </button>
+              <button
                 onClick={() => setViewMode("stage")}
-                className={`px-3 py-1.5 rounded-lg transition-all ${
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg transition-all ${
                   viewMode === "stage"
                     ? "bg-blue-600 text-white shadow-sm"
                     : "text-slate-400 hover:text-white"
                 }`}
               >
-                Interactive Stage
-              </button>
-              <button
-                onClick={() => setViewMode("list")}
-                className={`px-3 py-1.5 rounded-lg transition-all ${
-                  viewMode === "list"
-                    ? "bg-blue-600 text-white shadow-sm"
-                    : "text-slate-400 hover:text-white"
-                }`}
-              >
-                Case Studies Feed
+                <Columns3 className="w-3.5 h-3.5" />
+                <span>Deep Dive Stage</span>
               </button>
             </div>
           </div>
@@ -365,87 +390,125 @@ export function ProjectGrid({ projects, onOpenCaseStudy }: ProjectGridProps) {
           </div>
         ) : null}
 
-        {viewMode === "list" && filteredProjects.length > 0 ? (
-          <div className="space-y-4">
-            {filteredProjects.map((project) => (
-              <div
-                key={project.id}
-                className="p-6 rounded-2xl bg-[#0f1219] border border-white/10 hover:border-white/20 transition-all flex flex-col md:flex-row md:items-center justify-between gap-6"
-              >
-                <div className="space-y-2 max-w-3xl">
-                  <div className="flex flex-wrap items-center gap-2">
-                    <span
-                      className={`px-2.5 py-0.5 rounded-full text-[10px] font-mono border ${
-                        getCategoryBadge(project.category).color
-                      }`}
-                    >
-                      {getCategoryBadge(project.category).label}
-                    </span>
-                    <span className="text-xs font-mono text-slate-400">{project.badge}</span>
-                  </div>
-
-                  <h3 className="text-xl font-bold text-white">{project.title}</h3>
-                  <p className="text-slate-300 text-sm leading-relaxed">{project.tagline}</p>
-
-                  <div className="flex flex-wrap gap-1.5 pt-1">
-                    {project.techStack.map((tech) => (
+        {viewMode === "bento" && filteredProjects.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {filteredProjects.map((project) => {
+              const badge = getCategoryBadge(project.category);
+              return (
+                <div
+                  key={project.id}
+                  className="group rounded-2xl bg-[#0f1219] border border-white/10 hover:border-blue-500/40 hover:bg-[#121622] p-5 sm:p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 shadow-lg hover:shadow-blue-500/5 relative overflow-hidden"
+                >
+                  <div className="space-y-3.5">
+                    {/* Top badges */}
+                    <div className="flex items-center justify-between gap-2">
                       <span
-                        key={tech}
-                        className="px-2 py-0.5 rounded text-[10px] font-mono bg-white/5 text-slate-300 border border-white/5"
+                        className={`px-2.5 py-0.5 rounded-full text-[10px] font-mono border ${badge.color}`}
                       >
-                        {tech}
+                        {badge.label}
                       </span>
-                    ))}
+                      <span className="text-[11px] font-mono text-slate-400 bg-white/5 px-2 py-0.5 rounded border border-white/10">
+                        {project.badge || project.status}
+                      </span>
+                    </div>
+
+                    {/* Title & Tagline */}
+                    <div>
+                      <h3 className="text-lg font-bold text-white group-hover:text-blue-300 transition-colors tracking-tight line-clamp-1">
+                        {project.title}
+                      </h3>
+                      <p className="mt-2 text-slate-300 text-xs sm:text-sm leading-relaxed line-clamp-3">
+                        {project.tagline}
+                      </p>
+                    </div>
+
+                    {/* Metric pill */}
+                    {project.metrics && project.metrics[0] ? (
+                      <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-[11px] font-mono text-slate-300">
+                        <span className="text-slate-400">{project.metrics[0].label}:</span>
+                        <span className="text-white font-medium">{project.metrics[0].value}</span>
+                      </div>
+                    ) : null}
+
+                    {/* Tech stack */}
+                    <div className="flex flex-wrap gap-1.5 pt-1">
+                      {project.techStack.slice(0, 4).map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-2 py-0.5 rounded text-[10px] font-mono bg-white/5 text-slate-300 border border-white/10"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                      {project.techStack.length > 4 ? (
+                        <span className="px-1.5 py-0.5 text-[10px] font-mono text-slate-400">
+                          +{project.techStack.length - 4}
+                        </span>
+                      ) : null}
+                    </div>
+                  </div>
+
+                  {/* Actions */}
+                  <div className="pt-5 mt-5 border-t border-white/10 flex items-center justify-between gap-2">
+                    <div className="flex items-center gap-2">
+                      {project.githubUrl ? (
+                        <a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="p-2 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 hover:text-white transition-colors"
+                          title="View GitHub Repository"
+                        >
+                          <GithubIcon className="w-3.5 h-3.5" />
+                        </a>
+                      ) : null}
+
+                      {project.liveUrl ? (
+                        <a
+                          href={project.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="p-2 rounded-lg bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/20 text-amber-300 hover:text-amber-200 transition-colors"
+                          title="Open Live Website"
+                        >
+                          <ExternalLink className="w-3.5 h-3.5" />
+                        </a>
+                      ) : null}
+
+                      {project.itchUrl ? (
+                        <a
+                          href={project.itchUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="p-2 rounded-lg bg-indigo-500/10 hover:bg-indigo-500/20 border border-indigo-500/20 text-indigo-300 hover:text-indigo-200 transition-colors"
+                          title="Play on itch.io"
+                        >
+                          <Gamepad2 className="w-3.5 h-3.5" />
+                        </a>
+                      ) : null}
+                    </div>
+
+                    <div className="flex items-center gap-1.5">
+                      <button
+                        onClick={() => onOpenCaseStudy(project)}
+                        className="px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold shadow-sm transition-all flex items-center gap-1"
+                      >
+                        <span>Case Study</span>
+                        <ArrowUpRight className="w-3 h-3" />
+                      </button>
+
+                      <Link
+                        href={`/projects/${project.id}`}
+                        className="p-1.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-slate-400 hover:text-white text-xs transition-colors"
+                        title="View Full Project Page"
+                      >
+                        <ArrowUpRight className="w-3.5 h-3.5" />
+                      </Link>
+                    </div>
                   </div>
                 </div>
-
-                <div className="flex flex-wrap items-center gap-3 shrink-0">
-                  {project.liveUrl ? (
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="px-3.5 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-black text-xs font-semibold flex items-center gap-1.5"
-                    >
-                      <span>{project.youtubeId ? "Watch Demo" : "Live Site"}</span>
-                      <ExternalLink className="w-3.5 h-3.5" />
-                    </a>
-                  ) : null}
-
-                  {project.itchUrl ? (
-                    <a
-                      href={project.itchUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="px-3.5 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold flex items-center gap-1.5"
-                    >
-                      <Gamepad2 className="w-3.5 h-3.5" />
-                      <span>itch.io</span>
-                    </a>
-                  ) : null}
-
-                  {project.githubUrl ? (
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="px-3.5 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-slate-200 text-xs font-medium flex items-center gap-1.5"
-                    >
-                      <GithubIcon className="w-4 h-4" />
-                      <span>Code</span>
-                    </a>
-                  ) : null}
-
-                  <button
-                    onClick={() => onOpenCaseStudy(project)}
-                    className="px-3.5 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold flex items-center gap-1.5"
-                  >
-                    <span>Case Study</span>
-                    <ArrowUpRight className="w-3.5 h-3.5" />
-                  </button>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         ) : null}
       </div>
