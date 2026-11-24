@@ -80,8 +80,8 @@ export function FlagshipSpotlight({ project }: FlagshipSpotlightProps) {
                 />
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-4 flex items-end justify-between gap-3">
                   <div className="font-mono text-[11px] text-slate-200 space-y-0.5">
-                    <div className="text-amber-300 font-semibold">Canon EOS M3 &bull; EF-M 18-55mm</div>
-                    <div className="text-slate-300">f/4.5 &bull; 1/80s &bull; ISO 200</div>
+                    <div className="text-amber-300 font-semibold">Canon EOS M3 &bull; EF-M 18-55mm IS STM</div>
+                    <div className="text-slate-300">18mm &bull; f/3.5 &bull; 1/60s &bull; ISO 500</div>
                   </div>
                   <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-amber-500 text-black text-xs font-semibold shadow-md shrink-0">
                     <span>Open Live Site</span>
